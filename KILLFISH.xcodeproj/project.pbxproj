@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0BF3BE1C5A99BD006BC869 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0BF3BC1C5A99BD006BC869 /* LeftMenuViewController.swift */; };
+		BA0BF3BF1C5A99BD006BC869 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0BF3BD1C5A99BD006BC869 /* RightMenuViewController.swift */; };
+		BA0BF3C21C5A9A20006BC869 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0BF3C01C5A9A20006BC869 /* FirstViewController.swift */; };
+		BA0BF3C31C5A9A20006BC869 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0BF3C11C5A9A20006BC869 /* SecondViewController.swift */; };
+		BA35AB591C5A5DC500F6BDD1 /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA35AB581C5A5DC500F6BDD1 /* SSASideMenu.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* ViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0BF3BC1C5A99BD006BC869 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = "../../../../../Downloads/SSASideMenu-master/Examples/Simple/SSASideMenuExample/LeftMenuViewController.swift"; sourceTree = "<group>"; };
+		BA0BF3BD1C5A99BD006BC869 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightMenuViewController.swift; path = "../../../../../Downloads/SSASideMenu-master/Examples/Simple/SSASideMenuExample/RightMenuViewController.swift"; sourceTree = "<group>"; };
+		BA0BF3C01C5A9A20006BC869 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../../../../Downloads/SSASideMenu-master/Examples/Simple/SSASideMenuExample/FirstViewController.swift"; sourceTree = "<group>"; };
+		BA0BF3C11C5A9A20006BC869 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../../../../../Downloads/SSASideMenu-master/Examples/Simple/SSASideMenuExample/SecondViewController.swift"; sourceTree = "<group>"; };
+		BA35AB581C5A5DC500F6BDD1 /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSASideMenu.swift; path = "../../../../../Downloads/ISSideMenu-master/Examples/Simple/SSASideMenuExample/SSASideMenu.swift"; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,7 @@
 		BA8D3FE01C5A42D300727AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA8D3FE31C5A42D300727AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA8D3FE51C5A42D300727AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +46,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BA0BF3C01C5A9A20006BC869 /* FirstViewController.swift */,
+				BA0BF3C11C5A9A20006BC869 /* SecondViewController.swift */,
+				BA0BF3BC1C5A99BD006BC869 /* LeftMenuViewController.swift */,
+				BA0BF3BD1C5A99BD006BC869 /* RightMenuViewController.swift */,
+				BA35AB581C5A5DC500F6BDD1 /* SSASideMenu.swift */,
+			);
+			name = SSASideMenu;
+			sourceTree = "<group>";
+		};
 		BA8D3FCD1C5A42D300727AFD = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +77,12 @@
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
 			isa = PBXGroup;
 			children = (
+				BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */,
 				BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */,
 				BA8D3FDB1C5A42D300727AFD /* ViewController.swift */,
 				BA8D3FDD1C5A42D300727AFD /* Main.storyboard */,
 				BA8D3FE01C5A42D300727AFD /* Assets.xcassets */,
+				BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */,
 				BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */,
 				BA8D3FE51C5A42D300727AFD /* Info.plist */,
 			);
@@ -135,8 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA35AB591C5A5DC500F6BDD1 /* SSASideMenu.swift in Sources */,
 				BA8D3FDC1C5A42D300727AFD /* ViewController.swift in Sources */,
+				BA0BF3BE1C5A99BD006BC869 /* LeftMenuViewController.swift in Sources */,
+				BA0BF3C21C5A9A20006BC869 /* FirstViewController.swift in Sources */,
+				BA0BF3C31C5A9A20006BC869 /* SecondViewController.swift in Sources */,
 				BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */,
+				BA0BF3BF1C5A99BD006BC869 /* RightMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +316,7 @@
 				BA8D3FEA1C5A42D300727AFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,25 +1,208 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="News" id="BYZ-38-t0r" customClass="ViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Новости" id="xn4-Xa-ja1">
+                        <barButtonItem key="backBarButtonItem" title="назад" id="TwG-Zi-7gA"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="OeM-jK-Jd8" kind="presentation" identifier="goto_login" id="4eY-EW-u5y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1143" y="337.5"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="4Uh-cv-91f">
+            <objects>
+                <viewController title="Login" id="OeM-jK-Jd8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7bX-Nd-yKH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ldp-bA-1tL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qSG-xV-Haj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnterRegistrBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ip3-2i-qcN">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-kq-fm6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.86125485373614941" blue="0.31991563636830866" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Продолжить"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="476" width="280" height="55"/>
+                                </variation>
+                            </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-OZ-AcH" userLabel="Username">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg1-I0-vxW" userLabel="Separator">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="4" y="31" width="366" height="2"/>
+                                        </variation>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneOrCard" translatesAutoresizingMaskIntoConstraints="NO" id="4Io-5U-4fm">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                        </variation>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+79999696597" placeholder="Номер карты или телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UB2-Uw-kRD">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.94312418193717273" green="0.28819461920033318" blue="0.31646201682504255" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="48" y="2" width="324" height="30"/>
+                                        </variation>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="hg1-I0-vxW"/>
+                                        <exclude reference="4Io-5U-4fm"/>
+                                        <exclude reference="UB2-Uw-kRD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="18" y="339" width="284" height="41"/>
+                                    <mask key="subviews">
+                                        <include reference="hg1-I0-vxW"/>
+                                        <include reference="4Io-5U-4fm"/>
+                                        <include reference="UB2-Uw-kRD"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ip3-2i-qcN" secondAttribute="trailing" constant="-20" id="0fQ-el-GzZ"/>
+                            <constraint firstItem="eIa-OZ-AcH" firstAttribute="leading" secondItem="qSG-xV-Haj" secondAttribute="leadingMargin" id="Fgh-SW-1zb"/>
+                            <constraint firstItem="eIa-OZ-AcH" firstAttribute="centerX" secondItem="qSG-xV-Haj" secondAttribute="centerX" id="FmF-V6-tz2"/>
+                            <constraint firstItem="Ldp-bA-1tL" firstAttribute="top" secondItem="ip3-2i-qcN" secondAttribute="bottom" id="LpM-cf-5sD">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="ip3-2i-qcN" firstAttribute="leading" secondItem="qSG-xV-Haj" secondAttribute="leadingMargin" constant="-20" id="V1r-I1-IvT"/>
+                            <constraint firstItem="ip3-2i-qcN" firstAttribute="top" secondItem="qSG-xV-Haj" secondAttribute="topMargin" id="gXC-8l-AoK"/>
+                            <constraint firstItem="eIa-OZ-AcH" firstAttribute="trailing" secondItem="qSG-xV-Haj" secondAttribute="trailingMargin" id="pSa-J9-7RV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ip3-2i-qcN"/>
+                                <exclude reference="PQ4-kq-fm6"/>
+                                <exclude reference="eIa-OZ-AcH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0fQ-el-GzZ"/>
+                                <exclude reference="V1r-I1-IvT"/>
+                                <exclude reference="gXC-8l-AoK"/>
+                                <exclude reference="Fgh-SW-1zb"/>
+                                <exclude reference="FmF-V6-tz2"/>
+                                <exclude reference="pSa-J9-7RV"/>
+                                <exclude reference="LpM-cf-5sD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ip3-2i-qcN"/>
+                                <include reference="PQ4-kq-fm6"/>
+                                <include reference="eIa-OZ-AcH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0fQ-el-GzZ"/>
+                                <include reference="V1r-I1-IvT"/>
+                                <include reference="gXC-8l-AoK"/>
+                                <include reference="Fgh-SW-1zb"/>
+                                <include reference="FmF-V6-tz2"/>
+                                <include reference="pSa-J9-7RV"/>
+                                <include reference="LpM-cf-5sD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gw8-Oa-DDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1893" y="307.5"/>
+        </scene>
+        <!--Signup-->
+        <scene sceneID="50L-pa-fRR">
+            <objects>
+                <viewController title="Signup" id="01j-kX-k97" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SnY-Lg-7zm"/>
+                        <viewControllerLayoutGuide type="bottom" id="lNw-ON-ecl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dIr-sQ-2cI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgh-g2-2tP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="1500"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uBh-yu-Teh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WAK-es-eqo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xVv-xS-OJa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lQQ-F1-0kp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3m-hh-AgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="1010"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EnterRegistrBackground" width="1080" height="1920"/>
+        <image name="PhoneOrCard" width="100" height="82"/>
+    </resources>
 </document>
