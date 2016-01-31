@@ -17,11 +17,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        /*window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        /*let verticalOffset: CGFloat = -4;
+        UINavigationBar.appearance().setTitleVerticalPositionAdjustment(verticalOffset,forBarMetrics: UIBarMetrics.Default)*/
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 20, green: 20, blue: 20, alpha: 0.0)
+        
+        //UINavigationBar.appearance().alpha = 0.2;
+        UINavigationBar.appearance().tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 0.4, blue: 0, alpha: 1)
+        /*UINavigationBar.appearance().translucent = true
+        
+        let bounds = UINavigationBar.appearance().bounds as CGRect!
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        UINavigationBar.appearance().addSubview(visualEffectView);
+        UINavigationBar.appearance().backgroundColor = UIColor.clearColor();
+        UINavigationBar.appearance().sendSubviewToBack(visualEffectView);*/
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().translucent = true
+
+        
+            
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //MARK : Setup SSASideMenu
         
-        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: FirstViewController()), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: RightMenuViewController())
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("news")
+        
+        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: vc), leftMenuViewController: LeftMenuViewController())
         sideMenu.backgroundImage = UIImage(named: "MainBackground.jpg")
         sideMenu.configure(SSASideMenu.MenuViewEffect(fade: true, scale: true, scaleBackground: false))
         sideMenu.configure(SSASideMenu.ContentViewEffect(alpha: 1.0, scale: 0.7))
@@ -29,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         sideMenu.delegate = self
         
         window?.rootViewController = sideMenu
-        window?.makeKeyAndVisible()*/
+        window?.makeKeyAndVisible()
         
         return true
     }
