@@ -11,13 +11,15 @@
 		BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */; };
 		BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */; };
 		BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */; };
+		BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */; };
+		BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
 		BA8D3FE11C5A42D300727AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE01C5A42D300727AFD /* Assets.xcassets */; };
 		BA8D3FE41C5A42D300727AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */; };
 		BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */; };
-		BAEAACC91C5CFC85004C1348 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC81C5CFC85004C1348 /* RootViewController.swift */; };
+		BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */; };
 		BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */; };
 		BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCC1C5D04CE004C1348 /* LeftMenuViewController.swift */; };
 		BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCD1C5D04CE004C1348 /* SSASideMenu.swift */; };
@@ -30,6 +32,8 @@
 		BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterNavViewController.swift; sourceTree = "<group>"; };
+		BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		BA8D3FE51C5A42D300727AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
-		BAEAACC81C5CFC85004C1348 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
 		BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BAEAACCC1C5D04CE004C1348 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		BAEAACCD1C5D04CE004C1348 /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 				BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */,
 				BA8D3FE51C5A42D300727AFD /* Info.plist */,
 				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
-				BAEAACC81C5CFC85004C1348 /* RootViewController.swift */,
+				BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */,
 				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
 				BAEAACD01C5D269E004C1348 /* TextBoxView.swift */,
 				BAEAACD21C5D2724004C1348 /* TextBoxView.xib */,
@@ -103,6 +107,8 @@
 				BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */,
 				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
 				BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */,
+				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
+				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
 			);
 			path = KILLFISH;
 			sourceTree = "<group>";
@@ -181,12 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */,
 				BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */,
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
-				BAEAACC91C5CFC85004C1348 /* RootViewController.swift in Sources */,
+				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
 				BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */,
+				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BAEAACD11C5D269E004C1348 /* TextBoxView.swift in Sources */,
 				BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */,
 				BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */,

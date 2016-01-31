@@ -8,13 +8,17 @@
 
 import UIKit
 
-class NewsViewController: RootViewController {
+class NewsViewController: MasterNavViewController {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setNavTitle("Новости")
+        
+        if(!logged){
+            logged=true;
+            self.performSegueWithIdentifier("goto_login", sender: self)
+        }
        
     }
 
@@ -25,10 +29,7 @@ class NewsViewController: RootViewController {
     var logged = false;
     override func viewDidAppear(animated: Bool) {
         
-        if(!logged){
-            logged=true;
-            self.performSegueWithIdentifier("goto_login", sender: self)
-        }
+   
     }
 
     

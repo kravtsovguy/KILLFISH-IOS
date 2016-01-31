@@ -38,6 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().translucent = true
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!];
+        //UILabel.appearance().font = UIFont(name: "Roboto-Light", size: 15)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!], forState: UIControlState.Normal)
+        
+        
 
         
             

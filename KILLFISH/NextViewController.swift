@@ -8,33 +8,12 @@
 
 import UIKit
 
-class NextViewController: UIViewController {
-
-    func setNavTitle(title:String){
-        (navigationItem.titleView as! UILabel).text = title
-    }
+class NextViewController: NavViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.clearColor()
         
-        let navLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20));
-        //navLabel.backgroundColor = UIColor
-        navLabel.textColor = UIColor.whiteColor();
-        navLabel.font = UIFont(name: "Roboto-Light", size: 15)
-        navLabel.textAlignment = NSTextAlignment.Center;
-        navLabel.text = "Custom";
-        navLabel.center.x-=100
-        navigationItem.titleView = navLabel;
-        
-        
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.translucent = true
-        
-        setNavTitle("Окно");
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class OldRootViewController: UIViewController {
     
     func setNavTitle(title:String){
         (navigationItem.titleView as! UILabel).text = title

@@ -25,16 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="32A-fs-YxS">
-                                <rect key="frame" x="0.0" y="1" width="320" height="568"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-YY-P3a" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="MGA-zR-Cf6"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-TJ-8GQ">
                                 <rect key="frame" x="137" y="171" width="46" height="30"/>
                                 <state key="normal" title="Тыц!"/>
@@ -43,11 +33,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zPe-YY-P3a" secondAttribute="trailing" id="6G7-Dh-Q1M"/>
-                            <constraint firstItem="zPe-YY-P3a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LCr-xV-Cqn"/>
-                            <constraint firstItem="zPe-YY-P3a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="epS-T8-gpx"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Новости" id="xn4-Xa-ja1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -72,13 +58,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybq-Jr-lzq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="eLQ-A5-y3g"/>
-                                </constraints>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-yv-zVu">
                                 <rect key="frame" x="110" y="110" width="100" height="100"/>
                             </imageView>
@@ -87,11 +66,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ybq-Jr-lzq" firstAttribute="top" secondItem="gHH-yh-LKr" secondAttribute="top" id="SYQ-Ls-7rB"/>
-                            <constraint firstItem="Ybq-Jr-lzq" firstAttribute="leading" secondItem="gHH-yh-LKr" secondAttribute="leading" id="VZ5-nx-SEp"/>
-                            <constraint firstAttribute="trailing" secondItem="Ybq-Jr-lzq" secondAttribute="trailing" id="dgT-jI-JyR"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Профиль" id="xHM-hi-UI3"/>
@@ -105,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="523" y="1484"/>
         </scene>
-        <!--Next View Controller-->
+        <!--Окно-->
         <scene sceneID="Tbk-pW-5mZ">
             <objects>
                 <viewController id="ZtB-8y-Yd8" customClass="NextViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,26 +90,9 @@
                     <view key="view" contentMode="scaleToFill" id="eU8-AD-nsf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Wzr-Gu-IET">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQL-1J-lNs" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="mbF-ke-OUz"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kQL-1J-lNs" firstAttribute="top" secondItem="eU8-AD-nsf" secondAttribute="top" id="3fL-FX-7u9"/>
-                            <constraint firstItem="kQL-1J-lNs" firstAttribute="leading" secondItem="eU8-AD-nsf" secondAttribute="leading" id="c7W-BH-big"/>
-                            <constraint firstAttribute="trailing" secondItem="kQL-1J-lNs" secondAttribute="trailing" id="sfr-d0-fKR"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JpT-Jq-uEh"/>
+                    <navigationItem key="navigationItem" title="Окно" id="JpT-Jq-uEh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LG-sP-wNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -403,7 +360,6 @@
         <image name="Avatar" width="220" height="220"/>
         <image name="EnterRegistrBackground" width="1080" height="1920"/>
         <image name="Help" width="83" height="83"/>
-        <image name="MainBackground" width="1080" height="1920"/>
         <image name="Password" width="71" height="83"/>
         <image name="PhoneOrCard" width="100" height="82"/>
         <image name="killfichICO" width="900" height="900"/>
