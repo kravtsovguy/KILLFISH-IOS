@@ -14,7 +14,7 @@ extension CarbonTabSwipeNavigation {
     {
         setIndicatorColor(UIColor.yellowColor().colorWithAlphaComponent(1))
         
-        setNormalColor(UIColor.whiteColor().colorWithAlphaComponent(0.8), font: UIFont(name: "Roboto-Light", size: 13)!)
+        setNormalColor(UIColor.whiteColor().colorWithAlphaComponent(0.6), font: UIFont(name: "Roboto-Light", size: 13)!)
         setSelectedColor(UIColor.whiteColor().colorWithAlphaComponent(0.8), font: UIFont(name: "Roboto-Light", size: 13)!)
     }
 

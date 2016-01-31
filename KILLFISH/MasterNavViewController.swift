@@ -22,8 +22,6 @@ class MasterNavViewController: NavViewController {
         butMenu.setBackgroundImage(imgMenu, forState: .Normal)
         butMenu.addTarget(self, action: "presentLeftMenuViewController", forControlEvents: .TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: butMenu);
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

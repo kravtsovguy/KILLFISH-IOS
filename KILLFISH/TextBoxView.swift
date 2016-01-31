@@ -10,8 +10,50 @@ import UIKit
 
 @IBDesignable
 class TextBoxView: UIView {
+    @IBOutlet weak var textBox: UITextField!
+    @IBOutlet weak var img: UIImageView!
     
-    @IBInspectable var lineWidth: CGFloat = 1.0
+    @IBInspectable var text: String = "" {
+        didSet {
+            textBox.text=text
+        }
+    }
+    
+    @IBInspectable var placeHolder: String = "" {
+        didSet {
+            textBox.placeholder=placeHolder
+        }
+    }
+    
+    @IBInspectable var secureText: Bool = false {
+        didSet {
+            textBox.secureTextEntry=secureText
+        }
+    }
+    
+    @IBInspectable var editable: Bool = true {
+        didSet {
+            textBox.enabled = editable
+        }
+    }
+    
+    @IBInspectable var imageIco: UIImage = UIImage()  {
+        didSet {
+            img.image = imageIco
+        }
+    }
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        view.backgroundColor = UIColor.clearColor()
+    }
+    
+    
+    /*@IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }*/
 
     /*
     // Only override drawRect: if you perform custom drawing.

@@ -10,7 +10,6 @@
 		BA05BE991C5D7A0E00E6AE89 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05BE981C5D7A0E00E6AE89 /* TestView.xib */; };
 		BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */; };
 		BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */; };
-		BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */; };
 		BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */; };
 		BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */; };
 		BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */; };
@@ -24,6 +23,9 @@
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
 		BA8D3FE11C5A42D300727AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE01C5A42D300727AFD /* Assets.xcassets */; };
 		BA8D3FE41C5A42D300727AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */; };
+		BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */; };
+		BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */; };
+		BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */; };
 		BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */; };
 		BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */; };
 		BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */; };
@@ -37,10 +39,9 @@
 		BA05BE981C5D7A0E00E6AE89 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterNavViewController.swift; sourceTree = "<group>"; };
 		BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
-		BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicesViewController.swift; path = ../ServicesViewController.swift; sourceTree = "<group>"; };
+		BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		BA05BEB61C5DB0B300E6AE89 /* KILLFISH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KILLFISH-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA05BEB71C5DB0B400E6AE89 /* Carbon Kit Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Carbon Kit Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA05BEB81C5DB0B400E6AE89 /* CarbonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonKit.h; sourceTree = "<group>"; };
@@ -60,6 +61,9 @@
 		BA8D3FE01C5A42D300727AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA8D3FE31C5A42D300727AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA8D3FE51C5A42D300727AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
+		BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +134,9 @@
 				BA05BEB51C5DB08B00E6AE89 /* CarbonKit */,
 				BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */,
 				BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */,
-				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
 				BA8D3FDD1C5A42D300727AFD /* Main.storyboard */,
+				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
+				BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */,
 				BA8D3FE01C5A42D300727AFD /* Assets.xcassets */,
 				BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */,
 				BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */,
@@ -145,10 +150,11 @@
 				BA05BE981C5D7A0E00E6AE89 /* TestView.xib */,
 				BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */,
 				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
-				BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */,
 				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
 				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
 				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
+				BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */,
+				BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */,
 			);
 			path = KILLFISH;
 			sourceTree = "<group>";
@@ -229,13 +235,15 @@
 			files = (
 				BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */,
 				BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */,
+				BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */,
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
+				BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */,
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
+				BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
-				BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
 				BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */,
