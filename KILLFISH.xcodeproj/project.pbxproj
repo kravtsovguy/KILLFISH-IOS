@@ -18,6 +18,7 @@
 		BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBE1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m */; };
 		BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */; };
 		BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */; };
+		BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		BA05BEBE1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
 		BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
 		BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
+		BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavExt.swift; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */,
 				BA8D3FE51C5A42D300727AFD /* Info.plist */,
 				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
+				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
 				BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */,
 				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
 				BAEAACD01C5D269E004C1348 /* TextBoxView.swift */,
@@ -229,6 +232,7 @@
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
+				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
 				BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */,

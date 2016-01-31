@@ -12,13 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        // Override point for customization after application launch.
-        
+    
+    func setupToolbar()
+    {
+        let bgColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        UIToolbar.appearance().setBackgroundImage(UIImage.initFromColor(bgColor),
+            forToolbarPosition: UIBarPosition.Any,
+            barMetrics: UIBarMetrics.Default)
+        UIToolbar.appearance().setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)
+        UIToolbar.appearance().translucent = true
+    }
+    
+    func setupNavBar()
+    {
         /*let verticalOffset: CGFloat = -4;
         UINavigationBar.appearance().setTitleVerticalPositionAdjustment(verticalOffset,forBarMetrics: UIBarMetrics.Default)*/
         //UINavigationBar.appearance().barTintColor = UIColor(red: 20, green: 20, blue: 20, alpha: 0.0)
@@ -49,11 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         //UILabel.appearance().font = UIFont(name: "Roboto-Light", size: 15)
         
         UIBarButtonItem.appearance().setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!], forState: UIControlState.Normal)
-        
-        
-
-        
-            
+    }
+    
+    func setupSideMenu()
+    {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //MARK : Setup SSASideMenu
@@ -70,6 +75,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         
         window?.rootViewController = sideMenu
         window?.makeKeyAndVisible()
+    }
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        setupToolbar()
+        setupNavBar()
+        setupSideMenu()
         
         return true
     }

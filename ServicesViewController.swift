@@ -33,6 +33,7 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
     }
     
     func style() {
+        carbonTabSwipeNavigation.setDefaultStyle();
         //let color: UIColor = UIColor(red: 24.0 / 255, green: 75.0 / 255, blue: 152.0 / 255, alpha: 1)
         //self.navigationController!.navigationBar.translucent = false
         //self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
@@ -45,12 +46,12 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
         //carbonTabSwipeNavigation.view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
         
-        let bgImageColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        /*let bgImageColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
         carbonTabSwipeNavigation.toolbar.setBackgroundImage(UIImage.initFromColor(bgImageColor),
             forToolbarPosition: UIBarPosition.Any,
             barMetrics: UIBarMetrics.Default)
         carbonTabSwipeNavigation.toolbar.setShadowImage(UIImage(),forToolbarPosition: UIBarPosition.Any)
-        carbonTabSwipeNavigation.toolbar.translucent = true
+        carbonTabSwipeNavigation.toolbar.translucent = true*/
         
         //carbonTabSwipeNavigation.toolbar.backgroundColor = UIColor.clearColor()
         //carbonTabSwipeNavigation.toolbar.barStyle = UIBarStyle.Default
@@ -58,10 +59,12 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
         //carbonTabSwipeNavigation.toolbar.barTintColor = UIColor.redColor().colorWithAlphaComponent(0.2)
         
+        /*
         carbonTabSwipeNavigation.setIndicatorColor(UIColor.yellowColor().colorWithAlphaComponent(1))
         
         carbonTabSwipeNavigation.setNormalColor(UIColor.whiteColor().colorWithAlphaComponent(0.8), font: UIFont(name: "Roboto-Light", size: 13)!)
         carbonTabSwipeNavigation.setSelectedColor(UIColor.whiteColor().colorWithAlphaComponent(0.8), font: UIFont(name: "Roboto-Light", size: 13)!)
+*/
         
     }
     
