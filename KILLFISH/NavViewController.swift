@@ -10,12 +10,16 @@ import UIKit
 
 class NavViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupBackground()
-        setupTopView()
+        //setupTopView()
     }
+    
+    var backImg: UIImageView!
     
     func setupBackground()
     {
@@ -46,6 +50,8 @@ class NavViewController: UIViewController {
             constant: 0)
         
         NSLayoutConstraint.activateConstraints([lc,rc,tc,bc])
+        
+        backImg = img
         
     }
     

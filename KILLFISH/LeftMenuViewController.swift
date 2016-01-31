@@ -99,6 +99,11 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             sideMenuViewController?.contentViewController = UINavigationController(rootViewController: vc)
             sideMenuViewController?.hideMenuViewController()
             break
+        case 2:
+            let vc = storyboard.instantiateViewControllerWithIdentifier("services")
+            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: vc)
+            sideMenuViewController?.hideMenuViewController()
+            break
         default:
             break
         }

@@ -28,4 +28,15 @@ extension UIImage{
         
         return newImage;
     }
+    
+    static func initFromColor(color:UIColor)->UIImage
+    {
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue).rawValue
+        let context = CGBitmapContextCreate(nil, 1, 1, 8, 0, colorSpace, bitmapInfo)
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, CGRectMake(0, 0, 1, 1))
+        let image = UIImage(CGImage: CGBitmapContextCreateImage(context)!)
+        return image
+    }
 }

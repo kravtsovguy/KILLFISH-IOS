@@ -79,6 +79,25 @@
             </objects>
             <point key="canvasLocation" x="523" y="1484"/>
         </scene>
+        <!--Services-->
+        <scene sceneID="ck7-BI-6Lk">
+            <objects>
+                <viewController storyboardIdentifier="services" id="Xsj-YH-Vde" userLabel="Services" customClass="ServicesViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oIl-XK-Z9O"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bfi-by-sfL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c0Z-4n-XIu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Сервисы" id="SR9-2q-tgF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rsi-HJ-X4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523" y="2230"/>
+        </scene>
         <!--Окно-->
         <scene sceneID="Tbk-pW-5mZ">
             <objects>
@@ -96,51 +115,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LG-sP-wNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="1484"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="4Uh-cv-91f">
-            <objects>
-                <viewController title="Login" id="OeM-jK-Jd8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7bX-Nd-yKH"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ldp-bA-1tL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qSG-xV-Haj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gw8-Oa-DDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="108.26666666666667" y="102.23999999999999"/>
+            <point key="canvasLocation" x="1021" y="811"/>
         </scene>
         <!--Signup-->
         <scene sceneID="50L-pa-fRR">
             <objects>
-                <viewController title="Signup" id="01j-kX-k97" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="test" title="Signup" id="01j-kX-k97" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SnY-Lg-7zm"/>
                         <viewControllerLayoutGuide type="bottom" id="lNw-ON-ecl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dIr-sQ-2cI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbC-a7-6db">
                                 <rect key="frame" x="169" y="213" width="51" height="31"/>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgh-g2-2tP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="1420"/>
+            <point key="canvasLocation" x="523" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uBh-yu-Teh">
@@ -304,6 +302,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Зарегистрироваться"/>
+                                <connections>
+                                    <action selector="SignupPressed:" destination="6Uq-Jk-tck" eventType="touchUpInside" id="2m0-RT-eK4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,10 +333,13 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="01j-kX-k97" kind="modal" identifier="goto_signup" id="aRD-GA-L6G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orU-Lc-ft9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="811"/>
+            <point key="canvasLocation" x="36" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5cd-hV-vxM">
@@ -354,6 +358,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT5-0t-onH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="1484"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FAk-Ik-MVV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AcG-Eu-ECs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIO-T6-gpo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xsj-YH-Vde" kind="relationship" relationship="rootViewController" id="Q01-2i-1tM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sre-oz-nkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="2230"/>
         </scene>
     </scenes>
     <resources>

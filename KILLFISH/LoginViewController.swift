@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func SignupPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("goto_signup", sender: self)
+    }
 
     @IBAction func loginPressed(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

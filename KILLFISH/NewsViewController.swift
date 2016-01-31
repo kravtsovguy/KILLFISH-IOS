@@ -11,12 +11,14 @@ import UIKit
 class NewsViewController: MasterNavViewController {
 
     
+    static var logged = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if(!logged){
-            logged=true;
+        if(!NewsViewController.logged){
+            NewsViewController.logged=true;
             self.performSegueWithIdentifier("goto_login", sender: self)
         }
        
@@ -26,10 +28,16 @@ class NewsViewController: MasterNavViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    var logged = false;
+    
     override func viewDidAppear(animated: Bool) {
         
    
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
     }
 
     

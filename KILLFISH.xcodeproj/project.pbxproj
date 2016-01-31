@@ -13,6 +13,11 @@
 		BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */; };
 		BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */; };
 		BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */; };
+		BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */; };
+		BA05BEC11C5DB0B400E6AE89 /* CarbonSwipeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBD1C5DB0B400E6AE89 /* CarbonSwipeRefresh.m */; };
+		BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBE1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m */; };
+		BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */; };
+		BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -34,6 +39,18 @@
 		BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterNavViewController.swift; sourceTree = "<group>"; };
 		BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicesViewController.swift; path = ../ServicesViewController.swift; sourceTree = "<group>"; };
+		BA05BEB61C5DB0B300E6AE89 /* KILLFISH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KILLFISH-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA05BEB71C5DB0B400E6AE89 /* Carbon Kit Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Carbon Kit Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA05BEB81C5DB0B400E6AE89 /* CarbonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonKit.h; sourceTree = "<group>"; };
+		BA05BEB91C5DB0B400E6AE89 /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonSwipeRefresh.h; sourceTree = "<group>"; };
+		BA05BEBA1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeNavigation.h; sourceTree = "<group>"; };
+		BA05BEBB1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
+		BA05BEBC1C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
+		BA05BEBD1C5DB0B400E6AE89 /* CarbonSwipeRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonSwipeRefresh.m; sourceTree = "<group>"; };
+		BA05BEBE1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
+		BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
+		BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA05BEB51C5DB08B00E6AE89 /* CarbonKit */ = {
+			isa = PBXGroup;
+			children = (
+				BA05BEB71C5DB0B400E6AE89 /* Carbon Kit Swift-Bridging-Header.h */,
+				BA05BEB81C5DB0B400E6AE89 /* CarbonKit.h */,
+				BA05BEB91C5DB0B400E6AE89 /* CarbonSwipeRefresh.h */,
+				BA05BEBA1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.h */,
+				BA05BEBB1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.h */,
+				BA05BEBC1C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.h */,
+				BA05BEBD1C5DB0B400E6AE89 /* CarbonSwipeRefresh.m */,
+				BA05BEBE1C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m */,
+				BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */,
+				BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */,
+				BA05BEB61C5DB0B300E6AE89 /* KILLFISH-Bridging-Header.h */,
+			);
+			name = CarbonKit;
+			sourceTree = "<group>";
+		};
 		BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +125,7 @@
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
 			isa = PBXGroup;
 			children = (
+				BA05BEB51C5DB08B00E6AE89 /* CarbonKit */,
 				BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */,
 				BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */,
 				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
@@ -109,6 +145,7 @@
 				BA05BE9E1C5D89C100E6AE89 /* NextViewController.swift */,
 				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
 				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
+				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
 			);
 			path = KILLFISH;
 			sourceTree = "<group>";
@@ -193,12 +230,17 @@
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
+				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
 				BA05BE9F1C5D89C100E6AE89 /* NextViewController.swift in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
+				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
+				BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */,
 				BAEAACD11C5D269E004C1348 /* TextBoxView.swift in Sources */,
 				BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */,
 				BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */,
+				BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */,
+				BA05BEC11C5DB0B400E6AE89 /* CarbonSwipeRefresh.m in Sources */,
 				BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KILLFISH/Info.plist;
@@ -320,6 +363,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -327,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KILLFISH/Info.plist;
@@ -335,6 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         // Override point for customization after application launch.
         
         /*let verticalOffset: CGFloat = -4;
@@ -35,9 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         UINavigationBar.appearance().backgroundColor = UIColor.clearColor();
         UINavigationBar.appearance().sendSubviewToBack(visualEffectView);*/
         
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        let bgColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
+        UINavigationBar.appearance().setBackgroundImage(UIImage.initFromColor(bgColor), forBarMetrics: UIBarMetrics.Default)
+        
+        //UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().translucent = true
+        
+        
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!];
         //UILabel.appearance().font = UIFont(name: "Roboto-Light", size: 15)
         
