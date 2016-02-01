@@ -19,7 +19,7 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        let item = NewsInfo(title: "Вот это да!", dateUnix: 1392321600, text: "Текст")
+        let item = NewsInfo(title: "Вот это да!", dateUnix: 1392321600, text: "Лорем<br>Ипсум")
         items=[item,item,item,item]
         
         if(!NewsViewController.logged){
@@ -42,13 +42,8 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        
     }
 
-    
-    @IBAction func nextTapped(sender: AnyObject) {
-        //self.performSegueWithIdentifier("goto_next", sender: self)
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -62,8 +57,10 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         //cell.dataLabel.text="06.12"
         //cell.titleLabel.text="1..2..3..Погнали!"
         //cell.textLabel?.text = self.items[indexPath.row]
+        //cell.tintColor = UIColor.redColor()
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        //cell.selectionStyle = .Blue
+        //cell.accessoryView
+        //cell.selectionStyle = .None
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
         //bgColorView.layer.cornerRadius=10
@@ -74,14 +71,14 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("goto_news", sender: self)
+        self.performSegueWithIdentifier("goto_news", sender: items[indexPath.row])
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goto_news" {
             let vc = segue.destinationViewController as! NewsItemViewController
-            
+            vc.item = sender as! NewsInfo
         }
     }
 

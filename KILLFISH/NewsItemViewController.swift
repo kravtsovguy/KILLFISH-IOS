@@ -10,8 +10,13 @@ import UIKit
 
 class NewsItemViewController: NavViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    var item:NewsInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,8 +26,14 @@ class NewsItemViewController: NavViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        setup(item)
+    }
+    
     func setup(item: NewsInfo) {
-        
+        title =  item.dayAndMonthAndYear
+        titleLabel.text = item.title
+        webView.loadHTMLString(item.text, baseURL: nil)
     }
 
 }

@@ -11,6 +11,9 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
         </mutableArray>
+        <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--News-->
@@ -25,20 +28,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-TJ-8GQ">
-                                <rect key="frame" x="137" y="72" width="46" height="30"/>
-                                <state key="normal" title="Тыц!"/>
-                                <connections>
-                                    <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qkE-zJ-KZW"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-OI-SGO">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsCell" rowHeight="80" id="h4G-CZ-urA" customClass="NewsTableViewCell" customModule="KILLFISH" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsCell" focusStyle="custom" rowHeight="80" id="h4G-CZ-urA" customClass="NewsTableViewCell" customModule="KILLFISH" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h4G-CZ-urA" id="C08-du-eG7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
@@ -110,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="523" y="811"/>
         </scene>
-        <!--News-->
+        <!--Profile-->
         <scene sceneID="b2f-pC-gfq">
             <objects>
-                <viewController storyboardIdentifier="profile" id="W8B-RU-eYU" userLabel="News" customClass="ProfileViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="W8B-RU-eYU" userLabel="Profile" customClass="ProfileViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kfc-yR-VmV"/>
                         <viewControllerLayoutGuide type="bottom" id="Epv-hY-56D"/>
@@ -227,20 +223,48 @@
             </objects>
             <point key="canvasLocation" x="523" y="2230"/>
         </scene>
-        <!--Новость-->
+        <!--NewsItem-->
         <scene sceneID="Tbk-pW-5mZ">
             <objects>
-                <viewController id="ZtB-8y-Yd8" customClass="NewsItemViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZtB-8y-Yd8" userLabel="NewsItem" customClass="NewsItemViewController" customModule="KILLFISH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iBZ-oX-fMF"/>
                         <viewControllerLayoutGuide type="bottom" id="fBF-rF-r0n"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eU8-AD-nsf" customClass="NewsTableViewCell" customModule="KILLFISH" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="eU8-AD-nsf" userLabel="View" customClass="NewsTableViewCell" customModule="KILLFISH" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Купи пива - получи подарок" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCb-vX-hQz" userLabel="Title">
+                                <rect key="frame" x="20" y="72" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qcM-vb-qQB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-e9-Zzq">
+                                <rect key="frame" x="20" y="130" width="280" height="438"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fBF-rF-r0n" firstAttribute="top" secondItem="V8f-e9-Zzq" secondAttribute="bottom" id="0KM-bI-d2i"/>
+                            <constraint firstItem="oCb-vX-hQz" firstAttribute="top" secondItem="iBZ-oX-fMF" secondAttribute="bottom" constant="8" id="CMH-qb-2wc"/>
+                            <constraint firstAttribute="trailing" secondItem="oCb-vX-hQz" secondAttribute="trailing" constant="20" id="Jcn-Ki-0v7"/>
+                            <constraint firstItem="V8f-e9-Zzq" firstAttribute="leading" secondItem="eU8-AD-nsf" secondAttribute="leading" constant="20" id="Qpf-Fh-JK4"/>
+                            <constraint firstItem="V8f-e9-Zzq" firstAttribute="top" secondItem="oCb-vX-hQz" secondAttribute="bottom" constant="8" id="VqG-Mr-ZhO"/>
+                            <constraint firstAttribute="trailing" secondItem="V8f-e9-Zzq" secondAttribute="trailing" constant="20" id="qyW-gD-xGF"/>
+                            <constraint firstItem="oCb-vX-hQz" firstAttribute="leading" secondItem="eU8-AD-nsf" secondAttribute="leading" constant="20" id="rFG-G8-vg3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Новость" id="JpT-Jq-uEh"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="oCb-vX-hQz" id="IKI-ub-6GQ"/>
+                        <outlet property="webView" destination="V8f-e9-Zzq" id="Knp-Ip-12Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LG-sP-wNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@
 		BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */; };
 		BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */; };
 		BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */; };
+		BA5375031C5F8E860058F917 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375021C5F8E860058F917 /* APICalls.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		BA05BEBF1C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
 		BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
 		BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavExt.swift; sourceTree = "<group>"; };
+		BA5375021C5F8E860058F917 /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
 		BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
+		BABDB12D1C5ECDDD00588ECD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +115,60 @@
 			name = SSASideMenu;
 			sourceTree = "<group>";
 		};
+		BA5374FD1C5F8D810058F917 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				BAEAACD01C5D269E004C1348 /* TextBoxView.swift */,
+				BAEAACD21C5D2724004C1348 /* TextBoxView.xib */,
+				BA05BE981C5D7A0E00E6AE89 /* TestView.xib */,
+				BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */,
+			);
+			name = "Custom UI";
+			sourceTree = "<group>";
+		};
+		BA5374FE1C5F8D9C0058F917 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
+				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
+		BA5374FF1C5F8DBF0058F917 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
+				BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */,
+				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
+				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
+				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
+				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
+				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
+				BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */,
+				BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BA5375001C5F8DFE0058F917 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */,
+				BABDB12D1C5ECDDD00588ECD /* Roboto-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		BA5375011C5F8E160058F917 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */,
+				BA5375021C5F8E860058F917 /* APICalls.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		BA8D3FCD1C5A42D300727AFD = {
 			isa = PBXGroup;
 			children = (
@@ -131,30 +188,18 @@
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
 			isa = PBXGroup;
 			children = (
+				BA5375011C5F8E160058F917 /* App */,
+				BA5375001C5F8DFE0058F917 /* Fonts */,
+				BA5374FD1C5F8D810058F917 /* Custom UI */,
+				BA5374FF1C5F8DBF0058F917 /* Controllers */,
+				BA5374FE1C5F8D9C0058F917 /* Extentions */,
 				BA05BEB51C5DB08B00E6AE89 /* CarbonKit */,
 				BA35AB571C5A5DA100F6BDD1 /* SSASideMenu */,
 				BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */,
 				BA8D3FDD1C5A42D300727AFD /* Main.storyboard */,
-				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
-				BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */,
 				BA8D3FE01C5A42D300727AFD /* Assets.xcassets */,
-				BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */,
 				BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */,
 				BA8D3FE51C5A42D300727AFD /* Info.plist */,
-				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
-				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
-				BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */,
-				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
-				BAEAACD01C5D269E004C1348 /* TextBoxView.swift */,
-				BAEAACD21C5D2724004C1348 /* TextBoxView.xib */,
-				BA05BE981C5D7A0E00E6AE89 /* TestView.xib */,
-				BA05BE9A1C5D7A4200E6AE89 /* TestView.swift */,
-				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
-				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
-				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
-				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
-				BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */,
-				BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */,
 			);
 			path = KILLFISH;
 			sourceTree = "<group>";
@@ -243,6 +288,7 @@
 				BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
+				BA5375031C5F8E860058F917 /* APICalls.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,

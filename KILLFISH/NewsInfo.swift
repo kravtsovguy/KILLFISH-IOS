@@ -14,7 +14,7 @@ class NewsInfo: NSObject {
     var text:String="";
     var date:NSDate=NSDate();
     var dayAndMonth:String{
-        //Here I’m creating the calendar instance that we will operate with:
+        /*//Here I’m creating the calendar instance that we will operate with:
         let calendar = NSCalendar.init(calendarIdentifier: NSCalendarIdentifierGregorian)
         
         //Now asking the calendar what day are we in today’s date:
@@ -25,17 +25,17 @@ class NewsInfo: NSObject {
         
         
         //Now asking the calendar what year are we in today’s date:
-        //let currentYearInt = (calendar?.component(NSCalendarUnit.Year, fromDate: NSDate()))!
+        //let currentYearInt = (calendar?.component(NSCalendarUnit.Year, fromDate: NSDate()))!*/
+        let f = NSDateFormatter()
+        f.dateFormat = "dd.MM"
         
-        return "\(toFormat(currentDayInt)).\(toFormat(currentMonthInt))"
+        return f.stringFromDate(date)
     }
     
-    func toFormat(i:Int)->String{
-        var s:String = "\(i)"
-        if (s.characters.count == 1){
-            s="0"+s
-        }
-        return s
+    var dayAndMonthAndYear:String{
+        let f = NSDateFormatter()
+        f.dateFormat = "dd.MM.yyyy"
+        return f.stringFromDate(date)
     }
     
     init(title:String,dateUnix:Double,text:String )
