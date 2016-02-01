@@ -19,6 +19,20 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        /*APICalls.Login("79136653903", code: "89295") { (ok) -> Void in
+            self.title="\(ok)"
+            self.title="\(APICalls.id)+\(APICalls.authtoken)"
+            
+        }*/
+        
+        APICalls.getNews({ (ok) -> Void in
+            
+        })
+        
+        /*APICalls.RemindCode("79136653903") { (ok) -> Void in
+            self.title="\(ok)"
+        }*/
+        
         let item = NewsInfo(title: "Вот это да!", dateUnix: 1392321600, text: "Лорем<br>Ипсум")
         items=[item,item,item,item]
         
