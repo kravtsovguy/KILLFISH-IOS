@@ -10,6 +10,10 @@ import UIKit
 
 class ProfileViewController: MasterNavViewController {
     @IBOutlet weak var avatarView: UIImageView!
+    @IBOutlet weak var nameView: TextBoxView!
+    @IBOutlet weak var phoneView: TextBoxView!
+    @IBOutlet weak var moneyView: TextBoxView!
+    @IBOutlet weak var cardView: TextBoxView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,21 @@ class ProfileViewController: MasterNavViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        setupUser()
+        APICalls.getData { (ok) -> Void in
+            self.setupUser()
+        }
+    }
+    
+    func setupUser()
+    {
+        nameView.text = App.user.name
+        phoneView.text = App.user.phone
+        moneyView.text = "\(App.user.balance/100) руб."
+        cardView.text = App.user.card
     }
     
 

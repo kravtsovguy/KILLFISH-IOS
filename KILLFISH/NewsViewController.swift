@@ -12,7 +12,7 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
-    static var logged = false;
+    //static var logged = true;
     var items: [NewsInfo] = [] //= ["We", "Heart", "Swift"]
     
     override func viewDidLoad() {
@@ -25,19 +25,32 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
             
         }*/
         
-        APICalls.getNews({ (ok) -> Void in
-            
-        })
+        items = App.getCacheNews()
         
+        APICalls.getNews { (news) -> Void in
+            self.items = news
+            self.tableView.reloadData()
+            for newItem in news{
+                APICalls.getNewsItem(newItem.id, onCompletion: { (newItemFull) -> Void in
+                    newItem.text = newItemFull.text
+                    App.setCacheNews(self.items)
+                    //self.tableView.reloadData()
+                })
+            }
+        }
+            
         /*APICalls.RemindCode("79136653903") { (ok) -> Void in
             self.title="\(ok)"
         }*/
-        
+        /*
         let item = NewsInfo(title: "Вот это да!", dateUnix: 1392321600, text: "Лорем<br>Ипсум")
         items=[item,item,item,item]
+        */
         
-        if(!NewsViewController.logged){
-            NewsViewController.logged=true;
+        App.loadCacheUser()
+        //if(!App.isLogged)
+        if true {
+            //NewsViewController.logged=true;
             self.performSegueWithIdentifier("goto_login", sender: self)
         }
        
@@ -85,7 +98,12 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("goto_news", sender: items[indexPath.row])
+        self.performSegueWithIdentifier("goto_news", sender: self.items[indexPath.row])
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("newsItem") as! NewsItemViewController
+        vc.item = self.items[indexPath.row]//sender as! NewsInfo
+        
+        navigationController?.pushViewController(vc, animated: true)*/
         
     }
     

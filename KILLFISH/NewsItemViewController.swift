@@ -11,7 +11,9 @@ import UIKit
 class NewsItemViewController: NavViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     var item:NewsInfo!
     
     override func viewDidLoad() {
@@ -28,13 +30,18 @@ class NewsItemViewController: NavViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        if item==nil { return }
         setup(item)
     }
     
     func setup(item: NewsInfo) {
         title =  item.dayAndMonthAndYear
         titleLabel.text = item.title
-        webView.loadHTMLString(item.text, baseURL: nil)
+        textView.text = item.textPage
+        imageView.downloadedFrom(link: item.imageUrl)
+        //textView.userInteractionEnabled = true
+        //imageView.fromURL(item.imageUrl)
+        //webView.loadHTMLString(item.textWeb, baseURL: nil)
     }
 
 }

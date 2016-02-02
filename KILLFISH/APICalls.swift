@@ -10,11 +10,11 @@ import UIKit
 
 class APICalls: NSObject {
     
-    static var id: Int!
+    /*static var id: Int!
     static var authtoken: String!
     static var isLogged: Bool! {
         return id != 0 && authtoken != ""
-    }
+    }*/
     
     
     enum Action:String {
@@ -24,7 +24,7 @@ class APICalls: NSObject {
         case UserRegistration = "user.registration_POST_NO"
         case UserRegistrationCode = "user.registration.code_POST_NO"
         case UserRegistrationForm = "user.registration.form_POST_NO"
-        case News = "news_GET_NO"
+        case News = "news_GET_YES"
         case UserData = "user.data_GET_YES"
     }
     
@@ -32,51 +32,86 @@ class APICalls: NSObject {
         callApi(.UserLogin, parameters: ["num":num,"code":code]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
-                id = json["id"] as! Int
-                authtoken = json["auth"] as! String
+                App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
+            
+                getData({_ in })
             }
             onCompletion(ok)
-            
         }
         
     }
     
     static func RemindCode(num:String,onCompletion: (Bool)->Void){
         callApi(.UserLoginCode, parameters: ["num":num]) { (json) -> Void in
-            onCompletion(json["ok"] as! Bool)
+            let ok = json["ok"] as! Bool
+            onCompletion(ok)
         }
     }
     
-    static func getNews(onCompletion: (Bool)->Void){
+    static func getNews(onCompletion: ([NewsInfo])->Void){
         callApi(.News, parameters: ["page":1]) { (json) -> Void in
-            onCompletion(json["ok"] as! Bool)
+            var news: [NewsInfo] = []
+            let newsD = json["news"] as! [NSDictionary]
+            for newsItem in newsD{
+                news.append(NewsInfo(json: newsItem))
+            }
+            onCompletion(news)
+        }
+    }
+    
+    /*static func loadNews(newsPre:[NewsInfo], onCompletion: ([NewsInfo])->Void){
+        
+        getNewsItem(newsItemPre.id) { (ni) -> Void in
+            
+        }
+        
+    }
+    
+    static func loadNewsItem(newsItemPre:NewsInfo, onCompletion: (NewsInfo)->Void){
+        
+    }
+    
+    
+    static func getNewsPreload(onCompletion: ([NewsInfo])->Void){
+        callApi(.News, parameters: ["page":1]) { (json) -> Void in
+            var news: [NewsInfo] = []
+            let newsD = json["news"] as! [NSDictionary]
+            for newsItem in newsD{
+                news.append(NewsInfo(json: newsItem))
+            }
+            onCompletion(news)
+        }
+    }*/
+    
+    static func getNewsItem(id:Int,onCompletion: (NewsInfo)->Void){
+        callApi(.News, parameters: ["newsid":id]) { (json) -> Void in
+            let ni = NewsInfo(json: json)
+            onCompletion(ni)
         }
     }
     
     static func getData(onCompletion: (Bool)->Void){
         callApi(.UserData, parameters: NSDictionary()) { (json) -> Void in
-            onCompletion(json["ok"] as! Bool)
+            let ok = json["ok"] as! Bool
+            if ok {
+                App.user.updateInfo(json)
+                App.saveCacheUser()
+            }
+            onCompletion(ok)
         }
     }
     
     
     static func callApi(actionEnum:Action, parameters:NSDictionary, onCompletion: (NSDictionary) -> Void){
         
-        //post = ["num": "7777777", "code": "55555"]
-        
         let act: String = actionEnum.rawValue
         let action = act.componentsSeparatedByString("_")
-        
-        //let dict = NSMutableDictionary(dictionary: parameters)
-        //dict["action"]=action[0]
-        //var dict: Dictionary<String,String> = parameters as! Dictionary<String, String>
-        //parameters["action"] = action[0]
         
         var postStr:String = "action=\(action[0])"
         
         if(action[2]=="YES"){
-            postStr+="&id=\(id)"
-            postStr+="&authtoken=\(authtoken)"
+            postStr+="&id=\(App.user.id)"
+            postStr+="&authtoken=\(App.user.authtoken)"
         }
         
         for (key, value) in parameters {
@@ -84,16 +119,16 @@ class APICalls: NSObject {
         }
         
         var url: String = "https://killfish.ru/app/"
-        if(action[1]=="GET"){
+        if action[1]=="GET" {
             url+="?\(postStr)"
         }
         
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        request.HTTPMethod = action[1]//"POST"
+        request.HTTPMethod = action[1]
             
-        if action[1]=="POST"{
+        if action[1]=="POST" {
                 
-            let postString = postStr//"code=89295&num=79136653903&action=user.login"
+            let postString = postStr
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
             
         }
@@ -120,12 +155,13 @@ class APICalls: NSObject {
                 result = try NSJSONSerialization.JSONObjectWithData(responseData,
                     options: []) as! NSDictionary
             } catch  {
-                //result = ["ok":"false"]
                 print("error parsing response from POST on /posts")
                 return
             }
+            dispatch_async(dispatch_get_main_queue(),{
+                onCompletion(result)
+            } )
             
-            onCompletion(result)
             
         }
         task.resume()

@@ -19,6 +19,10 @@
 		BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */; };
 		BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */; };
 		BA5375031C5F8E860058F917 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375021C5F8E860058F917 /* APICalls.swift */; };
+		BA5375051C60B39C0058F917 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375041C60B39C0058F917 /* UIImageViewExt.swift */; };
+		BA5375091C60CEF90058F917 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375081C60CEF90058F917 /* User.swift */; };
+		BA53750B1C60CFA30058F917 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53750A1C60CFA30058F917 /* App.swift */; };
+		BA53750F1C6140E80058F917 /* SignupOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53750E1C6140E80058F917 /* SignupOneViewController.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		BA05BEC01C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
 		BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavExt.swift; sourceTree = "<group>"; };
 		BA5375021C5F8E860058F917 /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
+		BA5375041C60B39C0058F917 /* UIImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		BA5375081C60CEF90058F917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA53750A1C60CFA30058F917 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		BA53750E1C6140E80058F917 /* SignupOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupOneViewController.swift; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 			children = (
 				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
 				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
+				BA5375041C60B39C0058F917 /* UIImageViewExt.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
 				BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */,
 				BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */,
+				BA53750E1C6140E80058F917 /* SignupOneViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +175,8 @@
 			children = (
 				BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */,
 				BA5375021C5F8E860058F917 /* APICalls.swift */,
+				BA5375081C60CEF90058F917 /* User.swift */,
+				BA53750A1C60CFA30058F917 /* App.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -285,7 +297,9 @@
 				BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */,
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
+				BA53750F1C6140E80058F917 /* SignupOneViewController.swift in Sources */,
 				BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */,
+				BA53750B1C60CFA30058F917 /* App.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
 				BA5375031C5F8E860058F917 /* APICalls.swift in Sources */,
@@ -297,6 +311,8 @@
 				BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */,
 				BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */,
 				BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */,
+				BA5375051C60B39C0058F917 /* UIImageViewExt.swift in Sources */,
+				BA5375091C60CEF90058F917 /* User.swift in Sources */,
 				BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */,
 				BA05BEC11C5DB0B400E6AE89 /* CarbonSwipeRefresh.m in Sources */,
 				BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */,

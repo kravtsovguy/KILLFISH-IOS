@@ -42,6 +42,7 @@ class TextBoxView: UIView {
             img.image = imageIco
         }
     }
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
