@@ -13,6 +13,7 @@ class LoginViewController: NavViewController {
     @IBOutlet weak var numView: TextBoxView!
     @IBOutlet weak var codeView: TextBoxView!
     
+    @IBOutlet weak var loginBtn: UIButton!
     var textBoxes: [UITextField]=[]
     
     override func viewDidLoad() {
@@ -43,16 +44,31 @@ class LoginViewController: NavViewController {
     }
 
     @IBAction func loginPressed(sender: UIButton) {
-        APICalls.login(numView.textBox.text!, code: codeView.textBox.text!, onCompletion: { (ok) -> Void in
+        
+        loginBtn.enabled=false
+        
+        APICalls.login(App.getCorrectPhone(numView.textBox.text!), code: codeView.textBox.text!, onCompletion: { (ok) -> Void in
             if ok {
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
                 //self.dismissViewControllerAnimated(true, completion: nil)
             }
             }, onError: { (err) in
+                self.loginBtn.enabled=true
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
         })
         //self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        
+        //numView.textBox.text = ""
+        //codeView.textBox.text = ""
+        
+        self.loginBtn.enabled = true
+        
+    }
+    
     
     /*
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

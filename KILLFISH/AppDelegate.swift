@@ -33,8 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         )
         
         JLToastView.setDefaultValue(
-            NSNumber(float: 90),
+            NSNumber(float: 110),
             forAttributeName: JLToastViewPortraitOffsetYAttributeName,
+            userInterfaceIdiom: .Phone
+        )
+        
+        JLToastView.setDefaultValue(
+            NSNumber(float: 0),
+            forAttributeName: JLToastViewCornerRadiusAttributeName,
             userInterfaceIdiom: .Phone
         )
     }

@@ -43,8 +43,8 @@ class SignupOneViewController: NavViewController {
             
             //self.codeView.hidden = false
             //self.sendCode.hidden = false
-            let mphone = phoneView.textBox.text!.stringByReplacingOccurrencesOfString("+", withString: "")
-            APICalls.registerOne(mphone, onCompletion: { (id, next, num) -> Void in
+            
+            APICalls.registerOne(App.getCorrectPhone(phoneView.textBox.text!), onCompletion: { (id, next, num) -> Void in
                 self.preId = id
                 self.num = num
                 
@@ -59,6 +59,7 @@ class SignupOneViewController: NavViewController {
                 
                 }, onError: { err in
                     self.nextButton.enabled = true
+                    JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
             })
             two=true
         }else{
@@ -70,6 +71,7 @@ class SignupOneViewController: NavViewController {
                 
                 }, onError: { err in
                     self.nextButton.enabled = true
+                    JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
             })
             
         }
@@ -95,9 +97,14 @@ class SignupOneViewController: NavViewController {
         //phoneView.textBox.text = ""
         //codeView.textBox.text = ""
         
+        self.codeView.hidden = true
+        self.sendCode.hidden = true
+        self.phoneView.textBox.enabled = true
+        self.nextButton.enabled = true
+        
     }
     
-    override func viewDidDisappear(animated:Bool) {
+   /* override func viewDidDisappear(animated:Bool) {
         super.viewDidDisappear(animated)
         
         //phoneView.textBox.text = ""
@@ -107,8 +114,10 @@ class SignupOneViewController: NavViewController {
         self.sendCode.hidden = true
         self.phoneView.textBox.enabled = true
         self.nextButton.enabled = true
+
         
     }
+*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

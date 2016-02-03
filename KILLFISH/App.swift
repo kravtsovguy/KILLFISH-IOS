@@ -50,4 +50,18 @@ class App{
         }
     }
     
+    static func getCorrectPhone(phone:String)->String{
+        if(phone.characters.count == 0) {
+            return phone
+        }
+        var str = Array(phone.characters)
+        if str[0]=="+"{
+            str.removeAtIndex(0)
+        }
+        if str[0]=="8"{
+            str[0]="7"
+        }
+        return String(str)
+    }
+    
 }

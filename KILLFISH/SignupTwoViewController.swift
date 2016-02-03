@@ -124,7 +124,8 @@ class SignupTwoViewController: NavViewController  {
         APICalls.registerThree(preId, name: nameView.textBox.text!, day: day, month: month, year: year, curr: currI[currSegment.selectedSegmentIndex]!, num: cardSwitch.selected, owner: cardView.textBox.text!, onCompletion: { (ok) -> Void in
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in
-            self.signupBtn.enabled = true
+                self.signupBtn.enabled = true
+                JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
         }
         
     }

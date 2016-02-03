@@ -692,6 +692,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="codeView" destination="w1I-gW-Yf7" id="BcC-am-OPc"/>
+                        <outlet property="loginBtn" destination="VeA-h7-AeH" id="02i-lq-fYh"/>
                         <outlet property="numView" destination="mpA-2t-5qH" id="LNG-N3-c0d"/>
                         <segue destination="01j-kX-k97" kind="push" identifier="goto_signup" id="aRD-GA-L6G"/>
                     </connections>

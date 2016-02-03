@@ -37,6 +37,7 @@
 		BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */; };
 		BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */; };
 		BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */; };
+		BAD43D2D1C62B7810047E1D5 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD43D2C1C62B7810047E1D5 /* StringExt.swift */; };
 		BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */; };
 		BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */; };
 		BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */; };
@@ -88,6 +89,7 @@
 		BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
 		BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
 		BABDB12D1C5ECDDD00588ECD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		BAD43D2C1C62B7810047E1D5 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */,
 				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
 				BA5375041C60B39C0058F917 /* UIImageViewExt.swift */,
+				BAD43D2C1C62B7810047E1D5 /* StringExt.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BA53751D1C62AEEF0058F917 /* JLToastCenter.swift in Sources */,
+				BAD43D2D1C62B7810047E1D5 /* StringExt.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
 				BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */,
 				BAEAACD11C5D269E004C1348 /* TextBoxView.swift in Sources */,
