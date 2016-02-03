@@ -26,22 +26,26 @@ class APICalls: NSObject {
         case UserRegistrationForm = "user.registration.form_POST_NO"
         case News = "news_GET_YES"
         case UserData = "user.data_GET_YES"
+        case UserRegistrationSMS = "user.registration.sms_POST_NO"
     }
     
-    static func Login(num:String, code:String,onCompletion: (Bool)->Void){
+    static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
         callApi(.UserLogin, parameters: ["num":num,"code":code]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
                 App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
-            
+                App.user.photo = json["photo"] as! String
                 getData({_ in })
+            }else{
+                onError(json["err"] as! String)
             }
             onCompletion(ok)
+            
         }
         
     }
     
-    static func RemindCode(num:String,onCompletion: (Bool)->Void){
+    static func remindCode(num:String,onCompletion: (Bool)->Void){
         callApi(.UserLoginCode, parameters: ["num":num]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             onCompletion(ok)
@@ -101,6 +105,57 @@ class APICalls: NSObject {
         }
     }
     
+    static func registerOne(phone:String, onCompletion: (Int,String,String)->Void, onError:(String)->Void){
+        callApi(.UserRegistration, parameters: ["mphone":phone]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                let id = json["id"] as! Int
+                let next = json["next"] as! String
+                var num = ""
+                if let _num = json["num"]{
+                    num = _num as! String
+                }
+                onCompletion(id,next,num)
+            }else{
+                onError(json["err"] as! String)
+            }
+            
+        }
+    }
+    
+    static func registerTwo(id:Int, code:Int, onCompletion: (Int,String,String)->Void, onError:(String)->Void){
+        callApi(.UserRegistrationCode, parameters: ["id":id,"code":code]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                let id = json["id"] as! Int
+                let next = json["next"] as! String
+                var num = ""
+                if let _num = json["num"]{
+                    num = _num as! String
+                }
+                onCompletion(id,next,num)
+            }else{
+                onError(json["err"] as! String)
+            }
+            
+        }
+    }
+    
+    
+    static func registerThree(id:Int, name:String, day:Int, month:Int, year:Int, curr:String, num:Bool, owner: String, onCompletion: (Bool)->Void, onError:(String)->Void){
+        let bnum: Int = num ? 1 : 0
+        callApi(.UserRegistrationForm, parameters: ["id":id,"name":name,"day":day,"month":month,"year":year,"curr":curr,"num":bnum,"owner":owner]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
+                getData({_ in })
+            }else{
+                onError(json["err"] as! String)
+            }
+            onCompletion(ok)
+            
+        }
+    }
     
     static func callApi(actionEnum:Action, parameters:NSDictionary, onCompletion: (NSDictionary) -> Void){
         
@@ -142,7 +197,7 @@ class APICalls: NSObject {
                 return
             }
             guard error == nil else {
-                print("error calling GET on /posts/1")
+                print("error calling GET or POST")
                 print(error)
                 return
             }
@@ -155,7 +210,7 @@ class APICalls: NSObject {
                 result = try NSJSONSerialization.JSONObjectWithData(responseData,
                     options: []) as! NSDictionary
             } catch  {
-                print("error parsing response from POST on /posts")
+                print("error parsing response")
                 return
             }
             dispatch_async(dispatch_get_main_queue(),{

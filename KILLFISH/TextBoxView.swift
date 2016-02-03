@@ -47,6 +47,7 @@ class TextBoxView: UIView {
     {
         super.awakeFromNib()
         view.backgroundColor = UIColor.clearColor()
+        //text=""
     }
     
     

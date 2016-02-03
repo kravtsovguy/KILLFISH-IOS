@@ -13,6 +13,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     var window: UIWindow?
     
+    func setupToast(){
+        JLToastView.setDefaultValue(
+            UIColor.blackColor().colorWithAlphaComponent(0.7),
+            forAttributeName: JLToastViewBackgroundColorAttributeName,
+            userInterfaceIdiom: .Phone
+        )
+        
+        JLToastView.setDefaultValue(
+            UIColor.whiteColor().colorWithAlphaComponent(1),
+            forAttributeName: JLToastViewTextColorAttributeName,
+            userInterfaceIdiom: .Phone
+        )
+        
+        JLToastView.setDefaultValue(
+            UIFont(name: "Roboto-Light", size: 15)!,
+            forAttributeName: JLToastViewFontAttributeName,
+            userInterfaceIdiom: .Phone
+        )
+        
+        JLToastView.setDefaultValue(
+            NSNumber(float: 90),
+            forAttributeName: JLToastViewPortraitOffsetYAttributeName,
+            userInterfaceIdiom: .Phone
+        )
+    }
+    
     func setupToolbar()
     {
         let bgColor = UIColor.whiteColor().colorWithAlphaComponent(0.1)
@@ -85,6 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         setupToolbar()
         setupNavBar()
         setupSideMenu()
+        setupToast()
         
         return true
     }

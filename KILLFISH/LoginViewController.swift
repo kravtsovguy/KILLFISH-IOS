@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: NavViewController {
 
     @IBOutlet weak var numView: TextBoxView!
     @IBOutlet weak var codeView: TextBoxView!
@@ -23,6 +23,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         numView.textBox.delegate = self
         codeView.textBox.delegate = self
         textBoxes = [numView.textBox,codeView.textBox]
+        
+        numView.textBox.keyboardType = .PhonePad
+        codeView.textBox.keyboardType = .NumberPad
         
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         //view.addGestureRecognizer(tap)
@@ -40,26 +43,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginPressed(sender: UIButton) {
-        APICalls.Login(numView.text, code: codeView.text) { (ok) -> Void in
+        APICalls.login(numView.textBox.text!, code: codeView.textBox.text!, onCompletion: { (ok) -> Void in
             if ok {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                //self.dismissViewControllerAnimated(true, completion: nil)
             }
-        }
+            }, onError: { (err) in
+                JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+        })
         //self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    /*
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
+
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         numView.textBox.resignFirstResponder()
         codeView.textBox.resignFirstResponder()
         view.endEditing(true)
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    */
+    override func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         //let nextTage=textField.tag+1;
         // Try to find next responder
@@ -79,7 +86,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //dismissKeyboard()
         return false
     }
-    
+    /*
     var kbHeight: CGFloat!
     
     var kVisible = false
@@ -121,7 +128,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
         })
     }
-    
+    */
     /*
     // MARK: - Navigation
 

@@ -23,6 +23,12 @@
 		BA5375091C60CEF90058F917 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375081C60CEF90058F917 /* User.swift */; };
 		BA53750B1C60CFA30058F917 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53750A1C60CFA30058F917 /* App.swift */; };
 		BA53750F1C6140E80058F917 /* SignupOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53750E1C6140E80058F917 /* SignupOneViewController.swift */; };
+		BA5375131C615F000058F917 /* SignupTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375121C615F000058F917 /* SignupTwoViewController.swift */; };
+		BA53751B1C62AEEF0058F917 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA5375151C62AEEF0058F917 /* Info.plist */; };
+		BA53751C1C62AEEF0058F917 /* JLToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375171C62AEEF0058F917 /* JLToast.swift */; };
+		BA53751D1C62AEEF0058F917 /* JLToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375181C62AEEF0058F917 /* JLToastCenter.swift */; };
+		BA53751E1C62AEEF0058F917 /* JLToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375191C62AEEF0058F917 /* JLToastView.swift */; };
+		BA53751F1C62AEEF0058F917 /* JLToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53751A1C62AEEF0058F917 /* JLToastWindow.swift */; };
 		BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */; };
 		BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */; };
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
@@ -64,6 +70,13 @@
 		BA5375081C60CEF90058F917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA53750A1C60CFA30058F917 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		BA53750E1C6140E80058F917 /* SignupOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupOneViewController.swift; sourceTree = "<group>"; };
+		BA5375121C615F000058F917 /* SignupTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupTwoViewController.swift; sourceTree = "<group>"; };
+		BA5375151C62AEEF0058F917 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA5375161C62AEEF0058F917 /* JLToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLToast.h; sourceTree = "<group>"; };
+		BA5375171C62AEEF0058F917 /* JLToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToast.swift; sourceTree = "<group>"; };
+		BA5375181C62AEEF0058F917 /* JLToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastCenter.swift; sourceTree = "<group>"; };
+		BA5375191C62AEEF0058F917 /* JLToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastView.swift; sourceTree = "<group>"; };
+		BA53751A1C62AEEF0058F917 /* JLToastWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastWindow.swift; sourceTree = "<group>"; };
 		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -150,13 +163,14 @@
 				BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */,
 				BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */,
 				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
-				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
 				BA05BEA01C5D9CC800E6AE89 /* MasterNavViewController.swift */,
 				BA05BEA21C5D9D5600E6AE89 /* NavViewController.swift */,
 				BA05BEA41C5DAE6F00E6AE89 /* ServicesViewController.swift */,
 				BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */,
 				BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */,
+				BA05BE9C1C5D81A200E6AE89 /* LoginViewController.swift */,
 				BA53750E1C6140E80058F917 /* SignupOneViewController.swift */,
+				BA5375121C615F000058F917 /* SignupTwoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +195,19 @@
 			name = App;
 			sourceTree = "<group>";
 		};
+		BA5375141C62AEEF0058F917 /* JLToast */ = {
+			isa = PBXGroup;
+			children = (
+				BA5375151C62AEEF0058F917 /* Info.plist */,
+				BA5375161C62AEEF0058F917 /* JLToast.h */,
+				BA5375171C62AEEF0058F917 /* JLToast.swift */,
+				BA5375181C62AEEF0058F917 /* JLToastCenter.swift */,
+				BA5375191C62AEEF0058F917 /* JLToastView.swift */,
+				BA53751A1C62AEEF0058F917 /* JLToastWindow.swift */,
+			);
+			path = JLToast;
+			sourceTree = "<group>";
+		};
 		BA8D3FCD1C5A42D300727AFD = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +227,7 @@
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
 			isa = PBXGroup;
 			children = (
+				BA5375141C62AEEF0058F917 /* JLToast */,
 				BA5375011C5F8E160058F917 /* App */,
 				BA5375001C5F8DFE0058F917 /* Fonts */,
 				BA5374FD1C5F8D810058F917 /* Custom UI */,
@@ -277,6 +305,7 @@
 			files = (
 				BAEAACD31C5D2724004C1348 /* TextBoxView.xib in Resources */,
 				BA8D3FE41C5A42D300727AFD /* LaunchScreen.storyboard in Resources */,
+				BA53751B1C62AEEF0058F917 /* Info.plist in Resources */,
 				BA8D3FE11C5A42D300727AFD /* Assets.xcassets in Resources */,
 				BA05BE991C5D7A0E00E6AE89 /* TestView.xib in Resources */,
 				BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */,
@@ -294,10 +323,12 @@
 				BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */,
 				BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */,
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
+				BA53751E1C62AEEF0058F917 /* JLToastView.swift in Sources */,
 				BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */,
 				BAEAACCE1C5D04CE004C1348 /* LeftMenuViewController.swift in Sources */,
 				BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */,
 				BA53750F1C6140E80058F917 /* SignupOneViewController.swift in Sources */,
+				BA53751F1C62AEEF0058F917 /* JLToastWindow.swift in Sources */,
 				BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */,
 				BA53750B1C60CFA30058F917 /* App.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
@@ -305,15 +336,18 @@
 				BA5375031C5F8E860058F917 /* APICalls.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
+				BA53751D1C62AEEF0058F917 /* JLToastCenter.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
 				BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */,
 				BAEAACD11C5D269E004C1348 /* TextBoxView.swift in Sources */,
 				BA05BE9B1C5D7A4200E6AE89 /* TestView.swift in Sources */,
 				BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */,
+				BA5375131C615F000058F917 /* SignupTwoViewController.swift in Sources */,
 				BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				BA5375051C60B39C0058F917 /* UIImageViewExt.swift in Sources */,
 				BA5375091C60CEF90058F917 /* User.swift in Sources */,
 				BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */,
+				BA53751C1C62AEEF0058F917 /* JLToast.swift in Sources */,
 				BA05BEC11C5DB0B400E6AE89 /* CarbonSwipeRefresh.m in Sources */,
 				BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */,
 			);

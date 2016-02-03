@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavViewController: UIViewController {
+class NavViewController: UIViewController, UITextFieldDelegate {
 
     
     
@@ -88,6 +88,17 @@ class NavViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     var kbHeight: CGFloat!
