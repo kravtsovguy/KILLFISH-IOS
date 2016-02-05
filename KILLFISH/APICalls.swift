@@ -27,6 +27,12 @@ class APICalls: NSObject {
         case News = "news_GET_YES"
         case UserData = "user.data_GET_YES"
         case UserRegistrationSMS = "user.registration.sms_POST_NO"
+        case UserReserveList = "user.reserve.list_GET_YES"
+        case UserReserveBars = "user.reserve.bars_GET_YES"
+        case UserReserveSave = "user.reserve.save_POST_YES"
+        case UserReserveCancel = "user.reserve.cancel_POST_YES"
+        case RadioCatalog = "radio.catalog_GET_YES"
+        case RadioPlaylist = "radio.playlist_GET_YES"
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
@@ -154,6 +160,112 @@ class APICalls: NSObject {
             }
             onCompletion(ok)
             
+        }
+    }
+    
+    static func getBars(onCompletion: ([CityInfo])->Void){
+        
+        callApi(.UserReserveBars, parameters: NSDictionary()) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var cities: [CityInfo] = []
+                ReserveInfo.initPrices(json)
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let cityI = CityInfo(json: unit)
+                    let bars = unit["bars"] as! [NSDictionary]
+                    for bar in bars{
+                        let barI = BarInfo(json: bar)
+                        cityI.bars.append(barI)
+                    }
+                    cities.append(cityI)
+                }
+                App.cities = cities
+                App.saveCacheBars()
+                onCompletion(cities)
+            }
+        }
+        
+    }
+    
+    static func getReserves(onCompletion: ([ReserveInfo])->Void){
+        
+        callApi(.UserReserveList, parameters: NSDictionary()) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var reserves: [ReserveInfo] = []
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let reserveI = ReserveInfo(json: unit)
+                    reserves.append(reserveI)
+                }
+                App.reserves = reserves
+                App.saveCacheReserves()
+                onCompletion(reserves)
+            }
+        }
+        
+    }
+    
+    static func saveReserve(vip:Bool,barid:Int,dt:Double,num:Int,discr:String, onCompletion: (Int)->Void, onError: (String)->Void){
+        let vipI = vip ? 1 : 0
+        callApi(.UserReserveSave, parameters: ["vip":vipI,"barid":barid,"dt":dt,"num":num,"opis":discr]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                onCompletion(json["bronid"] as! Int)
+            }else{
+                onError(json["err"] as! String)
+            }
+        }
+    }
+    
+    static func cancelReserve(bronid:Int, onCompletion: (Bool)->Void, onError: (String)->Void){
+        
+        callApi(.UserReserveCancel, parameters: ["bronid":bronid]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                
+            }else{
+                onError(json["err"] as! String)
+            }
+            
+            onCompletion(ok)
+        }
+    }
+    
+    static func getMusic(onCompletion: ([MusicInfo])->Void){
+        //max 2027
+        callApi(.RadioCatalog, parameters: ["letter":"all","page":1,"num_on_page":2500]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var music: [MusicInfo] = []
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let musicI = MusicInfo(json: unit)
+                    music.append(musicI)
+                }
+                App.music = music
+                App.saveCacheMusic()
+                onCompletion(music)
+            }
+        }
+        
+    }
+    
+    static func getMusicPlay(onCompletion: ([MusicPlayInfo])->Void){
+        //max 2027
+        callApi(.RadioPlaylist, parameters: ["stream":"listen3","num":10]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var music: [MusicPlayInfo] = []
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let musicPI = MusicPlayInfo(json: unit)
+                    music.append(musicPI)
+                }
+                App.musicPlay = music
+                onCompletion(music)
+            }
         }
     }
     

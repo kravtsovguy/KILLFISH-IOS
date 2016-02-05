@@ -42,6 +42,24 @@ class TextBoxView: UIView {
             img.image = imageIco
         }
     }
+   /*
+    @IBInspectable var icoWidth: Int = 25  {
+        didSet {
+            for subview in view.subviews {
+                for constraint in subview.constraints {
+                    if constraint.identifier == "icoWidth"{
+                        constraint.constant = CGFloat(icoWidth)
+                    }
+                }
+            }
+            //img.frame.size.width = CGFloat(icoWidth)
+            textBox.text = "\(icoWidth)"
+            var fr = img.frame
+            fr.size.width = CGFloat(icoWidth)
+            img.frame = fr
+        }
+    }
+    */
     
     override func awakeFromNib()
     {

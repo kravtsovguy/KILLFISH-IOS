@@ -34,6 +34,7 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
                 APICalls.getNewsItem(newItem.id, onCompletion: { (newItemFull) -> Void in
                     newItem.text = newItemFull.text
                     App.setCacheNews(self.items)
+                    self.tableView.reloadData()
                     //self.tableView.reloadData()
                 })
             }
@@ -48,8 +49,8 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         */
         
         App.loadCacheUser()
-        //if(!App.isLogged)
-        if true {
+        if(!App.isLogged){
+        //if true {
             //NewsViewController.logged=true;
             self.performSegueWithIdentifier("goto_login", sender: self)
         }

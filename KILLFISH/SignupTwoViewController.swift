@@ -43,24 +43,22 @@ class SignupTwoViewController: NavViewController  {
         
         imgView.downloadedFrom(link: "http://placehold.it/200x200")
         
-        setDatePicker()
-        
-        
+        setDatePicker(dateView.textBox,dpicker: datePicker,act: "showSelectedDate")
         
         // Do any additional setup after loading the view.
     }
     
     let datePicker = UIDatePicker()
-    func setDatePicker(){
+    func setDatePicker(dtext:UITextField, dpicker: UIDatePicker, act: Selector){
         
-        datePicker.datePickerMode = .Date
+        dpicker.datePickerMode = .Date
         //let pv = UIPickerView()
-        dateView.textBox.inputView = datePicker
+        dtext.inputView = dpicker
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
         toolbar.tintColor = UIColor.whiteColor()
         //let doneBtn = UIBarButtonItem(title: "Готово", style: UIBarButtonItemStyle.Plain, target: self, action: "showSelectedDate")
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done , target: self, action: "showSelectedDate")
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done , target: self, action: act)
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace , target: nil, action: nil)
         
         toolbar.setItems([space,doneBtn], animated: true)
@@ -70,7 +68,7 @@ class SignupTwoViewController: NavViewController  {
             forToolbarPosition: UIBarPosition.Any,
             barMetrics: UIBarMetrics.Default)
         
-        dateView.textBox.inputAccessoryView = toolbar
+        dtext.inputAccessoryView = toolbar
         
     }
     
@@ -121,7 +119,7 @@ class SignupTwoViewController: NavViewController  {
         let month = components.month
         let day = components.day
         
-        APICalls.registerThree(preId, name: nameView.textBox.text!, day: day, month: month, year: year, curr: currI[currSegment.selectedSegmentIndex]!, num: cardSwitch.selected, owner: cardView.textBox.text!, onCompletion: { (ok) -> Void in
+        APICalls.registerThree(preId, name: nameView.textBox.text!, day: day, month: month, year: year, curr: currI[currSegment.selectedSegmentIndex]!, num: cardSwitch.on, owner: cardView.textBox.text!, onCompletion: { (ok) -> Void in
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in
                 self.signupBtn.enabled = true

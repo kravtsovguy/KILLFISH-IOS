@@ -24,15 +24,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qiQ-aB-Zic" userLabel="Username">
                     <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneOrCard" translatesAutoresizingMaskIntoConstraints="NO" id="btt-9k-wOU">
-                            <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="aVZ-ug-edb"/>
-                                <constraint firstAttribute="width" constant="25" id="udU-By-mO7"/>
-                            </constraints>
-                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+79999696597" placeholder="Номер карты или телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ozd-WZ-Qpx">
                             <rect key="frame" x="47" y="0.0" width="233" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="nSO-K4-lwv"/>
+                            </constraints>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -45,19 +41,27 @@
                         <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-4r-6u4" userLabel="Separator">
                             <rect key="frame" x="0.0" y="34" width="280" height="1"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="m6o-Qd-3Y2"/>
+                            </constraints>
                         </view>
+                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="btt-9k-wOU">
+                            <rect key="frame" x="0.0" y="8" width="30" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="aVZ-ug-edb"/>
+                                <constraint firstAttribute="width" constant="30" identifier="icoWidth" id="udU-By-mO7"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="DT1-4r-6u4" secondAttribute="bottom" constant="5" id="2En-np-0s5"/>
-                        <constraint firstItem="Ozd-WZ-Qpx" firstAttribute="leading" secondItem="btt-9k-wOU" secondAttribute="trailing" constant="22" id="Ba4-DP-1aa"/>
-                        <constraint firstItem="DT1-4r-6u4" firstAttribute="leading" secondItem="btt-9k-wOU" secondAttribute="leading" id="C09-0a-Zqe"/>
+                        <constraint firstItem="btt-9k-wOU" firstAttribute="top" secondItem="qiQ-aB-Zic" secondAttribute="top" constant="8" id="1QV-4O-1OF"/>
+                        <constraint firstAttribute="bottom" secondItem="DT1-4r-6u4" secondAttribute="bottom" constant="5" id="Fw5-Fo-pnQ"/>
+                        <constraint firstItem="DT1-4r-6u4" firstAttribute="leading" secondItem="qiQ-aB-Zic" secondAttribute="leading" id="HOD-ex-aXd"/>
                         <constraint firstItem="Ozd-WZ-Qpx" firstAttribute="top" secondItem="qiQ-aB-Zic" secondAttribute="top" id="Hzs-Id-F1P"/>
-                        <constraint firstItem="DT1-4r-6u4" firstAttribute="trailing" secondItem="Ozd-WZ-Qpx" secondAttribute="trailing" id="V6B-OH-q1b"/>
+                        <constraint firstAttribute="trailing" secondItem="DT1-4r-6u4" secondAttribute="trailing" id="X3w-tt-zHt"/>
                         <constraint firstAttribute="height" constant="40" id="dFk-Qa-hZP"/>
-                        <constraint firstItem="btt-9k-wOU" firstAttribute="bottom" secondItem="Ozd-WZ-Qpx" secondAttribute="bottom" constant="-12" id="fBZ-gf-FZX"/>
-                        <constraint firstItem="DT1-4r-6u4" firstAttribute="top" secondItem="btt-9k-wOU" secondAttribute="bottom" constant="4" id="i80-EV-zQL"/>
-                        <constraint firstItem="btt-9k-wOU" firstAttribute="top" secondItem="Ozd-WZ-Qpx" secondAttribute="top" id="mGZ-vV-iJe"/>
                         <constraint firstItem="btt-9k-wOU" firstAttribute="leading" secondItem="qiQ-aB-Zic" secondAttribute="leading" id="qm6-Dq-Is3"/>
+                        <constraint firstItem="Ozd-WZ-Qpx" firstAttribute="leading" secondItem="qiQ-aB-Zic" secondAttribute="leading" constant="47" id="t0i-Vm-MVr"/>
                         <constraint firstAttribute="trailing" secondItem="Ozd-WZ-Qpx" secondAttribute="trailing" id="zcg-5t-CkW"/>
                     </constraints>
                 </view>
@@ -73,6 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="PhoneOrCard" width="100" height="82"/>
+        <image name="Phone" width="60" height="82"/>
     </resources>
 </document>

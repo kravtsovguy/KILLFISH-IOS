@@ -17,6 +17,8 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        App.servicesView = self
+        
         items = ["Бронирование столов", "Заказ музыки"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
@@ -27,6 +29,8 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         self.style()
         
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,15 +49,22 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
         switch index {
         case 0:
-            return self.storyboard!.instantiateViewControllerWithIdentifier("test")
+            return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
         default:
-            return self.storyboard!.instantiateViewControllerWithIdentifier("test")
+            return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
         }
         
     }
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAtIndex index: UInt) {
         NSLog("Did move at index: %ld", index)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goto_reserve_info" {
+            let vc = segue.destinationViewController as! ReserveCancelViewController
+            vc.item = sender as! ReserveInfo
+        }
     }
     
 

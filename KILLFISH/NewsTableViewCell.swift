@@ -13,11 +13,12 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet var dataLabel: UILabel!
     @IBOutlet var newsIco: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    
+    @IBOutlet var textNLabel: UILabel!
     
     func setup(item:NewsInfo) {
         dataLabel.text = item.dayAndMonth
         titleLabel.text = item.title
+        textNLabel.text = item.textPage
     }
     
 
