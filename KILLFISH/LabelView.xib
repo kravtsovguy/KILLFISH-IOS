@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabelView" customModule="KILLFISH" customModuleProvider="target">
+            <connections>
+                <outlet property="labelView" destination="3vI-AS-NBX" id="Ag4-mE-jLd"/>
+                <outlet property="textView" destination="Uum-vg-s6K" id="kmt-JD-eZI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-SL-sVf" userLabel="Separator">
+                    <rect key="frame" x="0.0" y="39" width="280" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="2CJ-wP-3Nb"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" placeholder="Text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-vg-s6K" userLabel="Text">
+                    <rect key="frame" x="90" y="5" width="190" height="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vI-AS-NBX">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="IoL-9d-gp8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Uum-vg-s6K" firstAttribute="leading" secondItem="3vI-AS-NBX" secondAttribute="trailing" id="3JG-iy-pMq"/>
+                <constraint firstAttribute="bottom" secondItem="Uum-vg-s6K" secondAttribute="bottom" constant="5" id="9tX-0f-mVM"/>
+                <constraint firstItem="Uum-vg-s6K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="9zb-QR-S4g"/>
+                <constraint firstAttribute="bottom" secondItem="K2T-SL-sVf" secondAttribute="bottom" id="HUY-I6-Nq0"/>
+                <constraint firstAttribute="bottom" secondItem="3vI-AS-NBX" secondAttribute="bottom" id="MrM-YN-I4n"/>
+                <constraint firstItem="3vI-AS-NBX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PKk-S3-I43"/>
+                <constraint firstItem="K2T-SL-sVf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VxA-6T-7u2"/>
+                <constraint firstAttribute="trailing" secondItem="Uum-vg-s6K" secondAttribute="trailing" id="gWV-Ww-shn"/>
+                <constraint firstItem="3vI-AS-NBX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kBY-Ck-d1B"/>
+                <constraint firstAttribute="trailing" secondItem="K2T-SL-sVf" secondAttribute="trailing" id="m1C-Wv-BBV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="19" y="50"/>
+        </view>
+    </objects>
+</document>

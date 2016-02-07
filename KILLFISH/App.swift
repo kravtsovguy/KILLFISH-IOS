@@ -16,6 +16,7 @@ class App{
     }
     
     static var servicesView: ServicesViewController!
+    static var paymentsView: PaymentsViewController!
     
     static var currency = ["RUR":"₽","BYR":"BYR","KZT":"₸"]
     static var curr: String {
@@ -27,6 +28,7 @@ class App{
     static var news: [NewsInfo] = []
     static var music: [MusicInfo] = []
     static var musicPlay: [MusicPlayInfo] = []
+    static var payments: [PaymentInfo] = []
     
     static func getData(obj:NSCoding)->NSData{
         let data = NSKeyedArchiver.archivedDataWithRootObject(obj)
@@ -117,6 +119,16 @@ class App{
     static func loadCacheMusic(){
         if let data = store.dataForKey("music"){
             music = getObj(data) as! [MusicInfo]
+        }
+    }
+    
+    static func saveCachePayments(){
+        store.setObject(getData(payments), forKey: "payments")
+    }
+    
+    static func loadCachePayments(){
+        if let data = store.dataForKey("payments"){
+            payments = getObj(data) as! [PaymentInfo]
         }
     }
     

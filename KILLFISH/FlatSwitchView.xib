@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlatSwitchView" customModule="KILLFISH" customModuleProvider="target">
+            <connections>
+                <outlet property="labelLeft" destination="CgE-Dp-XbE" id="rLT-wP-ZeL"/>
+                <outlet property="labelRight" destination="6H8-Nl-KcG" id="5MK-9b-8dO"/>
+                <outlet property="leftView" destination="6dd-BQ-eJw" id="VfN-3Y-4bj"/>
+                <outlet property="rightView" destination="vb4-fT-KrE" id="mDA-6u-Il3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dd-BQ-eJw" userLabel="Left">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СТАНДАРТ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgE-Dp-XbE" userLabel="text">
+                            <rect key="frame" x="0.0" y="7" width="70" height="21"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="2aO-HQ-110"/>
+                        <constraint firstItem="CgE-Dp-XbE" firstAttribute="leading" secondItem="6dd-BQ-eJw" secondAttribute="leading" id="7Ff-nx-c4P"/>
+                        <constraint firstAttribute="bottom" secondItem="CgE-Dp-XbE" secondAttribute="bottom" constant="7" id="MXe-Gi-BuZ"/>
+                        <constraint firstAttribute="trailing" secondItem="CgE-Dp-XbE" secondAttribute="trailing" id="dWw-Cs-Z2Z"/>
+                        <constraint firstItem="CgE-Dp-XbE" firstAttribute="top" secondItem="6dd-BQ-eJw" secondAttribute="top" constant="7" id="xTv-KW-UN5"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="qmc-KV-hAb" appends="YES" id="2q4-kI-OtB"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vb4-fT-KrE" userLabel="Right">
+                    <rect key="frame" x="70" y="0.0" width="70" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6H8-Nl-KcG" userLabel="text">
+                            <rect key="frame" x="0.0" y="7" width="70" height="21"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="6H8-Nl-KcG" firstAttribute="leading" secondItem="vb4-fT-KrE" secondAttribute="leading" id="RG8-Ly-R0F"/>
+                        <constraint firstAttribute="bottom" secondItem="6H8-Nl-KcG" secondAttribute="bottom" constant="7" id="gHl-bk-BvB"/>
+                        <constraint firstAttribute="trailing" secondItem="6H8-Nl-KcG" secondAttribute="trailing" id="hnl-MG-CSh"/>
+                        <constraint firstAttribute="width" constant="70" id="mvD-mR-ZB1"/>
+                        <constraint firstItem="6H8-Nl-KcG" firstAttribute="top" secondItem="vb4-fT-KrE" secondAttribute="top" constant="7" id="t0z-76-Hnf"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="4ts-9P-3Ij" appends="YES" id="bdU-gF-cy4"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vb4-fT-KrE" secondAttribute="trailing" id="KXZ-kt-Rl9"/>
+                <constraint firstItem="6dd-BQ-eJw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R6q-2Y-p6B"/>
+                <constraint firstItem="vb4-fT-KrE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wxn-9p-YSD"/>
+                <constraint firstAttribute="bottom" secondItem="vb4-fT-KrE" secondAttribute="bottom" id="YXa-oe-jYk"/>
+                <constraint firstAttribute="bottom" secondItem="6dd-BQ-eJw" secondAttribute="bottom" id="gvF-TO-PJ2"/>
+                <constraint firstItem="6dd-BQ-eJw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zX8-zV-6w1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="9" y="17.5"/>
+        </view>
+        <tapGestureRecognizer id="qmc-KV-hAb">
+            <connections>
+                <action selector="leftTapped:" destination="-1" id="BSq-Go-YLu"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="4ts-9P-3Ij">
+            <connections>
+                <action selector="rightTapped:" destination="-1" id="Vt2-XO-5Hu"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

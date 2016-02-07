@@ -30,6 +30,11 @@ class SignupOneViewController: NavViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func sendCodePressed(sender: AnyObject) {
+        sendCode.enabled = false
+        
+        APICalls.sendSMStoRegister(preId) { (ok) -> Void in
+            self.sendCode.enabled = true
+        }
     }
     
     var preId = 0

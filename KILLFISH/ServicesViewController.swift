@@ -30,6 +30,10 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
     }
     
+    override func viewWillAppear(animated:Bool) {
+
+    }
+    
 
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +54,8 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         switch index {
         case 0:
             return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
+        case 1:
+            return self.storyboard!.instantiateViewControllerWithIdentifier("music")
         default:
             return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
         }

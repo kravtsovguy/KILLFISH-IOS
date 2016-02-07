@@ -1,47 +1,44 @@
 //
-//  ReserveViewController.swift
+//  PaymentsListViewController.swift
 //  KILLFISH
 //
-//  Created by Матвей Кравцов on 04.02.16.
+//  Created by Матвей Кравцов on 06.02.16.
 //  Copyright © 2016 Матвей Кравцов. All rights reserved.
 //
 
-
 import UIKit
 
-class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PaymentsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var type = "all"
+    var items: [PaymentInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.clearColor()
         
-        let item = ReserveInfo(bar: "главный бар", dateUnix: 1392321600, count: 12)
-        item.sum = 50000
-        item.status = 1
-        item.cancelable = true
-        items = [item,item,item]
+        //let item = PaymentInfo(type: "income", dateUnix: <#T##Double#>, sum: 10000, curr: "RUR")
+        //items = [item,item,item]
         
-        App.loadCacheBars()
-        App.loadCacheReserves()
-        
-        APICalls.getBars {_ in }
-        
-        APICalls.getMusicPlay{_ in }
+        tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        APICalls.getReserves { reserves in
-            self.items.appendContentsOf(reserves)
-            self.tableView.reloadData()
-        }
+        
+        items = App.payments.filter({ (pi) -> Bool in
+            if type == "all"{
+                return true
+            }else{
+                return pi.type == type
+            }
+        })
+        tableView.reloadData()
+        
     }
-    
-    var items: [ReserveInfo] = []
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -49,7 +46,7 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("reserveCell")! as! ReserveTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("paymentCell")! as! PaymentViewCell
         
         cell.setup(items[indexPath.row])
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -62,13 +59,7 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        App.servicesView.performSegueWithIdentifier("goto_reserve_info", sender: self.items[indexPath.row])
+        App.paymentsView.performSegueWithIdentifier("goto_payment_info", sender: self.items[indexPath.row])
     }
-    @IBAction func addReserve(sender: AnyObject) {
-        
-        App.servicesView.performSegueWithIdentifier("goto_reserve_add", sender: self)
-
-    }
-    
 
 }

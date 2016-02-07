@@ -23,6 +23,14 @@ class ReserveCancelViewController: NavViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        barView.textBox.text = ""
+        dateView.textBox.text = ""
+        numView.textBox.text = ""
+        statusView.text = ""
+        sumView.text = ""
+        
         if item==nil { return }
         setup()
     }
@@ -31,7 +39,13 @@ class ReserveCancelViewController: NavViewController {
         barView.textBox.text = item.bar
         dateView.textBox.text = "\(item.dayAndMonthAndYear) \(item.timeHM)"
         numView.textBox.text = "\(item.count) человек"
+        if 1<item.count && item.count<5{
+            numView.textBox.text=numView.textBox.text!+"а"
+        }
         cancelBtn.hidden = !item.cancelable
+        
+        sumView.text = "\(item.sum/100) \(App.curr)"
+        
         if item.status == 0{
             statusView.text = "бронь активна"
         }

@@ -33,6 +33,8 @@ class APICalls: NSObject {
         case UserReserveCancel = "user.reserve.cancel_POST_YES"
         case RadioCatalog = "radio.catalog_GET_YES"
         case RadioPlaylist = "radio.playlist_GET_YES"
+        case UserMoney = "user.money_GET_YES"
+        case UserCheck = "user.check_GET_YES"
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
@@ -58,8 +60,15 @@ class APICalls: NSObject {
         }
     }
     
+    static func sendSMStoRegister(preid:Int,onCompletion: (Bool)->Void){
+        callApi(.UserLoginCode, parameters: ["id":preid]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            onCompletion(ok)
+        }
+    }
+    
     static func getNews(onCompletion: ([NewsInfo])->Void){
-        callApi(.News, parameters: ["page":1]) { (json) -> Void in
+        callApi(.News, parameters: ["page":1,"num_on_page":100]) { (json) -> Void in
             var news: [NewsInfo] = []
             let newsD = json["news"] as! [NSDictionary]
             for newsItem in newsD{
@@ -265,6 +274,40 @@ class APICalls: NSObject {
                 }
                 App.musicPlay = music
                 onCompletion(music)
+            }
+        }
+    }
+    
+    static func getPayments(onCompletion: ([PaymentInfo])->Void){
+        
+        callApi(.UserMoney, parameters: ["page":1,"num_on_page":1000]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var payments: [PaymentInfo] = []
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let item = PaymentInfo(json: unit)
+                    payments.append(item)
+                }
+                //App.payments = payments
+                //App.saveCachePayments()
+                onCompletion(payments)
+            }
+        }
+    }
+    
+    static func getCheck(checkid:Int, onCompletion: ([CheckInfo])->Void){
+        
+        callApi(.UserCheck, parameters: ["checkid":checkid]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var array: [CheckInfo] = []
+                let units = json["units"] as! [NSDictionary]
+                for unit in units{
+                    let item = CheckInfo(json: unit)
+                    array.append(item)
+                }
+                onCompletion(array)
             }
         }
     }

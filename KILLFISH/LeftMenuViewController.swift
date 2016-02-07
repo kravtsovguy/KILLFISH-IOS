@@ -104,6 +104,11 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             sideMenuViewController?.contentViewController = UINavigationController(rootViewController: vc)
             sideMenuViewController?.hideMenuViewController()
             break
+        case 3:
+            let vc = storyboard.instantiateViewControllerWithIdentifier("payments")
+            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: vc)
+            sideMenuViewController?.hideMenuViewController()
+            break
         default:
             break
         }

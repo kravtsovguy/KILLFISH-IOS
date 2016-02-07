@@ -18,11 +18,11 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var vipView: UISwitch!
     @IBOutlet weak var sumView: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var fswitchView: FlatSwitchView!
     
     var pickerBarView = UIPickerView()
     var pickerCityView = UIPickerView()
     let pickerNumView = UIPickerView()
-    let pickerTimeView = UIPickerView()
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -36,18 +36,31 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     var vip = false
     
     var numArr = [String]()
-    var hours = -1
-    var minutes = -1
     
+    override func viewWillAppear(animated: Bool) {
+        //super.viewWillAppear(animated)
+        
+        cityView.textBox.text = ""
+        barView.textBox.text = ""
+        dateView.textBox.text = ""
+        numView.textBox.text = ""
+        discrView.textBox.text = ""
+        sumView.text = ""
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for var i = 1 ; i<=100; i+=1 {
             numArr.append("\(i) человек")
+            if 1<i && i<5{
+                numArr[i-1]+="а"
+            }
         }
         
-        sumView.text = ""
+        fswitchView.switched = vipChanged
+        
         
         cityView.textBox.delegate = self
         barView.textBox.delegate = self
@@ -57,7 +70,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         discrView.textBox.delegate = self
         
         datePicker.date = NSDate(timeIntervalSince1970: 0)
-        datePicker.datePickerMode = .Date
+        datePicker.datePickerMode = .DateAndTime
         timePicker.datePickerMode = .Time
         
         pickerCityView.delegate = self
@@ -69,40 +82,28 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         pickerNumView.delegate = self
         pickerNumView.dataSource = self
         
-        pickerTimeView.delegate = self
-        pickerTimeView.dataSource = self
+        //let oneHourBack = myDate.dateByAddingTimeInterval(-3600)
+        
+        datePicker.minimumDate = NSDate()
+        
+        datePicker.maximumDate = NSCalendar.currentCalendar().dateByAddingUnit(
+            NSCalendarUnit.Day,
+            value: +14,
+            toDate: NSDate(),
+            options: NSCalendarOptions.WrapComponents)
+        
+        
+        
         
         setPicker(dateView.textBox, dpicker: datePicker, act: "showSelectedDate")
         //setPicker(timeView.textBox, dpicker: timePicker, act: "showSelectedTime")
-        setPicker(timeView.textBox, dpicker: pickerTimeView, act: "showSelectedCorrectTime")
         setPicker(cityView.textBox, dpicker: pickerCityView, act: "showSelectedCity")
         setPicker(barView.textBox, dpicker: pickerBarView, act: "showSelectedBar")
         setPicker(numView.textBox, dpicker: pickerNumView, act: "showSelectedNum")
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    var arr = [Int]()
-    func setupTime(){
-        if currCityId != -1 && currBarId != -1{
-            let start = App.cities[currCityId].bars[currBarId].start
-            let end = App.cities[currCityId].bars[currBarId].end
-            var arr = [Int]()
-            for var i=start ; i != end ; i+=1{
-                if i==24{
-                    i=0
-                }
-                arr.append(i)
-            }
-            self.arr = arr
-        }
+
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        if pickerView == pickerTimeView{
-            return 2
-        }
         return 1
     }
     
@@ -121,18 +122,6 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         if pickerView == pickerNumView{
             return numArr.count
         }
-        if pickerView == pickerTimeView{
-            if component == 0{
-                return arr.count
-            }else{
-                if arr.count != 0{
-                    return 60
-                }else {
-                    0
-                }
-            }
-
-        }
         return 0
     }
     
@@ -142,29 +131,13 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         }
         if pickerView == pickerBarView{
             if currCityId != -1{
-                return App.cities[currCityId].bars[row].name
+                return getFullBarName(currCityId, bid: row)
             }else{
                 return ""
             }
         }
         if pickerView == pickerNumView{
             return numArr[row]
-        }
-        if pickerView == pickerTimeView{
-            if component == 0{
-                if arr.count != 0{
-                    return "\(arr[row])"
-                }else{
-                    return ""
-                }
-                /*if currCityId != -1 && currBarId != -1{
-                    return "\(arr[row])"
-                }else {
-                    return ""
-                }*/
-            }else{
-                return "\(row)"
-            }
         }
         return ""
     }
@@ -186,14 +159,8 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
-    
     func setPicker(dtext:UITextField, dpicker: UIView, act: Selector){
-        
-        //dpicker.datePickerMode = .Date
-        //let pv = UIPickerView()
+    
         dtext.inputView = dpicker
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
@@ -214,52 +181,39 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     }
     
     func showSelectedDate(){
-        let f = NSDateFormatter()
-        f.dateFormat = "dd.MM.yyyy"
-        date = datePicker.date
-        dateView.textBox.text = f.stringFromDate(datePicker.date)
         dateView.textBox.resignFirstResponder()
+        date = datePicker.date
+        checkDate()
     }
-    
+    /*
     func showSelectedTime(){
         let f = NSDateFormatter()
         f.dateFormat = "HH:mm"
         timeView.textBox.text = f.stringFromDate(timePicker.date)
         timeView.textBox.resignFirstResponder()
     }
-    
-    func showSelectedCorrectTime(){
-        timeView.textBox.resignFirstResponder()
-        
-        if currCityId == -1 || currBarId == -1{
-            return
-        }
-        let row0 = pickerTimeView.selectedRowInComponent(0)
-        let row1 = pickerTimeView.selectedRowInComponent(1)
-        
-        hours = arr[row0]
-        minutes = row1
-        
-        timeView.textBox.text = "\(arr[row0]):\(row1)"
-        
-    }
-    
+    */
     func showSelectedCity(){
+        cityView.textBox.resignFirstResponder()
+        
         let row = pickerCityView.selectedRowInComponent(0)
         
         if row != currCityId{
             currBarId = -1
             barView.textBox.text = ""
-            arr = [Int]()
-            hours = -1
-            minutes = -1
-            timeView.textBox.text = ""
         }
         
         currCityId = row
         cityView.textBox.text = App.cities[row].name
-        cityView.textBox.resignFirstResponder()
     }
+    
+    func getFullBarName(cid:Int, bid:Int)->String{
+        let start = App.cities[cid].bars[bid].start
+        let end = App.cities[cid].bars[bid].end
+        let name = App.cities[cid].bars[bid].name
+        return "\(name) (\(start):00 - \(end):00)"
+    }
+    
     func showSelectedBar(){
         barView.textBox.resignFirstResponder()
         
@@ -270,17 +224,12 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         let row = pickerBarView.selectedRowInComponent(0)
         
         if row != currBarId {
-            arr = [Int]()
-            hours = -1
-            minutes = -1
-            timeView.textBox.text = ""
         }
         
         currBarId = row
-        if currCityId != -1{
-            barView.textBox.text = App.cities[currCityId].bars[row].name
-        }
-        setupTime()
+        barView.textBox.text = getFullBarName(currCityId, bid: row)
+        
+        checkDate()
         
     }
     
@@ -294,6 +243,9 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     }
     
     func recalcSum(){
+        if num == 0 {
+            return
+        }
         if vip{
             sum = ReserveInfo.priceVIP / 100 * (((num-1) / (ReserveInfo.kVIP)) + 1)
         }else{
@@ -305,22 +257,14 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     @IBAction func saveReserve(sender: AnyObject) {
         self.saveBtn.enabled = false
         
-        checkValues { (err) -> Void in
+        let ok = checkValues { (err) -> Void in
             self.saveBtn.enabled = true
             JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+        }
+        if !ok{
             return
         }
-        
-        let seconds = Double(hours * 60 * 60 + minutes * 60)
-        let fdate = date.dateByAddingTimeInterval(seconds)
-        
-        /*let f = NSDateFormatter()
-        f.dateFormat = "dd.MM.yyyy HH:mm"
-        let dstr = f.stringFromDate(fdate)
-
-        print(dstr)*/
-        
-        APICalls.saveReserve(vip, barid: App.cities[currCityId].bars[currBarId].id, dt: fdate.timeIntervalSince1970, num: num, discr: discrView.textBox.text!, onCompletion: { (bronid) -> Void in
+        APICalls.saveReserve(vip, barid: App.cities[currCityId].bars[currBarId].id, dt: date.timeIntervalSince1970, num: num, discr: discrView.textBox.text!, onCompletion: { (bronid) -> Void in
                 self.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in
                 self.saveBtn.enabled=true
@@ -331,23 +275,18 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     
     func checkValues(onError: (String)->Void)->Bool{
         var err = ""
+        if currCityId == -1{
+            err = "Выберите город"
+        }else
+        if currBarId == -1{
+            err = "Выберите бар"
+        }else
+        if date.timeIntervalSince1970 == 0{
+            err = "Выберите дату"
+        }else
         if num==0{
             err = "Введите число гостей"
         }
-        if currCityId == -1{
-            err = "Выберите город"
-        }
-        if currBarId == -1{
-            err = "Выберите бар"
-        }
-        if date.timeIntervalSince1970 == 0{
-            err = "Выберите дату"
-        }
-        
-        if hours == -1 || minutes == -1 {
-            err = "Выберите время"
-        }
-        
         let ok = err == ""
         if !ok {
             onError(err)
@@ -355,8 +294,37 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         return ok
     }
     
+    func checkDate(){
+        if currCityId != -1 && currBarId != -1{
+            
+            let start = App.cities[currCityId].bars[currBarId].start
+            let end = App.cities[currCityId].bars[currBarId].end
+            
+            let f = NSDateFormatter()
+            f.dateFormat = "HH"
+            let h = Int(f.stringFromDate(date))
+            if start <= h && h <= 24 || 0<=h && h<end {
+                
+            }else{
+                
+                date = NSCalendar.currentCalendar().dateByAddingUnit(
+                    NSCalendarUnit.Hour,
+                    value: start-h!,
+                    toDate: date,
+                    options: NSCalendarOptions.WrapComponents)!
+                
+            }
+        }
+        
+        let f = NSDateFormatter()
+        f.dateFormat = "dd.MM.yyyy HH:mm"
+        
+        dateView.textBox.text = f.stringFromDate(date)
+        
+    }
+    
     @IBAction func vipChanged(sender: AnyObject) {
-        vip = vipView.on
+        vip = fswitchView.isRight//vipView.on
         recalcSum()
     }
 

@@ -38,6 +38,7 @@ class NewsItemViewController: NavViewController {
         title =  item.dayAndMonthAndYear
         titleLabel.text = item.title
         textView.text = item.textPage
+        //imageView.image = UIImage()
         imageView.downloadedFrom(link: item.imageUrl)
         //textView.userInteractionEnabled = true
         //imageView.fromURL(item.imageUrl)
