@@ -15,6 +15,8 @@ class App{
         return user.id != 0 && user.authtoken != ""
     }
     
+    static var menu: LeftMenuViewController!
+    
     static var servicesView: ServicesViewController!
     static var paymentsView: PaymentsViewController!
     
@@ -23,6 +25,9 @@ class App{
         return currency[user.curr]!
     }
     
+    static var musicCost: Int = 0
+    
+    static var friends: [FriendInfo] = []
     static var cities: [CityInfo] = []
     static var reserves: [ReserveInfo] = []
     static var news: [NewsInfo] = []
@@ -122,6 +127,17 @@ class App{
         }
     }
     
+    static func saveCacheMusicCost(){
+        store.setObject(getData(musicCost), forKey: "musicCost")
+    }
+    
+    static func loadCacheMusicCost(){
+        if let data = store.dataForKey("musicCost"){
+            musicCost = getObj(data) as! Int
+        }
+    }
+    
+    
     static func saveCachePayments(){
         store.setObject(getData(payments), forKey: "payments")
     }
@@ -129,6 +145,16 @@ class App{
     static func loadCachePayments(){
         if let data = store.dataForKey("payments"){
             payments = getObj(data) as! [PaymentInfo]
+        }
+    }
+    
+    static func saveCacheFriends(){
+        store.setObject(getData(friends), forKey: "friends")
+    }
+    
+    static func loadCacheFriends(){
+        if let data = store.dataForKey("friends"){
+            friends = getObj(data) as! [FriendInfo]
         }
     }
     

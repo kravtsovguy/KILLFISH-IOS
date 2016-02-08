@@ -35,6 +35,9 @@ class APICalls: NSObject {
         case RadioPlaylist = "radio.playlist_GET_YES"
         case UserMoney = "user.money_GET_YES"
         case UserCheck = "user.check_GET_YES"
+        case RadioCost = "radio.cost_GET_NO"
+        case UserRadioDemand = "user.radio.demand_POST_YES"
+        case UserKillfishFriends = "user.killfish.friends_GET_YES"
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
@@ -52,6 +55,20 @@ class APICalls: NSObject {
         }
         
     }
+    
+    static func logout(onCompletion: (Bool)->Void, onError: (String)->Void){
+        callApi(.UserLogout, parameters: NSDictionary()) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                
+            }else{
+                onError(json["err"] as! String)
+            }
+            onCompletion(ok)
+            
+        }
+    }
+
     
     static func remindCode(num:String,onCompletion: (Bool)->Void){
         callApi(.UserLoginCode, parameters: ["num":num]) { (json) -> Void in
@@ -309,6 +326,51 @@ class APICalls: NSObject {
                 }
                 onCompletion(array)
             }
+        }
+    }
+    
+    static func getMusicCost(onCompletion: (Int)->Void){
+        
+        callApi(.RadioCost, parameters: ["curr":App.user.curr]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                let cost = json["cost"] as! Int
+                App.musicCost = cost
+                App.saveCacheMusicCost()
+                onCompletion(cost)
+            }
+        }
+    }
+    
+    static func buyMusic(songid: Int, onCompletion: (String)->Void, onError: (String)->Void){
+        
+        callApi(.UserRadioDemand, parameters: ["idsong":songid]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                onCompletion(json["msg"] as! String)
+            }else{
+                onError(json["err"] as! String)
+            }
+            
+        }
+    }
+    
+    static func getFriends(onCompletion: ([FriendInfo])->Void){
+        
+        callApi(.UserKillfishFriends, parameters: NSDictionary()) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var array: [FriendInfo] = []
+                let units = json["users"] as! [NSDictionary]
+                for unit in units{
+                    let item = FriendInfo(json: unit)
+                    array.append(item)
+                }
+                App.friends = array
+                App.saveCacheFriends()
+                onCompletion(array)
+            }
+            
         }
     }
     

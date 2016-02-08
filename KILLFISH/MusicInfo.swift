@@ -14,6 +14,7 @@ class MusicInfo: NSObject, NSCoding{
     var artist: String = ""
     var title: String = ""
     var length: Int = 0
+    var lastBuy: Double = 0
     
     init(json: NSDictionary){
         if let item = json["idsong"]{

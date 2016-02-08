@@ -12,13 +12,22 @@ class MusicViewCell: UITableViewCell {
     
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var artistView: UILabel!
+    @IBOutlet weak var imgView: UIImageView!
     
     func setup(item: MusicInfo){
         
         titleView.text = item.title
         artistView.text = item.artist
         
-        
+        if item.lastBuy == 0 {
+            imgView.image = UIImage(named: "Buy")
+            return
+        }
+        var time: Double = NSDate().timeIntervalSince1970 - item.lastBuy
+        time /= 60
+        if time <= 20{
+            imgView.image = UIImage(named: "Check")
+        }
     }
 
     /*override func awakeFromNib() {

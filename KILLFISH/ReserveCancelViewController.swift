@@ -12,14 +12,16 @@ class ReserveCancelViewController: NavViewController {
     @IBOutlet weak var barView: TextBoxView!
     @IBOutlet weak var dateView: TextBoxView!
     @IBOutlet weak var numView: TextBoxView!
-    @IBOutlet weak var statusView: UITextField!
-    @IBOutlet weak var sumView: UITextField!
+    @IBOutlet weak var statusView: LabelView!
+    @IBOutlet weak var sumView: LabelView!
     @IBOutlet weak var cancelBtn: UIButton!
     
     var item: ReserveInfo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupRightItem()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,6 +37,22 @@ class ReserveCancelViewController: NavViewController {
         setup()
     }
     
+    func cancel(){
+        
+        cancelPressed(self)
+        
+    }
+    
+    func setupRightItem()
+    {
+        let imgMenu = UIImage(named: "Cancel")!.alpha(0.5)
+        let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let butMenu = UIButton(frame: rectMenu)
+        butMenu.setBackgroundImage(imgMenu, forState: .Normal)
+        butMenu.addTarget(self, action: "cancel", forControlEvents: .TouchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butMenu);
+    }
+    
     func setup(){
         barView.textBox.text = item.bar
         dateView.textBox.text = "\(item.dayAndMonthAndYear) \(item.timeHM)"
@@ -42,7 +60,9 @@ class ReserveCancelViewController: NavViewController {
         if 1<item.count && item.count<5{
             numView.textBox.text=numView.textBox.text!+"а"
         }
-        cancelBtn.hidden = !item.cancelable
+        cancelBtn.hidden = true//!item.cancelable
+
+        navigationItem.rightBarButtonItem?.customView?.hidden = !item.cancelable
         
         sumView.text = "\(item.sum/100) \(App.curr)"
         

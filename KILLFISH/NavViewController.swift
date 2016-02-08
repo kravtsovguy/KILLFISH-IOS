@@ -14,7 +14,7 @@ class NavViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //title = "Something"
         setupBackground()
         //setupTopView()
@@ -137,6 +137,8 @@ class NavViewController: UIViewController, UITextFieldDelegate {
     
     func animateTextField(up: Bool) {
         let movement = (up ? -kbHeight : kbHeight)
+        
+        //self.navigationController?.setNavigationBarHidden(up, animated: true)
         
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)

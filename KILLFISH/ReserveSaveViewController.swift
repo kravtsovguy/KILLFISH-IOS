@@ -16,7 +16,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var timeView: TextBoxView!
     @IBOutlet weak var discrView: TextBoxView!
     @IBOutlet weak var vipView: UISwitch!
-    @IBOutlet weak var sumView: UITextField!
+    @IBOutlet weak var sumView: LabelView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var fswitchView: FlatSwitchView!
     

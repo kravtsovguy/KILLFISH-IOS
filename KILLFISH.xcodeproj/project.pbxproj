@@ -56,7 +56,9 @@
 		BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FDD1C5A42D300727AFD /* Main.storyboard */; };
 		BA8D3FE11C5A42D300727AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE01C5A42D300727AFD /* Assets.xcassets */; };
 		BA8D3FE41C5A42D300727AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8D3FE21C5A42D300727AFD /* LaunchScreen.storyboard */; };
-		BAB2914D1C67B78B0099AD86 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2914C1C67B78B0099AD86 /* SearchViewCell.swift */; };
+		BAB291501C68CD590099AD86 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2914F1C68CD590099AD86 /* FriendsViewController.swift */; };
+		BAB291521C68CDF20099AD86 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB291511C68CDF20099AD86 /* FriendInfo.swift */; };
+		BAB291541C68D7760099AD86 /* FriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB291531C68D7760099AD86 /* FriendViewCell.swift */; };
 		BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */; };
 		BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */; };
 		BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */; };
@@ -129,7 +131,9 @@
 		BA8D3FE01C5A42D300727AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA8D3FE31C5A42D300727AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA8D3FE51C5A42D300727AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAB2914C1C67B78B0099AD86 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		BAB2914F1C68CD590099AD86 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		BAB291511C68CDF20099AD86 /* FriendInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
+		BAB291531C68D7760099AD86 /* FriendViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewCell.swift; sourceTree = "<group>"; };
 		BABDB1271C5E914100588ECD /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
 		BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
@@ -178,7 +182,6 @@
 			children = (
 				BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */,
 				BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */,
-				BAB2914C1C67B78B0099AD86 /* SearchViewCell.swift */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				BA8854191C63C47A0048F287 /* Profile */,
 				BA88541C1C63C4AF0048F287 /* Services */,
 				BA1F2AD71C65FA8D0060B321 /* Payments */,
+				BAB2914E1C68CCD10099AD86 /* Friends */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 				BA8854231C63F4E50048F287 /* MusicPlayInfo.swift */,
 				BA1F2ADA1C65FBEE0060B321 /* PaymentInfo.swift */,
 				BA1F2ADC1C65FFF80060B321 /* CheckInfo.swift */,
+				BAB291511C68CDF20099AD86 /* FriendInfo.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -370,6 +375,15 @@
 			path = KILLFISH;
 			sourceTree = "<group>";
 		};
+		BAB2914E1C68CCD10099AD86 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2914F1C68CD590099AD86 /* FriendsViewController.swift */,
+				BAB291531C68D7760099AD86 /* FriendViewCell.swift */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,6 +463,8 @@
 			files = (
 				BA05BEA11C5D9CC800E6AE89 /* MasterNavViewController.swift in Sources */,
 				BA8D3FDC1C5A42D300727AFD /* NewsViewController.swift in Sources */,
+				BAB291541C68D7760099AD86 /* FriendViewCell.swift in Sources */,
+				BAB291501C68CD590099AD86 /* FriendsViewController.swift in Sources */,
 				BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */,
 				BA1F2AEC1C669EFE0060B321 /* CheckViewCell.swift in Sources */,
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
@@ -463,6 +479,7 @@
 				BA8854221C63F4A60048F287 /* MusicInfo.swift in Sources */,
 				BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */,
 				BA1F2AD11C64F8580060B321 /* ReserveCancelViewController.swift in Sources */,
+				BAB291521C68CDF20099AD86 /* FriendInfo.swift in Sources */,
 				BA53750B1C60CFA30058F917 /* App.swift in Sources */,
 				BA1F2AD91C65FAC00060B321 /* PaymentsViewController.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
@@ -473,7 +490,6 @@
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BA8854241C63F4E50048F287 /* MusicPlayInfo.swift in Sources */,
 				BA53751D1C62AEEF0058F917 /* JLToastCenter.swift in Sources */,
-				BAB2914D1C67B78B0099AD86 /* SearchViewCell.swift in Sources */,
 				BAD43D2D1C62B7810047E1D5 /* StringExt.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
 				BA1F2AE11C661CF50060B321 /* PaymentViewCell.swift in Sources */,

@@ -18,6 +18,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var items: [MusicInfo] = []
     var filteredItems: [MusicInfo] = []
     
+    var buyed = [Int:Double]()
+    
    /* override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         let app = UIApplication.sharedApplication()
         if searchController.active && !app.statusBarHidden && searchController.searchBar.frame.origin.y == 0 {
@@ -32,8 +34,10 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.backgroundColor = UIColor.clearColor()
         
+        App.loadCacheMusicCost()
         App.loadCacheMusic()
         items = App.music
+        
         tableView.reloadData()
         /*
         let searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
@@ -88,10 +92,17 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        APICalls.getMusicCost { _ in}
+        
         APICalls.getMusic { (music) -> Void in
             self.items = music
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
@@ -107,18 +118,26 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return filteredItems.count
         }
         return items.count
+        
+        //return filteredItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("musicCell")! as! MusicViewCell
         
-        if searchController.active && searchController.searchBar.text != "" {
-            cell.setup(filteredItems[indexPath.row])
-        } else {
-            cell.setup(items[indexPath.row])
-        }
+        var item: MusicInfo!
         
+        if self.searchController.active && self.searchController.searchBar.text != "" {
+            item = self.filteredItems[indexPath.row]
+        } else {
+            item = self.items[indexPath.row]
+        }
+        if buyed[item.id] != nil{
+            item.lastBuy = buyed[item.id]!
+        }
+        cell.setup(item)
+        //cell.setup(filteredItems[indexPath.row])
         //cell.setup(items[indexPath.row])
         cell.accessoryType = UITableViewCellAccessoryType.None
         let bgColorView = UIView()
@@ -129,6 +148,46 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let alertController = UIAlertController(title: "", message:
+            "Вы хотите заказать эту песню?\nСтоимость \(App.musicCost/100) \(App.curr)", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Заказать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
+            
+            
+            
+            var item: MusicInfo!
+            
+            if self.searchController.active && self.searchController.searchBar.text != "" {
+                item = self.filteredItems[indexPath.row]
+            } else {
+                item = self.items[indexPath.row]
+            }
+            /*
+            APICalls.buyMusic(item.id, onCompletion: { (msg) -> Void in
+                
+                JLToast.makeText(msg, duration: JLToastDelay.LongDelay).show()
+                self.buyed[item.id] = NSDate().timeIntervalSince1970
+                tableView.reloadData()
+                
+                }, onError: { (err) -> Void in
+                    
+                JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+                    
+            })
+            */
+            
+            JLToast.makeText("Заказ принят!", duration: JLToastDelay.LongDelay).show()
+            self.buyed[item.id] = NSDate().timeIntervalSince1970
+            tableView.reloadData()
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Cancel,handler: { (action: UIAlertAction!) in
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        
         
     }
 

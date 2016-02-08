@@ -89,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!], forState: UIControlState.Normal)
     }
     
+    
     func setupSideMenu()
     {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -98,7 +99,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("news")
         
-        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: vc), leftMenuViewController: LeftMenuViewController())
+        App.menu =  LeftMenuViewController()
+        
+        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: vc), leftMenuViewController: App.menu)
         sideMenu.backgroundImage = UIImage(named: "MainBackground.jpg")
         sideMenu.configure(SSASideMenu.MenuViewEffect(fade: true, scale: true, scaleBackground: false))
         sideMenu.configure(SSASideMenu.ContentViewEffect(alpha: 1.0, scale: 0.7))

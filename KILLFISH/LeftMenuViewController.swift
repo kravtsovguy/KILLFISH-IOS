@@ -26,6 +26,19 @@ class LeftMenuViewController: UIViewController {
         tableView.bounces = false
         return tableView
     }()
+    
+    var items: [UIViewController] = []
+    
+    func setupItems(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        items.append(storyboard.instantiateViewControllerWithIdentifier("news"))
+        items.append(storyboard.instantiateViewControllerWithIdentifier("profile"))
+        items.append(storyboard.instantiateViewControllerWithIdentifier("services"))
+        items.append(storyboard.instantiateViewControllerWithIdentifier("payments"))
+        items.append(storyboard.instantiateViewControllerWithIdentifier("friends"))
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,6 +47,8 @@ class LeftMenuViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupItems()
 
         view.backgroundColor = UIColor.clearColor()
         view.addSubview(tableView)
@@ -85,10 +100,20 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        selectItem(indexPath.row)
+    }
+    
+    func selectItem(index: Int){
         
-     
-        switch indexPath.row {
+        if index>=items.count{
+            return
+        }
+        sideMenuViewController?.contentViewController = UINavigationController(rootViewController: items[index])
+        sideMenuViewController?.hideMenuViewController()
+
+        
+        /*
+        switch index {
         case 0:
             let vc = storyboard.instantiateViewControllerWithIdentifier("news") as! NewsViewController
             sideMenuViewController?.contentViewController = UINavigationController(rootViewController: vc)
@@ -112,8 +137,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-        
-        
+        */
     }
     
 }

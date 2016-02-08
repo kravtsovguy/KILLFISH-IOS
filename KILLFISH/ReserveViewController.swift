@@ -20,7 +20,7 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let item = ReserveInfo(bar: "главный бар", dateUnix: 1392321600, count: 12)
         item.sum = 50000
-        item.status = 1
+        item.status = 2
         item.cancelable = true
         items = [item,item,item]
         

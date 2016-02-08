@@ -31,7 +31,8 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
     }
     
     override func viewWillAppear(animated:Bool) {
-
+        //super.viewWillAppear(animated)
+        
     }
     
 
