@@ -31,6 +31,9 @@ class PaymentsViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
     }
     
+    
+    //let updateDelegate: (Void)->Void = {_ in}
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,6 +41,7 @@ class PaymentsViewController: MasterNavViewController, CarbonTabSwipeNavigationD
             
             App.payments = payments
             App.saveCachePayments()
+            self.updateViews()
             
             for payment in payments{
                 if payment.id == 0{
@@ -51,6 +55,15 @@ class PaymentsViewController: MasterNavViewController, CarbonTabSwipeNavigationD
                 
             }
         }
+    }
+    
+    func updateViews(){
+        
+        for vc in carbonTabSwipeNavigation.viewControllers{
+            let v = vc.value as! PaymentsListViewController
+            v.updateItems()
+        }
+        
     }
     
     

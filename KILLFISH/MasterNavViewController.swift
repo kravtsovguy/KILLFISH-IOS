@@ -16,13 +16,25 @@ class MasterNavViewController: NavViewController {
         view.backgroundColor = UIColor.clearColor()
         backImg.hidden = true
         
+        setupMainBarButton()
+        
+    }
+    
+    func setupMainBarButton(){
+        
         let imgMenu = UIImage(named: "Menu")!.alpha(0.5)
         let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
         let butMenu = UIButton(frame: rectMenu)
         butMenu.setBackgroundImage(imgMenu, forState: .Normal)
         butMenu.addTarget(self, action: "presentLeftMenuViewController", forControlEvents: .TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: butMenu);
+        
     }
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -18,25 +18,26 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         view.backgroundColor = UIColor.clearColor()
         
+        
+        
+        App.loadCacheBars()
+        App.loadCacheReserves()
+        items = App.reserves
+        
         let item = ReserveInfo(bar: "главный бар", dateUnix: 1392321600, count: 12)
         item.sum = 50000
         item.status = 2
         item.cancelable = true
         items = [item,item,item]
         
-        App.loadCacheBars()
-        App.loadCacheReserves()
-        
         APICalls.getBars {_ in }
-        
-        APICalls.getMusicPlay{_ in }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
         APICalls.getReserves { reserves in
-            self.items.appendContentsOf(reserves)
+            //self.items = reserves
             self.tableView.reloadData()
         }
     }

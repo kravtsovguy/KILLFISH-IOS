@@ -20,6 +20,29 @@ class NavViewController: UIViewController, UITextFieldDelegate {
         //setupTopView()
     }
     
+    func setupBackButton(){
+        //let imgMenu = UIImage(named: "Back")!.alpha(0.5)//.cropToBounds(15, height: 15).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        
+        //imgMenu.frame = CGRectMake(0, 0, 15,  15);
+
+        /*let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let butMenu = UIButton(frame: rectMenu)
+        butMenu.setBackgroundImage(imgMenu, forState: .Normal)
+        butMenu.addTarget(self, action: "backButtonPressed:", forControlEvents: .TouchUpInside)
+        navigationItem.backBarButtonItem = UIBarButtonItem(customView: butMenu);*/
+        //navigationItem.backBarButtonItem?.setBackgroundImage(imgMenu, forState: .Normal, barMetrics: .Default)
+        
+        //self.navigationController?.navigationBar.backIndicatorImage = imgMenu
+        //self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgMenu
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        //self.navigationItem.backBarButtonItem!.title="";
+        
+    }
+
+    func backButtonPressed(sender:UIButton) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     var backImg: UIImageView!
     
     func setupBackground()
@@ -105,8 +128,11 @@ class NavViewController: UIViewController, UITextFieldDelegate {
     
     var kVisible = false
     
+
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
+        
+        //setupBackButton()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)

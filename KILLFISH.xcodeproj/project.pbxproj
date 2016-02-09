@@ -70,6 +70,9 @@
 		BAEAACCF1C5D04CE004C1348 /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCD1C5D04CE004C1348 /* SSASideMenu.swift */; };
 		BAEAACD11C5D269E004C1348 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACD01C5D269E004C1348 /* TextBoxView.swift */; };
 		BAEAACD31C5D2724004C1348 /* TextBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEAACD21C5D2724004C1348 /* TextBoxView.xib */; };
+		BAEC09551C69D2AC000CA579 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09541C69D2AC000CA579 /* MapViewController.swift */; };
+		BAEC09571C69DB22000CA579 /* BarLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09561C69DB22000CA579 /* BarLocationInfo.swift */; };
+		BAEC09591C6A052D000CA579 /* BarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09581C6A052D000CA579 /* BarAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +150,9 @@
 		BAEAACCD1C5D04CE004C1348 /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
 		BAEAACD01C5D269E004C1348 /* TextBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
 		BAEAACD21C5D2724004C1348 /* TextBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextBoxView.xib; sourceTree = "<group>"; };
+		BAEC09541C69D2AC000CA579 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BAEC09561C69DB22000CA579 /* BarLocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLocationInfo.swift; sourceTree = "<group>"; };
+		BAEC09581C6A052D000CA579 /* BarAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +251,7 @@
 				BA88541C1C63C4AF0048F287 /* Services */,
 				BA1F2AD71C65FA8D0060B321 /* Payments */,
 				BAB2914E1C68CCD10099AD86 /* Friends */,
+				BAEC09531C69D24A000CA579 /* Map */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +280,8 @@
 				BA1F2ADA1C65FBEE0060B321 /* PaymentInfo.swift */,
 				BA1F2ADC1C65FFF80060B321 /* CheckInfo.swift */,
 				BAB291511C68CDF20099AD86 /* FriendInfo.swift */,
+				BAEC09561C69DB22000CA579 /* BarLocationInfo.swift */,
+				BAEC09581C6A052D000CA579 /* BarAnnotation.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -384,6 +393,14 @@
 			name = Friends;
 			sourceTree = "<group>";
 		};
+		BAEC09531C69D24A000CA579 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC09541C69D2AC000CA579 /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,10 +500,12 @@
 				BA53750B1C60CFA30058F917 /* App.swift in Sources */,
 				BA1F2AD91C65FAC00060B321 /* PaymentsViewController.swift in Sources */,
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
+				BAEC09591C6A052D000CA579 /* BarAnnotation.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
 				BA5375031C5F8E860058F917 /* APICalls.swift in Sources */,
 				BA1F2ADD1C65FFF80060B321 /* CheckInfo.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,
+				BAEC09571C69DB22000CA579 /* BarLocationInfo.swift in Sources */,
 				BA05BEA31C5D9D5600E6AE89 /* NavViewController.swift in Sources */,
 				BA8854241C63F4E50048F287 /* MusicPlayInfo.swift in Sources */,
 				BA53751D1C62AEEF0058F917 /* JLToastCenter.swift in Sources */,
@@ -516,6 +535,7 @@
 				BA05BEC11C5DB0B400E6AE89 /* CarbonSwipeRefresh.m in Sources */,
 				BA88541E1C63C93F0048F287 /* CityInfo.swift in Sources */,
 				BA8D3FDA1C5A42D300727AFD /* AppDelegate.swift in Sources */,
+				BAEC09551C69D2AC000CA579 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

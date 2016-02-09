@@ -32,12 +32,18 @@ class LeftMenuViewController: UIViewController {
     func setupItems(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let itemsStr = ["news","profile","services","payments","friends","map"]
         
+        for item in itemsStr{
+            items.append(storyboard.instantiateViewControllerWithIdentifier(item))
+        }
+        /*
         items.append(storyboard.instantiateViewControllerWithIdentifier("news"))
         items.append(storyboard.instantiateViewControllerWithIdentifier("profile"))
         items.append(storyboard.instantiateViewControllerWithIdentifier("services"))
         items.append(storyboard.instantiateViewControllerWithIdentifier("payments"))
         items.append(storyboard.instantiateViewControllerWithIdentifier("friends"))
+*/
     }
 
     override func viewDidAppear(animated: Bool) {

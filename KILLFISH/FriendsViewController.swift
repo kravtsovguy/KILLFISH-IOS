@@ -10,6 +10,7 @@ import UIKit
 
 class FriendsViewController: MasterNavViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var countView: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var items: [FriendInfo] = []
     
@@ -45,6 +46,17 @@ class FriendsViewController: MasterNavViewController, UITableViewDelegate, UITab
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var str = "\(items.count) "
+        if items.count == 0 || items.count>=5{
+            str += "ДРУЗЕЙ"
+        }
+        if items.count == 1{
+            str += "ДРУГ"
+        }
+        if items.count > 1 && items.count<5{
+            str += "ДРУГА"
+        }
+        countView.text = str
         return items.count
     }
     

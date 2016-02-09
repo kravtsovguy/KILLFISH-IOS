@@ -60,6 +60,16 @@ class App{
         }
     }
     
+    static func saveCacheNews(){
+        store.setObject(getData(news), forKey: "news")
+    }
+    
+    static func loadCacheNews(){
+        if let data = store.dataForKey("news"){
+            news = getObj(data) as! [NewsInfo]
+        }
+    }
+    
     static func saveCacheUser(){
         store.setObject(getData(user), forKey: "user")
     }

@@ -21,6 +21,7 @@ class User: NSObject, NSCoding{
     var card_type: Int = 0
     var curr:String = ""
     var photo:String = ""
+    var percent: [Int] = [Int](count: 3, repeatedValue: 0)
     
     init(id:Int, authtoken:String){
         self.id = id
@@ -37,7 +38,9 @@ class User: NSObject, NSCoding{
         curr = json["curr"] as! String
         balance = json["balance"]![0]["sum"] as! Int
         card_type = Int(json["card_type"] as! String)!
-        //print("LEL")
+        percent[0] = Int(json["procent"]!["1"] as! String)!
+        percent[1] = Int(json["procent"]!["2"] as! String)!
+        percent[2] = Int(json["procent"]!["3"] as! String)!
     }
     
     required init(coder decoder: NSCoder) {
@@ -52,6 +55,9 @@ class User: NSObject, NSCoding{
         if let obj = decoder.decodeObjectForKey("photo") {
             self.photo = obj as! String
         }
+        if let obj = decoder.decodeObjectForKey("percent") {
+            self.percent = obj as! [Int]
+        }
         super.init()
     }
     
@@ -65,6 +71,7 @@ class User: NSObject, NSCoding{
         coder.encodeInteger(self.card_type, forKey: "card_type")
         coder.encodeObject(self.curr, forKey: "curr")
         coder.encodeObject(self.photo, forKey: "photo")
+        coder.encodeObject(self.percent, forKey: "percent")
     }
     
 }

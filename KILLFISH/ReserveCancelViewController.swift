@@ -81,13 +81,35 @@ class ReserveCancelViewController: NavViewController {
     }
     
     @IBAction func cancelPressed(sender: AnyObject) {
-        self.cancelBtn.enabled = false
+        
+        let alertController = UIAlertController(title: "", message:
+            "Отменить бронь?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Отменить", style: UIAlertActionStyle.Destructive,handler: { (action: UIAlertAction!) in
+   
+            self.navigationController?.popViewControllerAnimated(true)
+            /*
+            APICalls.cancelReserve(self.item.id, onCompletion: { (ok) -> Void in
+                
+                self.navigationController?.popViewControllerAnimated(true)
+                
+                }, onError: { (err) -> Void in
+                JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+            })
+            */
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.Cancel,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        /*self.cancelBtn.enabled = false
         
         APICalls.cancelReserve(item.id, onCompletion: { (ok) -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in
                 self.cancelBtn.enabled=true
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
-        }
+        }*/
     }
 }

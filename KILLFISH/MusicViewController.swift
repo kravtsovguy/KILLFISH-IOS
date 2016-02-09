@@ -92,6 +92,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //APICalls.getMusicPlay{_ in }
+        
         APICalls.getMusicCost { _ in}
         
         APICalls.getMusic { (music) -> Void in

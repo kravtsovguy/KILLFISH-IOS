@@ -87,6 +87,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         //UILabel.appearance().font = UIFont(name: "Roboto-Light", size: 15)
         
         UIBarButtonItem.appearance().setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 15)!], forState: UIControlState.Normal)
+        
+        /*let bgColorT = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        var backImg: UIImage = UIImage(named: "Cancel")!
+        backImg = backImg.cropToBounds(15, height: 15)
+        UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImg, forState: .Normal, barMetrics: .Default)
+        */
+        
+        let imgMenu = UIImage(named: "Back")!.alpha(0.5).cropImage(scaledToSize: CGSize(width: 15, height: 15)).imageWithAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: -3, right: 0))//.cropToBounds(15, height: 15).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        
+        //imgMenu.frame = CGRectMake(0, 0, 15,  15);
+        
+        /*let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let butMenu = UIButton(frame: rectMenu)
+        butMenu.setBackgroundImage(imgMenu, forState: .Normal)
+        butMenu.addTarget(self, action: "backButtonPressed:", forControlEvents: .TouchUpInside)
+        navigationItem.backBarButtonItem = UIBarButtonItem(customView: butMenu);*/
+        //navigationItem.backBarButtonItem?.setBackgroundImage(imgMenu, forState: .Normal, barMetrics: .Default)
+        
+        UINavigationBar.appearance().backIndicatorImage = imgMenu
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = imgMenu
+        //UINavigationBar.appearance().backItem?.backBarButtonItem?.title = ""
+        //UINavigationBar.appearance().backItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+       
+         //UINavigationBar.appearance().backItem?.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
+        
     }
     
     

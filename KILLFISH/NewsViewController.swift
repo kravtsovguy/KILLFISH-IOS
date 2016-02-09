@@ -25,16 +25,32 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
             
         }*/
         
-        items = App.getCacheNews()
+        //items = App.getCacheNews()
+        
+        App.loadCacheNews()
+        items = App.news
+        tableView.reloadData()
         
         APICalls.getNews { (news) -> Void in
             self.items = news
+            
             self.tableView.reloadData()
+            
+            var i = 0
             for newItem in news{
                 APICalls.getNewsItem(newItem.id, onCompletion: { (newItemFull) -> Void in
+                    
                     newItem.text = newItemFull.text
-                    App.setCacheNews(self.items)
+                    
+                    //App.setCacheNews(self.items)
                     self.tableView.reloadData()
+                    
+                    i+=1
+                    if i == news.count{
+                        App.news = self.items
+                        App.saveCacheNews()
+                    }
+                    
                     //self.tableView.reloadData()
                 })
             }
@@ -53,6 +69,8 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         //if true {
             //NewsViewController.logged=true;
             self.performSegueWithIdentifier("goto_login", sender: self)
+        }else{
+            APICalls.getData {_ in}
         }
        
     }
@@ -62,8 +80,8 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
    
     }
     

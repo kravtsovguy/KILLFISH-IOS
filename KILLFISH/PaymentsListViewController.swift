@@ -29,6 +29,11 @@ class PaymentsListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        updateItems()
+    }
+    
+    func updateItems(){
+        
         items = App.payments.filter({ (pi) -> Bool in
             if type == "all"{
                 return true

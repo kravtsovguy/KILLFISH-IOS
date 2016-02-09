@@ -24,7 +24,7 @@ class APICalls: NSObject {
         case UserRegistration = "user.registration_POST_NO"
         case UserRegistrationCode = "user.registration.code_POST_NO"
         case UserRegistrationForm = "user.registration.form_POST_NO"
-        case News = "news_GET_YES"
+        case News = "news_GET_NO"
         case UserData = "user.data_GET_YES"
         case UserRegistrationSMS = "user.registration.sms_POST_NO"
         case UserReserveList = "user.reserve.list_GET_YES"
@@ -38,6 +38,7 @@ class APICalls: NSObject {
         case RadioCost = "radio.cost_GET_NO"
         case UserRadioDemand = "user.radio.demand_POST_YES"
         case UserKillfishFriends = "user.killfish.friends_GET_YES"
+        case UserBarsByCoords = "user.bars.by.coords_GET_YES"
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
@@ -368,6 +369,23 @@ class APICalls: NSObject {
                 }
                 App.friends = array
                 App.saveCacheFriends()
+                onCompletion(array)
+            }
+            
+        }
+    }
+    
+    static func getBarsByCoords(lat: Double, lon:Double, distance: Double, onCompletion: ([BarLocationInfo])->Void){
+        
+        callApi(.UserBarsByCoords, parameters: ["lat":lat,"lon":lon,"radius":distance]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                var array: [BarLocationInfo] = []
+                let units = json["bars"] as! [NSDictionary]
+                for unit in units{
+                    let item = BarLocationInfo(json: unit)
+                    array.append(item)
+                }
                 onCompletion(array)
             }
             
