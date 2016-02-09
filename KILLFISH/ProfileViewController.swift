@@ -47,8 +47,9 @@ class ProfileViewController: MasterNavViewController {
             "Выйти из аккаунта?", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Выйти", style: UIAlertActionStyle.Destructive,handler: { (action: UIAlertAction!) in
             
-            App.menu.selectItem(0)
-            App.menu.items[0].performSegueWithIdentifier("goto_login", sender: self)
+            //App.menu.selectItem(0)
+            //App.menu.items[0].performSegueWithIdentifier("goto_login", sender: self)
+            self.performSegueWithIdentifier("goto_logout", sender: self)
             
             /*
             APICalls.logout({ (ok) -> Void in
@@ -75,6 +76,8 @@ class ProfileViewController: MasterNavViewController {
         phoneView.text = ""
         moneyView.text = ""
         cardView.text = ""
+        
+        setupUser()
         
         APICalls.getData { (ok) -> Void in
             self.setupUser()

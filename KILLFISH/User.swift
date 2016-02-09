@@ -22,6 +22,7 @@ class User: NSObject, NSCoding{
     var curr:String = ""
     var photo:String = ""
     var percent: [Int] = [Int](count: 3, repeatedValue: 0)
+    var lastBarId: Int = 0
     
     init(id:Int, authtoken:String){
         self.id = id
@@ -41,6 +42,7 @@ class User: NSObject, NSCoding{
         percent[0] = Int(json["procent"]!["1"] as! String)!
         percent[1] = Int(json["procent"]!["2"] as! String)!
         percent[2] = Int(json["procent"]!["3"] as! String)!
+        lastBarId = json["lastbar_id"] as! Int
     }
     
     required init(coder decoder: NSCoder) {
@@ -58,6 +60,9 @@ class User: NSObject, NSCoding{
         if let obj = decoder.decodeObjectForKey("percent") {
             self.percent = obj as! [Int]
         }
+        if let obj = decoder.decodeObjectForKey("lastBarId") {
+            self.lastBarId = obj as! Int
+        }
         super.init()
     }
     
@@ -72,6 +77,7 @@ class User: NSObject, NSCoding{
         coder.encodeObject(self.curr, forKey: "curr")
         coder.encodeObject(self.photo, forKey: "photo")
         coder.encodeObject(self.percent, forKey: "percent")
+        coder.encodeInteger(self.lastBarId, forKey: "lastBarId")
     }
     
 }

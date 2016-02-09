@@ -33,7 +33,7 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
         }
         
         
-        if CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
+        if CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() == .Denied)
         {
             
             let alertController = UIAlertController(title: "Доступ к геолокации запрещен", message:

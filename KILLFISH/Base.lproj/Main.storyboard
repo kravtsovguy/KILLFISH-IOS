@@ -258,6 +258,7 @@
                         <outlet property="moneyView" destination="Ptz-wL-Sho" id="MIX-TM-1Ed"/>
                         <outlet property="nameView" destination="GDs-Q3-CIW" id="SSu-hp-NXo"/>
                         <outlet property="phoneView" destination="Vlf-F6-sAV" id="S2s-Vn-Ca4"/>
+                        <segue destination="6oj-vI-K9e" kind="modal" identifier="goto_logout" id="fNT-9J-qAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbd-Ha-MqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1914,4 +1915,7 @@
         <image name="Wallet" width="82" height="71"/>
         <image name="killfichICO" width="900" height="900"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fNT-9J-qAk"/>
+    </inferredMetricsTieBreakers>
 </document>

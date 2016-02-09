@@ -46,6 +46,28 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         numView.textBox.text = ""
         discrView.textBox.text = ""
         sumView.text = ""
+        
+        setupLastBar()
+    }
+    
+    func setupLastBar(){
+        
+        if(App.user.lastBarId == 0){
+            return
+        }
+        
+        for var i=0; i<App.cities.count; i+=1{
+            for var j=0; j<App.cities[i].bars.count; j+=1{
+                if App.cities[i].bars[j].id == App.user.lastBarId{
+                    currCityId = i
+                    cityView.textBox.text = App.cities[currCityId].name
+                    
+                    currBarId = j
+                    barView.textBox.text = getFullBarName(currCityId, bid: currBarId)
+                }
+            }
+        }
+        
     }
 
     
@@ -211,7 +233,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         let start = App.cities[cid].bars[bid].start
         let end = App.cities[cid].bars[bid].end
         let name = App.cities[cid].bars[bid].name
-        return "\(name) (\(start):00 - \(end):00)"
+        return "\(name) (\(start):00 - \(end+1):00)"
     }
     
     func showSelectedBar(){
@@ -303,7 +325,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
             let f = NSDateFormatter()
             f.dateFormat = "HH"
             let h = Int(f.stringFromDate(date))
-            if start <= h && h <= 24 || 0<=h && h<end {
+            if start <= h && h <= 24 || 0<=h && h<=end {
                 
             }else{
                 

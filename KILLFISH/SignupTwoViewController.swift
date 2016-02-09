@@ -86,6 +86,8 @@ class SignupTwoViewController: NavViewController  {
         nameView.textBox.text = ""
         dateView.textBox.text = ""
         cardView.textBox.text = ""
+        currSegment.selectedSegmentIndex = 0
+        cardSwitch.on = false
         
         if num == "" {
             cardLabel.hidden = true

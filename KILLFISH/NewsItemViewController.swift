@@ -30,6 +30,10 @@ class NewsItemViewController: NavViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        titleLabel.text = "Новость"
+        textView.text = "Текст"
+        
         if item==nil { return }
         setup(item)
     }
