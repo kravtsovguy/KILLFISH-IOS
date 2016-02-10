@@ -39,6 +39,9 @@ class APICalls: NSObject {
         case UserRadioDemand = "user.radio.demand_POST_YES"
         case UserKillfishFriends = "user.killfish.friends_GET_YES"
         case UserBarsByCoords = "user.bars.by.coords_GET_YES"
+        case RadioCurrent = "radio.current_GET_YES"
+        case UserPhoto = "user.photo_POST_YES"
+        
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
@@ -47,6 +50,7 @@ class APICalls: NSObject {
             if ok {
                 App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
                 App.user.photo = json["photo"] as! String
+                App.saveCacheUser()
                 getData({_ in })
             }else{
                 onError(json["err"] as! String)
@@ -61,7 +65,7 @@ class APICalls: NSObject {
         callApi(.UserLogout, parameters: NSDictionary()) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
-                
+                App.clearAll()
             }else{
                 onError(json["err"] as! String)
             }
@@ -181,6 +185,9 @@ class APICalls: NSObject {
             let ok = json["ok"] as! Bool
             if ok {
                 App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
+                if App.userPhotoSignin != nil{
+                    uploadPhoto(App.userPhotoSignin, onCompletion: {_ in}, onError: {_ in})
+                }
                 getData({_ in })
             }else{
                 onError(json["err"] as! String)
@@ -279,9 +286,9 @@ class APICalls: NSObject {
         
     }
     
-    static func getMusicPlay(onCompletion: ([MusicPlayInfo])->Void){
+    static func getMusicPlay(stream: String, onCompletion: ([MusicPlayInfo])->Void){
         //max 2027
-        callApi(.RadioPlaylist, parameters: ["stream":"listen3","num":10]) { (json) -> Void in
+        callApi(.RadioPlaylist, parameters: ["stream":stream,"num":10]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
                 var music: [MusicPlayInfo] = []
@@ -392,6 +399,45 @@ class APICalls: NSObject {
         }
     }
     
+    static func getCurrentStream(barid: Int, onCompletion: (StreamInfo)->Void) {
+        
+        callApi(.RadioCurrent, parameters: ["barid":barid]) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                let item = StreamInfo(json: json)
+                onCompletion(item)
+            }
+        }
+        
+    }
+    
+    static func uploadPhoto(img: UIImage, onCompletion: (String)->Void, onError: (String)->Void) {
+        
+        ImageUploader.getOCR(img) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                let url = json["photo"] as! String
+                App.user.photo = url
+                App.saveCacheUser()
+                onCompletion(url)
+            }else{
+                onError(json["err"] as! String)
+            }
+        }
+        
+        /*
+        ImageUploader.myImageUploadRequest(img) { (json) -> Void in
+            let ok = json["ok"] as! Bool
+            if ok {
+                onCompletion(json["photo"] as! String)
+            }else{
+                onError(json["err"] as! String)
+            }
+            
+        }
+        */
+    }
+    
     static func callApi(actionEnum:Action, parameters:NSDictionary, onCompletion: (NSDictionary) -> Void){
         
         let act: String = actionEnum.rawValue
@@ -424,7 +470,7 @@ class APICalls: NSObject {
         }
         //let jsonPost = try NSJSONSerialization.dataWithJSONObject(dict, options: [])
         //request.HTTPBody = jsonPost
-        print("KEK")
+        //print("KEK")
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
             
             guard let responseData = data else {
@@ -438,6 +484,7 @@ class APICalls: NSObject {
             }
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
             print("responseString = \(responseString)")
             
             let result: NSDictionary

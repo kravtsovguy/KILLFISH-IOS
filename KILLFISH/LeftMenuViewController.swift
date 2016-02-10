@@ -17,7 +17,7 @@ class LeftMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .None
-        tableView.frame = CGRectMake(20, (self.view.frame.size.height - 54 * 6) / 2.0, self.view.frame.size.width, 54 * 6)
+        tableView.frame = CGRectMake(20, (self.view.frame.size.height - 54 * 7) / 2.0, self.view.frame.size.width, 54 * 7)
         tableView.autoresizingMask = [.FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleWidth]
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.opaque = false
@@ -27,12 +27,12 @@ class LeftMenuViewController: UIViewController {
         return tableView
     }()
     
+    let itemsStr = ["news","profile","services","payments","friends","map","about"]
     var items: [UIViewController] = []
     
     func setupItems(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let itemsStr = ["news","profile","services","payments","friends","map"]
         
         for item in itemsStr{
             items.append(storyboard.instantiateViewControllerWithIdentifier(item))
@@ -76,7 +76,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -87,9 +87,9 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
    
-        let titles: [String] = ["Новости", "Профиль", "Сервисы", "Платежи", "Друзья", "На карте"]
+        let titles: [String] = ["Новости", "Профиль", "Сервисы", "Платежи", "Друзья", "На карте", "О программе"]
         
-        let images: [String] = ["IconHome", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty", "IconEmpty"]
+        let images: [String] = ["IconHome", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty", "IconEmpty", "IconEmpty"]
         
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.font = UIFont(name: "Roboto-Light", size: 17)

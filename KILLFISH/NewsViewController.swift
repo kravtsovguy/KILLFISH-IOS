@@ -34,7 +34,7 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
         APICalls.getNews { (news) -> Void in
             self.items = news
             
-            self.tableView.reloadData()
+            //self.tableView.reloadData()
             
             var i = 0
             for newItem in news{
@@ -43,15 +43,15 @@ class NewsViewController: MasterNavViewController, UITableViewDelegate, UITableV
                     newItem.text = newItemFull.text
                     
                     //App.setCacheNews(self.items)
-                    self.tableView.reloadData()
+                    //self.tableView.reloadData()
                     
                     i+=1
                     if i == news.count{
                         App.news = self.items
                         App.saveCacheNews()
+                        self.tableView.reloadData()
                     }
                     
-                    //self.tableView.reloadData()
                 })
             }
         }

@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
 class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nowTitleView: UILabel!
+    @IBOutlet weak var nowArtistView: UILabel!
+    @IBOutlet weak var nowView: UIView!
     
     @IBOutlet weak var searchView: UIView!
     var searchController = UISearchController(searchResultsController: nil)
+    
+    var locationManager = CLLocationManager()
     
     var items: [MusicInfo] = []
     var filteredItems: [MusicInfo] = []
@@ -100,6 +106,25 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.items = music
             self.tableView.reloadData()
         }
+        
+        tableView.tableHeaderView = nil
+        //self.nowView.hidden = true
+        //setupLocationManager()
+
+    }
+    
+    func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //locationManager.distanceFilter = 100
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways){
+            locationManager.startUpdatingLocation()
+        }
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -208,11 +233,56 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
     }
     */
+    
+    var isReady = false
 
 }
 
-extension MusicViewController: UISearchResultsUpdating {
+extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegate {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+        case .Authorized, .AuthorizedWhenInUse:
+            manager.startUpdatingLocation()
+        default: break
+        }
+    }
+    
+
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations.last! as CLLocation
+        
+        if isReady{
+            return
+        }
+        isReady = true
+        
+        APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 5000) { (bars) -> Void in
+            
+            if bars.count>0 {
+            
+            //APICalls.getCurrentStream(bars[0].id, onCompletion:{ (stream) -> Void in
+                
+                APICalls.getMusicPlay("listen6",onCompletion: { (musicPlay) -> Void in
+                    if musicPlay.count>0{
+                        self.tableView.tableHeaderView = self.nowView
+                        self.nowView.hidden = false
+                        self.nowTitleView.text = musicPlay[0].music.title
+                        self.nowArtistView.text = musicPlay[0].music.artist
+                    }
+                })
+            //})
+            
+            }
+            
+            
+            
+            
+        }
+    }
+    
 }

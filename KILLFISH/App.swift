@@ -15,7 +15,10 @@ class App{
         return user.id != 0 && user.authtoken != ""
     }
     
+    
+    
     static var menu: LeftMenuViewController!
+    
     
     static var servicesView: ServicesViewController!
     static var paymentsView: PaymentsViewController!
@@ -34,6 +37,9 @@ class App{
     static var music: [MusicInfo] = []
     static var musicPlay: [MusicPlayInfo] = []
     static var payments: [PaymentInfo] = []
+    
+    static var userPhotoSignin: UIImage! = nil
+    static var userPhoto: UIImage! = nil
     
     static func getData(obj:NSCoding)->NSData{
         let data = NSKeyedArchiver.archivedDataWithRootObject(obj)
@@ -168,6 +174,16 @@ class App{
         }
     }
     
+    static func saveCachePhoto(){
+        store.setObject(getData(userPhoto), forKey: "userPhoto")
+    }
+    
+    static func loadCachePhoto(){
+        if let data = store.dataForKey("userPhoto"){
+            userPhoto = getObj(data) as! UIImage
+        }
+    }
+    
     static func getCorrectPhone(phone:String)->String{
         if(phone.characters.count == 0) {
             return phone
@@ -180,6 +196,46 @@ class App{
             str[0]="7"
         }
         return String(str)
+    }
+    
+    static func clearAll(){
+        
+        App.user = User(id: 0, authtoken: "")
+        App.saveCacheUser()
+        
+        App.payments = []
+        App.saveCachePayments()
+        
+        App.reserves = []
+        App.saveCacheReserves()
+        
+        App.friends = []
+        App.saveCacheFriends()
+        
+        App.userPhotoSignin = nil
+        
+        App.userPhoto = nil
+        App.saveCachePhoto()
+        
+        
+    }
+    
+    static func loadImage(link:String, onCompletion: (UIImage)->Void) {
+        guard
+            let url = NSURL(string: link)
+            else {return}
+        //contentMode = mode
+        NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+            guard
+                let httpURLResponse = response as? NSHTTPURLResponse where httpURLResponse.statusCode == 200,
+                let mimeType = response?.MIMEType where mimeType.hasPrefix("image"),
+                let data = data where error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                onCompletion(image)
+            }
+        }).resume()
     }
     
     /*static func getCorrectFIO(phone:String)->String{
