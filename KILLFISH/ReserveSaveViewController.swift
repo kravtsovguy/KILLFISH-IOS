@@ -277,15 +277,17 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     }
 
     @IBAction func saveReserve(sender: AnyObject) {
-        self.saveBtn.enabled = false
+        
         
         let ok = checkValues { (err) -> Void in
-            self.saveBtn.enabled = true
-            JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+            JLToast.makeText(err, duration: JLToastDelay.ShortDelay).show()
         }
         if !ok{
             return
         }
+        
+        self.saveBtn.enabled = false
+        
         APICalls.saveReserve(vip, barid: App.cities[currCityId].bars[currBarId].id, dt: date.timeIntervalSince1970, num: num, discr: discrView.textBox.text!, onCompletion: { (bronid) -> Void in
                 self.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in

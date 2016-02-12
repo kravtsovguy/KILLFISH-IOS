@@ -45,7 +45,7 @@ class APICalls: NSObject {
     }
     
     static func login(num:String, code:String,onCompletion: (Bool)->Void, onError: (String)->Void){
-        callApi(.UserLogin, parameters: ["num":num,"code":code]) { (json) -> Void in
+        callApi(.UserLogin, parameters: ["iostoken":App.iostoken, "num":num, "code":code]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
                 App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
@@ -83,7 +83,7 @@ class APICalls: NSObject {
     }
     
     static func sendSMStoRegister(preid:Int,onCompletion: (Bool)->Void){
-        callApi(.UserLoginCode, parameters: ["id":preid]) { (json) -> Void in
+        callApi(.UserRegistrationSMS, parameters: ["id":preid]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             onCompletion(ok)
         }
@@ -181,7 +181,7 @@ class APICalls: NSObject {
     
     static func registerThree(id:Int, name:String, day:Int, month:Int, year:Int, curr:String, num:Bool, owner: String, onCompletion: (Bool)->Void, onError:(String)->Void){
         let bnum: Int = num ? 1 : 0
-        callApi(.UserRegistrationForm, parameters: ["id":id,"name":name,"day":day,"month":month,"year":year,"curr":curr,"num":bnum,"owner":owner]) { (json) -> Void in
+        callApi(.UserRegistrationForm, parameters: ["iostoken":App.iostoken, "id":id,"fio":name,"day":day,"month":month,"year":year,"curr":curr,"num":bnum,"owner":owner]) { (json) -> Void in
             let ok = json["ok"] as! Bool
             if ok {
                 App.user = User(id: json["id"] as! Int, authtoken: json["auth"] as! String);
@@ -417,6 +417,7 @@ class APICalls: NSObject {
             let ok = json["ok"] as! Bool
             if ok {
                 let url = json["photo"] as! String
+                App.userPhoto = img
                 App.user.photo = url
                 App.saveCacheUser()
                 onCompletion(url)

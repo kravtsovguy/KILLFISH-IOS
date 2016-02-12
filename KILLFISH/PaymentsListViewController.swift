@@ -11,12 +11,17 @@ import UIKit
 class PaymentsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomC: NSLayoutConstraint!
     
     var type = "all"
     var items: [PaymentInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !App.ios9{
+            //bottomC.constant += 100
+        }
         
         view.backgroundColor = UIColor.clearColor()
         

@@ -19,6 +19,7 @@ class NewsTableViewCell: UITableViewCell {
         dataLabel.text = item.dayAndMonth
         titleLabel.text = item.title
         textNLabel.text = item.textPage
+        newsIco.image = item.ico
     }
     
 

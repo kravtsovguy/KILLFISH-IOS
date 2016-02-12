@@ -15,7 +15,9 @@ class App{
         return user.id != 0 && user.authtoken != ""
     }
     
-    
+    static var ios9: Bool {
+        return NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 9, minorVersion: 0, patchVersion: 0))
+    }
     
     static var menu: LeftMenuViewController!
     
@@ -40,6 +42,8 @@ class App{
     
     static var userPhotoSignin: UIImage! = nil
     static var userPhoto: UIImage! = nil
+    
+    static var iostoken = ""
     
     static func getData(obj:NSCoding)->NSData{
         let data = NSKeyedArchiver.archivedDataWithRootObject(obj)
@@ -181,6 +185,7 @@ class App{
     static func loadCachePhoto(){
         if let data = store.dataForKey("userPhoto"){
             userPhoto = getObj(data) as! UIImage
+            //userPhoto = UIImage.initFromColor(UIColor.whiteColor())
         }
     }
     
@@ -214,8 +219,13 @@ class App{
         
         App.userPhotoSignin = nil
         
-        App.userPhoto = nil
+        //App.userPhoto = nil
+        //App.userPhoto = UIImage()
+        App.userPhoto = UIImage.initFromColor(UIColor.whiteColor())
         App.saveCachePhoto()
+        
+        
+        App.menu.setupItems()
         
         
     }

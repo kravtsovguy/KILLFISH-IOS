@@ -79,6 +79,9 @@
 		BAEC09631C6B829C000CA579 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09621C6B829C000CA579 /* ImageUploader.swift */; };
 		BAEC09D91C6B9A52000CA579 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09CC1C6B9A4D000CA579 /* Alamofire.framework */; };
 		BAEC09DA1C6B9A52000CA579 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09CC1C6B9A4D000CA579 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAEC09E01C6BBA8E000CA579 /* NewsTagFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09DE1C6BBA8E000CA579 /* NewsTagFilter.swift */; };
+		BAEC09E11C6BBA8E000CA579 /* SuperAlgorythm.json in Resources */ = {isa = PBXBuildFile; fileRef = BAEC09DF1C6BBA8E000CA579 /* SuperAlgorythm.json */; };
+		BAEC09E41C6BE413000CA579 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09E31C6BE413000CA579 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +240,9 @@
 		BAEC09601C6B7AFF000CA579 /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		BAEC09621C6B829C000CA579 /* ImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		BAEC09C11C6B9A4D000CA579 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		BAEC09DE1C6BBA8E000CA579 /* NewsTagFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTagFilter.swift; sourceTree = "<group>"; };
+		BAEC09DF1C6BBA8E000CA579 /* SuperAlgorythm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SuperAlgorythm.json; sourceTree = "<group>"; };
+		BAEC09E31C6BE413000CA579 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEC09E41C6BE413000CA579 /* MapKit.framework in Frameworks */,
 				BAEC09D91C6B9A52000CA579 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +446,7 @@
 		BA8D3FCD1C5A42D300727AFD = {
 			isa = PBXGroup;
 			children = (
+				BAEC09E31C6BE413000CA579 /* MapKit.framework */,
 				BA8D3FD81C5A42D300727AFD /* KILLFISH */,
 				BA8D3FD71C5A42D300727AFD /* Products */,
 				BAEC09C11C6B9A4D000CA579 /* Alamofire.xcodeproj */,
@@ -456,6 +464,7 @@
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
 			isa = PBXGroup;
 			children = (
+				BAEC09E21C6BBA98000CA579 /* TagFilter */,
 				BAEC095F1C6B7AED000CA579 /* Toucan */,
 				BA5375141C62AEEF0058F917 /* JLToast */,
 				BA5375011C5F8E160058F917 /* App */,
@@ -521,6 +530,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BAEC09E21C6BBA98000CA579 /* TagFilter */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC09DE1C6BBA8E000CA579 /* NewsTagFilter.swift */,
+				BAEC09DF1C6BBA8E000CA579 /* SuperAlgorythm.json */,
+			);
+			name = TagFilter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -556,6 +574,11 @@
 					BA8D3FD51C5A42D300727AFD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 83W65ZB2H6;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -641,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAEAACD31C5D2724004C1348 /* TextBoxView.xib in Resources */,
+				BAEC09E11C6BBA8E000CA579 /* SuperAlgorythm.json in Resources */,
 				BA1F2AE51C6681740060B321 /* LabelView.xib in Resources */,
 				BA8D3FE41C5A42D300727AFD /* LaunchScreen.storyboard in Resources */,
 				BA1F2AD31C6560A90060B321 /* FlatSwitchView.xib in Resources */,
@@ -713,6 +737,7 @@
 				BA8854151C637DE90048F287 /* ReserveTableViewCell.swift in Sources */,
 				BA5375091C60CEF90058F917 /* User.swift in Sources */,
 				BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */,
+				BAEC09E01C6BBA8E000CA579 /* NewsTagFilter.swift in Sources */,
 				BA1F2AEE1C676A9F0060B321 /* MusicViewController.swift in Sources */,
 				BA1F2AE81C6681A00060B321 /* LabelView.swift in Sources */,
 				BA53751C1C62AEEF0058F917 /* JLToast.swift in Sources */,
@@ -852,6 +877,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -870,6 +896,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

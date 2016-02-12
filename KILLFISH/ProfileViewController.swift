@@ -20,6 +20,7 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
         super.viewDidLoad()
         
         App.loadCacheUser()
+        App.loadCachePhoto()
         setupUser()
         
         setupRightItem()
@@ -45,21 +46,22 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     
     func logout(){
         
-        let alertController = UIAlertController(title: "", message:
-            "Выйти из аккаунта?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Выйти из аккаунта?", message:
+            "", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Выйти", style: UIAlertActionStyle.Destructive,handler: { (action: UIAlertAction!) in
             
             //App.menu.selectItem(0)
             //App.menu.items[0].performSegueWithIdentifier("goto_login", sender: self)
-            self.performSegueWithIdentifier("goto_logout", sender: self)
+           
+            //self.performSegueWithIdentifier("goto_logout", sender: self)
             
-            /*
+            
             APICalls.logout({ (ok) -> Void in
-                
+                 self.performSegueWithIdentifier("goto_logout", sender: self)
                 }) { (err) -> Void in
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
             }
-            */
+
         }))
         
         alertController.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.Cancel,handler: nil))
@@ -74,12 +76,18 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     
     override func viewWillAppear(animated: Bool) {
         
-        nameView.text = ""
-        phoneView.text = ""
-        moneyView.text = ""
-        cardView.text = ""
+        if(App.user.name == ""){
+            
+            nameView.text = ""
+            phoneView.text = ""
+            moneyView.text = ""
+            cardView.text = ""
+            
+            avatarView.alpha = 0.5
+            avatarView.image = UIImage(named: "Default photo")
+        }
         
-        setupUser()
+        //setupUser()
         
         APICalls.getData { (ok) -> Void in
             self.setupUser()
@@ -92,13 +100,26 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
         phoneView.text = App.user.phone
         moneyView.text = "\(App.user.balance/100) \(App.curr)"
         cardView.text = App.user.card
-        setupAvatarByURL(App.user.photo)
+        
+        if App.userPhoto == nil{
+            setupAvatarByURL(App.user.photo)
+        }else{
+            let data1 = UIImagePNGRepresentation(App.userPhoto)
+            let data2 = UIImagePNGRepresentation(UIImage.initFromColor(UIColor.whiteColor()))
+            if data1!.isEqualToData(data2!) {
+                setupAvatarByURL(App.user.photo)
+            }else{
+                setupAvatarByImage(App.userPhoto)
+            }
+        }
     }
     
     var picker:UIImagePickerController = UIImagePickerController()
     var popover:UIPopoverController!
     
     @IBAction func imageTapped(sender: AnyObject) {
+        
+        picker.navigationBar.tintColor = UIColor.blackColor()
         
         let alert:UIAlertController=UIAlertController(title: "Выберите аватар", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cameraAction = UIAlertAction(title: "Камера", style: UIAlertActionStyle.Default)
@@ -166,6 +187,8 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         let nimg = Toucan(image: img!).resize(CGSize(width: 222, height: 222)).image
+        
+        App.userPhoto = nimg
             
         APICalls.uploadPhoto(nimg, onCompletion: { (url) -> Void in
             
@@ -177,6 +200,7 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController)
     {
+        picker.dismissViewControllerAnimated(true, completion: nil)
         print("picker cancel.")
     }
     
@@ -189,7 +213,11 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
             
             return
         }
+        
         App.loadImage(url){ (img) ->Void in
+            App.userPhoto = img
+            App.saveCachePhoto()
+            
             self.setupAvatarByImage(img)
         }
     }

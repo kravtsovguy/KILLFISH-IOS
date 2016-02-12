@@ -158,7 +158,9 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     }
     
     func centerUserLocation(){
-        
+        if mapView.userLocation.location == nil{
+            return
+        }
         centerMapOnLocation(mapView.userLocation.location!)
     }
     
@@ -228,7 +230,7 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     
     
     let initialLocation = CLLocation(latitude: 55.7522200, longitude: 37.6155600)
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 4000
     func centerMapOnLocation(location: CLLocation) {
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,

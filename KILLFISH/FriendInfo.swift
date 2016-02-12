@@ -23,7 +23,7 @@ class FriendInfo: NSObject, NSCoding{
     init(json: NSDictionary){
         self.id = json["id"] as! Int
         self.name = json["fio"] as! String
-        self.num = json["num"] as! Int
+        self.num = Int(json["num"] as! String) ?? 0
         self.type = json["type"] as! String
     }
     

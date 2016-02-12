@@ -13,6 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     var window: UIWindow?
     
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("error \(error)")
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let token = "\(deviceToken)"
+        print(token)
+        var str = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
+        str = str.stringByReplacingOccurrencesOfString(" ", withString: "")
+        App.iostoken = str
+    }
+    
+    func setupNotifications(){
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
     func setupToast(){
         JLToastView.setDefaultValue(
             UIColor.blackColor().colorWithAlphaComponent(0.7),
@@ -57,6 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
     
     func setupNavBar()
     {
+        //NSUserDefaults.standardUserDefaults().setBool(false, forKey: "UIViewShowAlignmentRects")
+
+        
         /*let verticalOffset: CGFloat = -4;
         UINavigationBar.appearance().setTitleVerticalPositionAdjustment(verticalOffset,forBarMetrics: UIBarMetrics.Default)*/
         //UINavigationBar.appearance().barTintColor = UIColor(red: 20, green: 20, blue: 20, alpha: 0.0)
@@ -142,12 +168,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        //UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         setupToolbar()
         setupNavBar()
         setupSideMenu()
         setupToast()
+        setupNotifications()
         
         return true
     }

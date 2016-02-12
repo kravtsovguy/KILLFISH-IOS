@@ -17,6 +17,28 @@ class NewsInfo: NSObject, NSCoding {
     var date:NSDate{
         return NSDate(timeIntervalSince1970: dateUnix)
     }
+    var ico: UIImage{
+        let f = NewsTagFilter.identifyTopicOfText(textPage)
+        var str = "Star"
+        switch f{
+        case .Birth:
+            str = "Present"
+            break
+        case .Card:
+            str = "Card"
+            break
+        case .Drink:
+            str = "Wine"
+            break
+        case .Food:
+            str = "Food"
+            break
+        case .Other:
+            str = "Star"
+            break
+        }
+        return UIImage(named: str)!
+    }
     var dayAndMonth:String{
         /*//Here I’m creating the calendar instance that we will operate with:
         let calendar = NSCalendar.init(calendarIdentifier: NSCalendarIdentifierGregorian)

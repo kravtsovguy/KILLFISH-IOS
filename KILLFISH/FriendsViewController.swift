@@ -24,7 +24,7 @@ class FriendsViewController: MasterNavViewController, UITableViewDelegate, UITab
         let item = FriendInfo()
         item.name = "Кравцов Матвей Евгеньевич"
         item.type = "f1"
-        items = [item,item,item]
+        //items = [item,item,item]
         
         tableView.reloadData()
 
@@ -40,7 +40,7 @@ class FriendsViewController: MasterNavViewController, UITableViewDelegate, UITab
         super.viewWillAppear(animated)
         
         APICalls.getFriends { (friends) -> Void in
-            //self.items = friends
+            self.items = friends
             self.tableView.reloadData()
         }
     }
@@ -79,6 +79,14 @@ class FriendsViewController: MasterNavViewController, UITableViewDelegate, UITab
         
     }
     
+    @IBAction func helpPressed(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Проценты с друзей", message:
+            "Друзья 1 уровня - \(App.user.percent[0])%\nДрузья 2 уровня - \(App.user.percent[1])%\nДрузья 3 уровня - \(App.user.percent[2])%", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.Cancel,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
     /*
     // MARK: - Navigation
 

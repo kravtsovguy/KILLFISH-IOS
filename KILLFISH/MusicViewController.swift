@@ -17,6 +17,7 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var nowView: UIView!
     
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var bottomC: NSLayoutConstraint!
     var searchController = UISearchController(searchResultsController: nil)
     
     var locationManager = CLLocationManager()
@@ -37,6 +38,10 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !App.ios9{
+            //bottomC.constant += 100
+        }
         
         view.backgroundColor = UIColor.clearColor()
         
@@ -176,8 +181,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let alertController = UIAlertController(title: "", message:
-            "Вы хотите заказать эту песню?\nСтоимость \(App.musicCost/100) \(App.curr)", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Заказать этот трек?", message:
+            "Стоимость \(App.musicCost/100) \(App.curr)", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Заказать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
             
             

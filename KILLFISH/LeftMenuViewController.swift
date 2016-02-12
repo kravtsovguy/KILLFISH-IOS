@@ -33,7 +33,7 @@ class LeftMenuViewController: UIViewController {
     func setupItems(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        items = []
         for item in itemsStr{
             items.append(storyboard.instantiateViewControllerWithIdentifier(item))
         }

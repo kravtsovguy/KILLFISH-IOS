@@ -21,6 +21,9 @@ class LoginViewController: NavViewController {
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         
+        backImg.image = UIImage(named: "EnterRegistrBackground")
+
+        
         numView.textBox.delegate = self
         codeView.textBox.delegate = self
         textBoxes = [numView.textBox,codeView.textBox]
@@ -44,6 +47,13 @@ class LoginViewController: NavViewController {
     }
 
     @IBAction func loginPressed(sender: UIButton) {
+        
+        let ok = checkValues { (err) -> Void in
+            JLToast.makeText(err, duration: JLToastDelay.ShortDelay).show()
+        }
+        if !ok{
+            return
+        }
         
         loginBtn.enabled=false
         
@@ -101,6 +111,43 @@ class LoginViewController: NavViewController {
         
         //dismissKeyboard()
         return false
+    }
+    @IBAction func helpTapped(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Код доступа", message:
+            "Выслать код доступа на ваш телефон?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Выслать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
+            
+            
+            
+            APICalls.remindCode(App.getCorrectPhone(self.numView.textBox.text!), onCompletion: { (ok) -> Void in
+                if ok{
+                    JLToast.makeText("Код выслан", duration: JLToastDelay.LongDelay).show()
+                }else{
+                    JLToast.makeText("Ошибка!", duration: JLToastDelay.LongDelay).show()
+                }
+            })
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Cancel,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func checkValues(onError: (String)->Void)->Bool{
+        var err = ""
+        if numView.textBox.text == ""{
+            err = "Введите номер телефона или номер карты"
+        }else
+            if codeView.textBox.text == ""{
+                err = "Введите код доступа"
+        }
+        let ok = err == ""
+        if !ok {
+            onError(err)
+        }
+        return ok
     }
     /*
     var kbHeight: CGFloat!

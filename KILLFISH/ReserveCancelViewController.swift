@@ -82,8 +82,8 @@ class ReserveCancelViewController: NavViewController {
     
     @IBAction func cancelPressed(sender: AnyObject) {
         
-        let alertController = UIAlertController(title: "", message:
-            "Отменить бронь?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Отменить бронь?", message:
+            "", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Отменить", style: UIAlertActionStyle.Destructive,handler: { (action: UIAlertAction!) in
    
             self.navigationController?.popViewControllerAnimated(true)

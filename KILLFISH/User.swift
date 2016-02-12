@@ -37,7 +37,9 @@ class User: NSObject, NSCoding{
         phone = json["mphone"] as! String
         card = json["num"] as! String
         curr = json["curr"] as! String
-        balance = json["balance"]![0]["sum"] as! Int
+        if json["balance"]?.count>0{
+            balance = json["balance"]![0]["sum"] as! Int
+        }
         card_type = Int(json["card_type"] as! String)!
         percent[0] = Int(json["procent"]!["1"] as! String)!
         percent[1] = Int(json["procent"]!["2"] as! String)!

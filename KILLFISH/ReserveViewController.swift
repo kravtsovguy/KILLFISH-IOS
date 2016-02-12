@@ -13,12 +13,17 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var buttonReserve: UIButton!
+    @IBOutlet weak var bottomC: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !App.ios9{
+            //bottomC.constant += 100
+        }
+        view.layoutIfNeeded()
+        
         view.backgroundColor = UIColor.clearColor()
-        
-        
         
         App.loadCacheBars()
         App.loadCacheReserves()
@@ -28,7 +33,7 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
         item.sum = 50000
         item.status = 2
         item.cancelable = true
-        items = [item,item,item]
+        //items = [item,item,item]
         
         APICalls.getBars {_ in }
     }
@@ -36,8 +41,10 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
+        view.layoutIfNeeded()
+        
         APICalls.getReserves { reserves in
-            //self.items = reserves
+            self.items = reserves
             self.tableView.reloadData()
         }
     }

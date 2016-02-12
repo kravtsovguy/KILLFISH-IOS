@@ -43,7 +43,15 @@ class SignupOneViewController: NavViewController {
     var two = false
     @IBAction func nextPressed(sender: AnyObject) {
         
+        let ok = checkValues { (err) -> Void in
+            JLToast.makeText(err, duration: JLToastDelay.ShortDelay).show()
+        }
+        if !ok{
+            return
+        }
+        
         nextButton.enabled = false
+        
         if two == false{
             
             //self.codeView.hidden = false
@@ -58,6 +66,7 @@ class SignupOneViewController: NavViewController {
                     self.sendCode.hidden = false
                     self.phoneView.textBox.enabled = false
                     self.nextButton.enabled = true
+                    self.two=true
                 }else{
                     self.toSignupTwo()
                 }
@@ -66,7 +75,7 @@ class SignupOneViewController: NavViewController {
                     self.nextButton.enabled = true
                     JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
             })
-            two=true
+            
         }else{
             APICalls.registerTwo(preId, code: Int(codeView.text)!, onCompletion: { (id, next, num) -> Void in
                 
@@ -99,14 +108,30 @@ class SignupOneViewController: NavViewController {
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
         
-        //phoneView.textBox.text = ""
-        //codeView.textBox.text = ""
+        phoneView.textBox.text = ""
+        codeView.textBox.text = ""
         
         self.codeView.hidden = true
         self.sendCode.hidden = true
         self.phoneView.textBox.enabled = true
         self.nextButton.enabled = true
+        two=false
         
+    }
+    
+    func checkValues(onError: (String)->Void)->Bool{
+        var err = ""
+        if phoneView.textBox.text == ""{
+            err = "Введите номер телефона"
+        }else
+            if two && codeView.textBox.text == ""{
+                err = "Введите код"
+        }
+        let ok = err == ""
+        if !ok {
+            onError(err)
+        }
+        return ok
     }
     
    /* override func viewDidDisappear(animated:Bool) {

@@ -13,22 +13,44 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
     var items = NSArray()
     var carbonTabSwipeNavigation: CarbonTabSwipeNavigation = CarbonTabSwipeNavigation()
     
+    @IBOutlet weak var viewContent: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         App.servicesView = self
         
-        items = ["Бронирование столов", "Заказ музыки"]
+        setupItems()
+        
+        items = ["Заказ музыки", "Бронирование столов"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         carbonTabSwipeNavigation.insertIntoRootViewController(self)
+        
+        //carbonTabSwipeNavigation.view.frame.size = CGSize(width: 10, height: 10)
         
         carbonTabSwipeNavigation.setDefaultStyle();
         
         self.style()
         
     }
+    
+    let itemsStr = ["music","reserve"]
+    var itemsVC: [UIViewController] = []
+    
+    func setupItems(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        for item in itemsStr{
+            let vc = storyboard.instantiateViewControllerWithIdentifier(item)
+            //vc.view.sizeToFit()
+            //vc.view.frame.size.height -= 100
+            itemsVC.append(vc)
+            
+        }
+    }
+    
     
     override func viewWillAppear(animated:Bool) {
         //super.viewWillAppear(animated)
@@ -54,11 +76,11 @@ class ServicesViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
         switch index {
         case 0:
-            return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
+            return itemsVC[0]
         case 1:
-            return self.storyboard!.instantiateViewControllerWithIdentifier("music")
+            return itemsVC[1]
         default:
-            return self.storyboard!.instantiateViewControllerWithIdentifier("reserve")
+            return itemsVC[0]
         }
         
     }
