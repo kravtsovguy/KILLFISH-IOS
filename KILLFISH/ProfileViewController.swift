@@ -37,7 +37,7 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     func setupRightItem()
     {
         let imgMenu = UIImage(named: "Exit")!.alpha(0.5)
-        let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let rectMenu = CGRect(x: 0, y: 0, width: 20, height: 20)
         let butMenu = UIButton(frame: rectMenu)
         butMenu.setBackgroundImage(imgMenu, forState: .Normal)
         butMenu.addTarget(self, action: "logout", forControlEvents: .TouchUpInside)
@@ -231,6 +231,19 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     }
 
 
+    @IBAction func moneyTapped(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("goto_pay", sender: self)
+        
+    }
+    @IBAction func cardTapped(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Тип карты", message: App.cardType[App.user.card_type], preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
     /*
     // MARK: - Navigation
 

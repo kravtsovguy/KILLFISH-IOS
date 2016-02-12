@@ -25,7 +25,9 @@ class ReserveCancelViewController: NavViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        //super.viewWillAppear(animated)
+        
+        //setupBackButton()
         
         barView.textBox.text = ""
         dateView.textBox.text = ""

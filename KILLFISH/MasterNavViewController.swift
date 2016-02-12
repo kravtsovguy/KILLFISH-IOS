@@ -23,7 +23,7 @@ class MasterNavViewController: NavViewController {
     func setupMainBarButton(){
         
         let imgMenu = UIImage(named: "Menu")!.alpha(0.5)
-        let rectMenu = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let rectMenu = CGRect(x: 0, y: 0, width: 20, height: 20)
         let butMenu = UIButton(frame: rectMenu)
         butMenu.setBackgroundImage(imgMenu, forState: .Normal)
         butMenu.addTarget(self, action: "presentLeftMenuViewController", forControlEvents: .TouchUpInside)

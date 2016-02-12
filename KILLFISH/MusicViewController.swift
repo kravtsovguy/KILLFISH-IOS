@@ -9,12 +9,13 @@
 import UIKit
 import MapKit
 
-class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MusicViewController: MasterNavViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nowTitleView: UILabel!
     @IBOutlet weak var nowArtistView: UILabel!
     @IBOutlet weak var nowView: UIView!
+    @IBOutlet weak var nowStatusView: UILabel!
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var bottomC: NSLayoutConstraint!
@@ -50,6 +51,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         items = App.music
         
         tableView.reloadData()
+        
+        
         /*
         let searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
         
@@ -97,13 +100,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //temp.delegate=self;
         self.tableView.tableHeaderView=temp;
 */
-
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
-        //APICalls.getMusicPlay{_ in }
+        setupInfoBtn("Справка", msg: "Закажите вашу любимую песню. Публичное исполнение музыкальных произведений организовано и осуществляется компанией HARLEX SALES Limited Liability Partnership")
         
         APICalls.getMusicCost { _ in}
         
@@ -111,18 +109,37 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.items = music
             self.tableView.reloadData()
         }
-        
-        tableView.tableHeaderView = nil
-        //self.nowView.hidden = true
-        //setupLocationManager()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //super.viewWillAppear(animated)
+        
+        //APICalls.getMusicPlay{_ in }
+        
+
+        
+        //tableView.tableHeaderView = nil
+        //self.nowView.hidden = true
+        //nowView.frame.size.height = 0
+        //self.tableView.tableHeaderView?.frame.size.height = 0
+        
+        resetNowView()
+        setupLocationManager()
+
+    }
+    
+    func resetNowView(){
+        self.nowTitleView.text = ""
+        self.nowArtistView.text = ""
+        self.nowStatusView.text = "Не надейдено близжайших баров"
     }
     
     func setupLocationManager(){
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        //locationManager.distanceFilter = 100
+        locationManager.distanceFilter = 500
         
         locationManager.requestWhenInUseAuthorization()
         
@@ -181,8 +198,8 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let alertController = UIAlertController(title: "Заказать этот трек?", message:
-            "Стоимость \(App.musicCost/100) \(App.curr)", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Заказ песни", message:
+            "Вы хотите вне очереди проиграть данную композицию во всех барах KillFish?\nОбратите внимание, с Вашего счёта будет списано \(App.musicCost/100) \(App.curr).\nЕсли у Вас золотая карта, то Вам доступно 5 бесплатных заказов в сутки, если серебряная, то 2", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Заказать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
             
             
@@ -194,7 +211,7 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 item = self.items[indexPath.row]
             }
-            /*
+            
             APICalls.buyMusic(item.id, onCompletion: { (msg) -> Void in
                 
                 JLToast.makeText(msg, duration: JLToastDelay.LongDelay).show()
@@ -206,12 +223,12 @@ class MusicViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
                     
             })
-            */
-            
+
+            /*
             JLToast.makeText("Заказ принят!", duration: JLToastDelay.LongDelay).show()
             self.buyed[item.id] = NSDate().timeIntervalSince1970
             tableView.reloadData()
-            
+            */
         }))
         
         alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Cancel,handler: { (action: UIAlertAction!) in
@@ -261,27 +278,38 @@ extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegat
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations.last! as CLLocation
         
+        /*
         if isReady{
             return
         }
         isReady = true
-        
+        */
         APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 5000) { (bars) -> Void in
             
             if bars.count>0 {
             
-            //APICalls.getCurrentStream(bars[0].id, onCompletion:{ (stream) -> Void in
+            APICalls.getCurrentStream(bars[0].id, onCompletion:{ (stream) -> Void in
                 
-                APICalls.getMusicPlay("listen6",onCompletion: { (musicPlay) -> Void in
+                var str = stream.stream
+                if str == "listen" {
+                    str+="1"
+                }
+                
+                APICalls.getMusicPlay(str,onCompletion: { (musicPlay) -> Void in
                     if musicPlay.count>0{
-                        self.tableView.tableHeaderView = self.nowView
-                        self.nowView.hidden = false
+                        //self.tableView.tableHeaderView = self.nowView
+                        //self.nowView.hidden = false
+                        //self.tableView.tableHeaderView?.frame.size.height = 70
+                        //self.nowView.frame.size.height = 70
                         self.nowTitleView.text = musicPlay[0].music.title
                         self.nowArtistView.text = musicPlay[0].music.artist
+                        self.nowStatusView.text = "Сейчас играет"
                     }
                 })
-            //})
+            })
             
+            }else{
+                self.resetNowView()
             }
             
             

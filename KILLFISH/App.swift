@@ -25,6 +25,7 @@ class App{
     static var servicesView: ServicesViewController!
     static var paymentsView: PaymentsViewController!
     
+    static var cardType = [0:"Нет", 1:"Обычная", 2:"WorldOfTanks",3:"Бургеры", 4:"Shop", 5: "Серебро", 6:"Золото", 7:"Винотория"]
     static var currency = ["RUR":"₽","BYR":"BYR","KZT":"₸"]
     static var curr: String {
         return currency[user.curr]!

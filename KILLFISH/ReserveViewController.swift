@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ReserveViewController: MasterNavViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,11 +35,13 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
         item.cancelable = true
         //items = [item,item,item]
         
+        setupInfoBtn("Информация", msg: "В случае, если Вы бронируете столы на компанию, размер которой превышает 25 человек, необходимо заранее связаться с администратором бара по телефону и устно подтвердить бронь.")
+        
         APICalls.getBars {_ in }
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        //super.viewWillAppear(animated)
 
         view.layoutIfNeeded()
         
@@ -70,12 +72,19 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        App.servicesView.performSegueWithIdentifier("goto_reserve_info", sender: self.items[indexPath.row])
+        self.performSegueWithIdentifier("goto_reserve_info", sender: self.items[indexPath.row])
     }
     @IBAction func addReserve(sender: AnyObject) {
         
-        App.servicesView.performSegueWithIdentifier("goto_reserve_add", sender: self)
+        self.performSegueWithIdentifier("goto_reserve_add", sender: self)
 
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goto_reserve_info" {
+            let vc = segue.destinationViewController as! ReserveCancelViewController
+            vc.item = sender as! ReserveInfo
+        }
     }
     
 

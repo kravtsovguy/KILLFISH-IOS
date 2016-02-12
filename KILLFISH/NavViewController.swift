@@ -20,6 +20,33 @@ class NavViewController: UIViewController, UITextFieldDelegate {
         //setupTopView()
     }
     
+    var infoMsg: (title:String, msg:String)!
+    
+    func setupInfoBtn(title: String, msg: String){
+        
+        infoMsg = (title,msg)
+        
+        let img = UIImage(named: "Help")?.cropImage(scaledToSize: CGSize(width: 25, height: 25)).alpha(0.5)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: "showAlert")
+
+        
+    }
+    
+    func showAlert(){
+        if infoMsg == nil{
+            return
+        }
+        
+        let alertController = UIAlertController(title: infoMsg.title, message: infoMsg.msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+
+        
+    }
+    
+    
     func setupBackButton(){
         //let imgMenu = UIImage(named: "Back")!.alpha(0.5)//.cropToBounds(15, height: 15).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
@@ -35,6 +62,7 @@ class NavViewController: UIViewController, UITextFieldDelegate {
         //self.navigationController?.navigationBar.backIndicatorImage = imgMenu
         //self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgMenu
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+
         //self.navigationItem.backBarButtonItem!.title="";
         
     }

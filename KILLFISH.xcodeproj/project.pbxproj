@@ -82,6 +82,8 @@
 		BAEC09E01C6BBA8E000CA579 /* NewsTagFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09DE1C6BBA8E000CA579 /* NewsTagFilter.swift */; };
 		BAEC09E11C6BBA8E000CA579 /* SuperAlgorythm.json in Resources */ = {isa = PBXBuildFile; fileRef = BAEC09DF1C6BBA8E000CA579 /* SuperAlgorythm.json */; };
 		BAEC09E41C6BE413000CA579 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09E31C6BE413000CA579 /* MapKit.framework */; };
+		BAEC09E61C6E295D000CA579 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E51C6E295D000CA579 /* PayViewController.swift */; };
+		BAEC09E81C6E7011000CA579 /* ReserveRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +245,8 @@
 		BAEC09DE1C6BBA8E000CA579 /* NewsTagFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTagFilter.swift; sourceTree = "<group>"; };
 		BAEC09DF1C6BBA8E000CA579 /* SuperAlgorythm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SuperAlgorythm.json; sourceTree = "<group>"; };
 		BAEC09E31C6BE413000CA579 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BAEC09E51C6E295D000CA579 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveRulesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */,
+				BAEC09E51C6E295D000CA579 /* PayViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				BA8854141C637DE90048F287 /* ReserveTableViewCell.swift */,
 				BA8854251C649E430048F287 /* ReserveSaveViewController.swift */,
 				BA1F2AD01C64F8580060B321 /* ReserveCancelViewController.swift */,
+				BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */,
 			);
 			name = Reserve;
 			sourceTree = "<group>";
@@ -690,6 +696,7 @@
 				BABDB1281C5E914100588ECD /* NewsTableViewCell.swift in Sources */,
 				BA1F2AEC1C669EFE0060B321 /* CheckViewCell.swift in Sources */,
 				BAEC09611C6B7AFF000CA579 /* Toucan.swift in Sources */,
+				BAEC09E81C6E7011000CA579 /* ReserveRulesViewController.swift in Sources */,
 				BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */,
 				BA53751E1C62AEEF0058F917 /* JLToastView.swift in Sources */,
 				BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */,
@@ -709,6 +716,7 @@
 				BA05BEC61C5E4EF800E6AE89 /* TabNavExt.swift in Sources */,
 				BAEC09591C6A052D000CA579 /* BarAnnotation.swift in Sources */,
 				BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */,
+				BAEC09E61C6E295D000CA579 /* PayViewController.swift in Sources */,
 				BA5375031C5F8E860058F917 /* APICalls.swift in Sources */,
 				BA1F2ADD1C65FFF80060B321 /* CheckInfo.swift in Sources */,
 				BA05BEC31C5DB0B400E6AE89 /* CarbonTabSwipeScrollView.m in Sources */,

@@ -30,7 +30,7 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-vg-s6K" userLabel="Text">
-                    <rect key="frame" x="70" y="5" width="210" height="30"/>
+                    <rect key="frame" x="90" y="5" width="190" height="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
@@ -41,9 +41,9 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vI-AS-NBX">
-                    <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="IoL-9d-gp8"/>
+                        <constraint firstAttribute="width" constant="90" id="IoL-9d-gp8"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>

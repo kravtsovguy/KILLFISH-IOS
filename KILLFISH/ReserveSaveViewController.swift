@@ -35,10 +35,12 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     var sum = 0
     var vip = false
     
-    var numArr = [String]()
+    var numArr: [(str:String,num:Int)] = []
     
     override func viewWillAppear(animated: Bool) {
         //super.viewWillAppear(animated)
+        
+        //setupBackButton()
         
         cityView.textBox.text = ""
         barView.textBox.text = ""
@@ -74,11 +76,12 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for var i = 1 ; i<=100; i+=1 {
-            numArr.append("\(i) человек")
+        for var i = 4 ; i<=40; i+=4 {
+            var letter = ""
             if 1<i && i<5{
-                numArr[i-1]+="а"
+                letter = "а"
             }
+            numArr.append(("\(i) человек\(letter)",i))
         }
         
         fswitchView.switched = vipChanged
@@ -159,7 +162,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
             }
         }
         if pickerView == pickerNumView{
-            return numArr[row]
+            return numArr[row].str
         }
         return ""
     }
@@ -257,8 +260,8 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     
     func showSelectedNum(){
         let row = pickerNumView.selectedRowInComponent(0)
-        num = row+1
-        numView.textBox.text = numArr[row]
+        num = numArr[row].num
+        numView.textBox.text = numArr[row].str
         numView.textBox.resignFirstResponder()
         
         recalcSum()
@@ -269,9 +272,9 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
             return
         }
         if vip{
-            sum = ReserveInfo.priceVIP / 100 * (((num-1) / (ReserveInfo.kVIP)) + 1)
+            sum = ReserveInfo.priceVIP / 100 //* (((num-1) / (ReserveInfo.kVIP)) + 1)
         }else{
-            sum = ReserveInfo.priceNormal / 100 * (((num-1) / (ReserveInfo.kNormal)) + 1)
+            sum = (ReserveInfo.priceNormal / 100)*(ReserveInfo.kNormal) * (((num-1) / (ReserveInfo.kNormal)) + 1)
         }
         sumView.text = "\(sum) \(App.curr)"
     }
@@ -350,6 +353,12 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     @IBAction func vipChanged(sender: AnyObject) {
         vip = fswitchView.isRight//vipView.on
         recalcSum()
+    }
+    @IBAction func rulesPressed(sender: AnyObject) {
+
+        self.performSegueWithIdentifier("goto_reserve_rules", sender: self)
+        //UIApplication.sharedApplication().openURL(NSURL(string: "https://killfish.ru/my/reserve.html")!)
+        
     }
 
 }
