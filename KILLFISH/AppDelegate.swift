@@ -120,7 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImg, forState: .Normal, barMetrics: .Default)
         */
         
-        let imgMenu = UIImage(named: "Back")!.alpha(0.5).cropImage(scaledToSize: CGSize(width: 15, height: 15)).imageWithAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: -3, right: 0))//.cropToBounds(15, height: 15).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let imgMenu = UIImage(named: "Back")!.alpha(0.5).cropImage(scaledToSize: CGSize(width: 20, height: 20)).imageWithAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: -3, right: 0))//.cropToBounds(15, height: 15).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
         //imgMenu.frame = CGRectMake(0, 0, 15,  15);
         
