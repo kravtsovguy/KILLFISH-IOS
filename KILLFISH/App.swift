@@ -21,7 +21,7 @@ class App{
     
     static var menu: LeftMenuViewController!
     
-    
+    static var musicView: MusicViewController!
     static var servicesView: ServicesViewController!
     static var paymentsView: PaymentsViewController!
     

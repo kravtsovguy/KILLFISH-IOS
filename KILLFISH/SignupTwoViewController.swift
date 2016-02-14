@@ -93,9 +93,9 @@ class SignupTwoViewController: NavViewController, UIImagePickerControllerDelegat
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
         
-        nameView.textBox.text = "Кравцов Матвей Евгеньевич"
+        nameView.textBox.text = ""
         dateView.textBox.text = ""
-        cardView.textBox.text = "1426843"
+        cardView.textBox.text = ""
         currSegment.selectedSegmentIndex = 0
         cardSwitch.on = false
         

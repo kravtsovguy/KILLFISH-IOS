@@ -72,8 +72,8 @@ class LoginViewController: NavViewController {
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
         
-        //numView.textBox.text = ""
-        //codeView.textBox.text = ""
+        numView.textBox.text = ""
+        codeView.textBox.text = ""
         
         self.loginBtn.enabled = true
         

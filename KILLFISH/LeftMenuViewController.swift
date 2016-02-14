@@ -18,7 +18,7 @@ class LeftMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .None
-        tableView.frame = CGRectMake(20, (self.view.frame.size.height - 60 * 8) / 2.0, self.view.frame.size.width, 60 * 8)
+        tableView.frame = CGRectMake(20, (self.view.frame.size.height - 54 * 8) / 2.0, self.view.frame.size.width, 54 * 8)
         tableView.autoresizingMask = [.FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleWidth]
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.opaque = false
@@ -28,7 +28,7 @@ class LeftMenuViewController: UIViewController {
         return tableView
     }()
     
-    let itemsStr = ["news","profile","music", "reserve","payments","friends","map","about"]
+    let itemsStr = ["news", "profile", "payments", "music", "reserve", "friends", "map", "about"]
     var items: [UIViewController] = []
     
     func setupItems(){
@@ -81,14 +81,14 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 54
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
    
-        let titles: [String] = ["Новости", "Профиль", "Музыка", "Бронирование", "Платежи", "Друзья", "На карте", "О программе"]
+        let titles: [String] = ["Новости", "Профиль", "Платежи", "Музыка", "Бронирование", "Друзья", "На карте", "О программе"]
         
         //let images: [String] = ["IconHome", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty", "IconEmpty", "IconEmpty"]
         

@@ -26,7 +26,7 @@ class NavViewController: UIViewController, UITextFieldDelegate {
         
         infoMsg = (title,msg)
         
-        let img = UIImage(named: "Help")?.cropImage(scaledToSize: CGSize(width: 25, height: 25)).alpha(0.5)
+        let img = UIImage(named: "Help")?.cropImage(scaledToSize: CGSize(width: 20, height: 20)).alpha(0.5)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: "showAlert")
 

@@ -101,10 +101,10 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виски-кола по спец-цене" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNV-QN-5pT" userLabel="title">
-                                                    <rect key="frame" x="123" y="29" width="189" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виски-кола по спец-цене" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNV-QN-5pT" userLabel="title">
+                                                    <rect key="frame" x="123" y="19" width="189" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="qwf-po-ROa"/>
+                                                        <constraint firstAttribute="height" constant="40" id="qwf-po-ROa"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -117,8 +117,8 @@
                                                         <constraint firstAttribute="height" constant="20" id="Que-51-AZU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виски-кола по спец-цене" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1J-Bf-BHh" userLabel="text">
-                                                    <rect key="frame" x="123" y="49" width="189" height="20"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виски-кола по спец-цене" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1J-Bf-BHh" userLabel="text">
+                                                    <rect key="frame" x="123" y="59" width="189" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="U7H-5O-Reg"/>
                                                     </constraints>
@@ -518,7 +518,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-NE-Z5H">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="469"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -597,10 +597,10 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p71-0y-ufS">
-                                <rect key="frame" x="20" y="484" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.92156862750000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="498" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="POi-rZ-Kdk"/>
+                                    <constraint firstAttribute="height" constant="50" id="POi-rZ-Kdk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -646,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-u1-BYx">
-                                <rect key="frame" x="0.0" y="64" width="320" height="405"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -725,10 +725,10 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY0-U6-T81">
-                                <rect key="frame" x="20" y="484" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.92156862750000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="498" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="vHc-0v-4cp"/>
+                                    <constraint firstAttribute="height" constant="50" id="vHc-0v-4cp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -899,10 +899,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQN-t8-eL4">
-                                <rect key="frame" x="20" y="463" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.92156862750000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="477" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="OWA-iV-Wy1"/>
+                                    <constraint firstAttribute="height" constant="50" id="OWA-iV-Wy1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1309,7 +1309,7 @@ cумму депозита можно потратить только в том 
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="GCc-Pk-Mxa" userLabel="current">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="GCc-Pk-Mxa" userLabel="current" customClass="MusicNowView" customModule="KILLFISH" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="64" width="320" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -1345,6 +1345,7 @@ cумму депозита можно потратить только в том 
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="Zjx-Xn-OeU" firstAttribute="centerY" secondItem="GCc-Pk-Mxa" secondAttribute="centerY" constant="-15" id="Dwa-cw-HYm"/>
                                         <constraint firstItem="qWN-li-1Mu" firstAttribute="centerY" secondItem="GCc-Pk-Mxa" secondAttribute="centerY" id="Dyr-sr-Tsq"/>
@@ -1353,6 +1354,12 @@ cумму депозита можно потратить только в том 
                                         <constraint firstItem="Zjx-Xn-OeU" firstAttribute="leading" secondItem="GCc-Pk-Mxa" secondAttribute="leading" constant="25" id="dBA-iI-1KR"/>
                                         <constraint firstItem="BUQ-RY-k2R" firstAttribute="top" secondItem="Zjx-Xn-OeU" secondAttribute="bottom" constant="2" id="ePd-eY-J3x"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="artistView" destination="BUQ-RY-k2R" id="gJh-mi-Veu"/>
+                                        <outlet property="statusView" destination="qWN-li-1Mu" id="9U3-Nd-rFC"/>
+                                        <outlet property="titleView" destination="Zjx-Xn-OeU" id="Mre-IV-Imi"/>
+                                        <outletCollection property="gestureRecognizers" destination="yeQ-If-9CO" appends="YES" id="yMy-fx-PmR"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="musicCell" focusStyle="custom" rowHeight="70" id="d3M-bP-TfS" userLabel="musicCell" customClass="MusicViewCell" customModule="KILLFISH" customModuleProvider="target">
@@ -1435,15 +1442,17 @@ cумму депозита можно потратить только в том 
                     <navigationItem key="navigationItem" title="Заказ музыки" id="k0V-k7-MCr"/>
                     <connections>
                         <outlet property="bottomC" destination="0h5-72-X4m" id="VSK-cd-PTv"/>
-                        <outlet property="nowArtistView" destination="BUQ-RY-k2R" id="zHg-OF-vvF"/>
-                        <outlet property="nowStatusView" destination="qWN-li-1Mu" id="aLK-uT-pvF"/>
-                        <outlet property="nowTitleView" destination="Zjx-Xn-OeU" id="2Cg-d4-hQi"/>
-                        <outlet property="nowView" destination="GCc-Pk-Mxa" id="3am-Au-V5d"/>
+                        <outlet property="nowView" destination="GCc-Pk-Mxa" id="ppm-gM-neO"/>
                         <outlet property="searchView" destination="vuU-K9-IqG" id="vPY-fR-7tB"/>
                         <outlet property="tableView" destination="B1Q-hV-L8l" id="4nd-2e-uqd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9i-Wd-hT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yeQ-If-9CO" userLabel="nowTap">
+                    <connections>
+                        <action selector="viewTapped:" destination="GCc-Pk-Mxa" id="25b-IV-oVC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1480" y="4330"/>
         </scene>
@@ -1531,7 +1540,7 @@ cумму депозита можно потратить только в том 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxb-mo-F3B" customClass="TextBoxView" customModule="KILLFISH" customModuleProvider="target">
-                                <rect key="frame" x="20" y="245" width="280" height="40"/>
+                                <rect key="frame" x="20" y="259" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uca-cg-UDX"/>
                                 </constraints>
@@ -1543,7 +1552,7 @@ cумму депозита можно потратить только в том 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OJ-wH-xYE" customClass="TextBoxView" customModule="KILLFISH" customModuleProvider="target">
-                                <rect key="frame" x="20" y="357" width="280" height="40"/>
+                                <rect key="frame" x="20" y="371" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FEy-mK-hB0"/>
                                 </constraints>
@@ -1556,7 +1565,7 @@ cумму депозита можно потратить только в том 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2k-ru-mwf">
-                                <rect key="frame" x="20" y="293" width="280" height="30"/>
+                                <rect key="frame" x="20" y="307" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VMz-mJ-DUu"/>
@@ -1570,10 +1579,10 @@ cумму депозита можно потратить только в том 
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSy-4M-CEF">
-                                <rect key="frame" x="20" y="464" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.92156862750000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="478" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="8Sy-v4-gjS"/>
+                                    <constraint firstAttribute="height" constant="50" id="8Sy-v4-gjS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1653,10 +1662,10 @@ cумму депозита можно потратить только в том 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fF6-Xm-sBD">
-                                <rect key="frame" x="20" y="464" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.92156862750000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="478" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="WdL-Pv-85z"/>
+                                    <constraint firstAttribute="height" constant="50" id="WdL-Pv-85z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1729,7 +1738,7 @@ cумму депозита можно потратить только в том 
                                     <segment title="BYR"/>
                                     <segment title="KZT"/>
                                 </segments>
-                                <color key="tintColor" red="0.99607843139999996" green="0.91372549020000005" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.98823529409999999" green="0.88235294119999996" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1813,13 +1822,13 @@ cумму депозита можно потратить только в том 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-h7-AeH">
-                                <rect key="frame" x="20" y="463" width="280" height="64"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.92156862745098034" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="477" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.88235294117647056" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="74h-I2-TRb"/>
+                                    <constraint firstAttribute="height" constant="50" id="74h-I2-TRb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="ВОЙТИ"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="6Uq-Jk-tck" eventType="touchUpInside" id="mPq-EV-Mfc"/>
@@ -1831,31 +1840,45 @@ cумму депозита можно потратить только в том 
                                     <constraint firstAttribute="height" constant="155" id="Mzi-Xd-ahB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет аккаунта?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVk-cu-1yD">
-                                <rect key="frame" x="20" y="527" width="109" height="41"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-3v-h6u">
+                                <rect key="frame" x="20" y="527" width="280" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет аккаунта?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVk-cu-1yD">
+                                        <rect key="frame" x="16" y="0.0" width="100" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="hK9-tM-VfL"/>
+                                            <constraint firstAttribute="width" constant="100" id="nU1-wy-VWa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g45-pB-Q4V">
+                                        <rect key="frame" x="117" y="0.0" width="155" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="Z4U-uV-uLj"/>
+                                            <constraint firstAttribute="width" constant="155" id="oze-ej-qYj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Зарегистрироваться"/>
+                                        <connections>
+                                            <action selector="SignupPressed:" destination="6Uq-Jk-tck" eventType="touchUpInside" id="2m0-RT-eK4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="hK9-tM-VfL"/>
-                                    <constraint firstAttribute="width" constant="109" id="nU1-wy-VWa"/>
+                                    <constraint firstAttribute="trailing" secondItem="g45-pB-Q4V" secondAttribute="trailing" constant="8" id="Ajm-pm-eLY"/>
+                                    <constraint firstItem="g45-pB-Q4V" firstAttribute="top" secondItem="fOl-3v-h6u" secondAttribute="top" id="BSR-07-ffC"/>
+                                    <constraint firstItem="XVk-cu-1yD" firstAttribute="leading" secondItem="fOl-3v-h6u" secondAttribute="leading" constant="16" id="MLm-s4-rvi"/>
+                                    <constraint firstItem="XVk-cu-1yD" firstAttribute="top" secondItem="fOl-3v-h6u" secondAttribute="top" id="njD-60-MmH"/>
+                                    <constraint firstAttribute="height" constant="41" id="weg-VV-PCV"/>
+                                    <constraint firstAttribute="width" constant="280" id="xea-cX-BGr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g45-pB-Q4V">
-                                <rect key="frame" x="125" y="527" width="155" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Z4U-uV-uLj"/>
-                                    <constraint firstAttribute="width" constant="155" id="oze-ej-qYj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Зарегистрироваться"/>
-                                <connections>
-                                    <action selector="SignupPressed:" destination="6Uq-Jk-tck" eventType="touchUpInside" id="2m0-RT-eK4"/>
-                                </connections>
-                            </button>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-2t-5qH" userLabel="Username" customClass="TextBoxView" customModule="KILLFISH" customModuleProvider="target">
-                                <rect key="frame" x="20" y="264" width="280" height="40"/>
+                                <rect key="frame" x="20" y="278" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Cb8-bD-sn3"/>
                                 </constraints>
@@ -1868,7 +1891,7 @@ cумму депозита можно потратить только в том 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1I-gW-Yf7" userLabel="Code" customClass="TextBoxView" customModule="KILLFISH" customModuleProvider="target">
-                                <rect key="frame" x="20" y="312" width="247" height="40"/>
+                                <rect key="frame" x="20" y="326" width="247" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8Ar-sC-NhL"/>
                                 </constraints>
@@ -1881,7 +1904,7 @@ cумму депозита можно потратить только в том 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJE-P3-a8D">
-                                <rect key="frame" x="275" y="319" width="25" height="25"/>
+                                <rect key="frame" x="275" y="333" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="BuO-eZ-2nV"/>
                                     <constraint firstAttribute="width" constant="25" id="cDz-jo-Jxa"/>
@@ -1900,18 +1923,16 @@ cумму депозита можно потратить только в том 
                             <constraint firstItem="quY-9I-LZa" firstAttribute="leading" secondItem="IcR-wG-Dao" secondAttribute="leading" constant="20" id="LW1-pe-ITs"/>
                             <constraint firstAttribute="trailing" secondItem="quY-9I-LZa" secondAttribute="trailing" constant="20" id="OpF-YM-uwM"/>
                             <constraint firstItem="w1I-gW-Yf7" firstAttribute="top" secondItem="mpA-2t-5qH" secondAttribute="bottom" constant="8" id="RNv-lf-PiS"/>
+                            <constraint firstItem="fOl-3v-h6u" firstAttribute="centerX" secondItem="IcR-wG-Dao" secondAttribute="centerX" id="WPq-sG-8sx"/>
                             <constraint firstItem="mpA-2t-5qH" firstAttribute="leading" secondItem="IcR-wG-Dao" secondAttribute="leading" constant="20" id="Y4I-al-X8W"/>
-                            <constraint firstItem="g45-pB-Q4V" firstAttribute="leading" secondItem="XVk-cu-1yD" secondAttribute="trailing" constant="-4" id="Zrp-5i-DUc"/>
                             <constraint firstAttribute="trailing" secondItem="mpA-2t-5qH" secondAttribute="trailing" constant="20" id="aC3-4g-VQY"/>
                             <constraint firstItem="TJE-P3-a8D" firstAttribute="top" secondItem="mpA-2t-5qH" secondAttribute="bottom" constant="15" id="c5O-0O-8hZ"/>
-                            <constraint firstItem="g45-pB-Q4V" firstAttribute="top" secondItem="VeA-h7-AeH" secondAttribute="bottom" id="cdo-fJ-a9O"/>
-                            <constraint firstItem="XVk-cu-1yD" firstAttribute="leading" secondItem="IcR-wG-Dao" secondAttribute="leading" constant="20" id="df9-sm-XCZ"/>
-                            <constraint firstItem="SJl-BZ-2Fq" firstAttribute="top" secondItem="XVk-cu-1yD" secondAttribute="bottom" id="fXd-UQ-OuV"/>
                             <constraint firstItem="w1I-gW-Yf7" firstAttribute="leading" secondItem="IcR-wG-Dao" secondAttribute="leading" constant="20" id="hRz-Pa-OuF"/>
                             <constraint firstAttribute="trailing" secondItem="w1I-gW-Yf7" secondAttribute="trailing" constant="53" id="j3I-q0-0Aq"/>
                             <constraint firstAttribute="trailing" secondItem="VeA-h7-AeH" secondAttribute="trailing" constant="20" id="mFG-4q-5rh"/>
-                            <constraint firstItem="SJl-BZ-2Fq" firstAttribute="top" secondItem="g45-pB-Q4V" secondAttribute="bottom" id="oXd-ty-b5w"/>
                             <constraint firstItem="quY-9I-LZa" firstAttribute="top" secondItem="IcR-wG-Dao" secondAttribute="topMargin" constant="30" id="pxi-7c-sLv"/>
+                            <constraint firstItem="SJl-BZ-2Fq" firstAttribute="top" secondItem="fOl-3v-h6u" secondAttribute="bottom" id="xrg-tL-EMd"/>
+                            <constraint firstItem="fOl-3v-h6u" firstAttribute="top" secondItem="VeA-h7-AeH" secondAttribute="bottom" id="zQP-dF-KHS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="biY-h3-Tzm"/>
@@ -2642,7 +2663,7 @@ cумму депозита можно потратить только в том 
         <image name="killfichICO" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fNT-9J-qAk"/>
+        <segue reference="38e-W9-nwg"/>
         <segue reference="oTh-l8-HTI"/>
         <segue reference="OBz-Yy-PoZ"/>
     </inferredMetricsTieBreakers>

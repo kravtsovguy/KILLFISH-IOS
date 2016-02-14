@@ -84,6 +84,7 @@
 		BAEC09E41C6BE413000CA579 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09E31C6BE413000CA579 /* MapKit.framework */; };
 		BAEC09E61C6E295D000CA579 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E51C6E295D000CA579 /* PayViewController.swift */; };
 		BAEC09E81C6E7011000CA579 /* ReserveRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */; };
+		BAEC09EA1C6F3920000CA579 /* MusicNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E91C6F3920000CA579 /* MusicNowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +248,7 @@
 		BAEC09E31C6BE413000CA579 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BAEC09E51C6E295D000CA579 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveRulesViewController.swift; sourceTree = "<group>"; };
+		BAEC09E91C6F3920000CA579 /* MusicNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 			children = (
 				BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */,
 				BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */,
+				BAEC09E91C6F3920000CA579 /* MusicNowView.swift */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				BAD43D2D1C62B7810047E1D5 /* StringExt.swift in Sources */,
 				BA05BEA51C5DAE6F00E6AE89 /* ServicesViewController.swift in Sources */,
 				BA1F2AE11C661CF50060B321 /* PaymentViewCell.swift in Sources */,
+				BAEC09EA1C6F3920000CA579 /* MusicNowView.swift in Sources */,
 				BAEC09631C6B829C000CA579 /* ImageUploader.swift in Sources */,
 				BA1F2ADB1C65FBEE0060B321 /* PaymentInfo.swift in Sources */,
 				BA05BEC21C5DB0B400E6AE89 /* CarbonTabSwipeNavigation.m in Sources */,
@@ -894,8 +898,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: matvey.kravtsov.e@gmail.com (9738465KAW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: matvey.kravtsov.e@gmail.com (9738465KAW)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = KILLFISH/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

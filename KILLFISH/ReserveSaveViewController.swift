@@ -48,6 +48,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         numView.textBox.text = ""
         discrView.textBox.text = ""
         sumView.text = ""
+        saveBtn.enabled = true
         
         setupLastBar()
     }
@@ -292,7 +293,8 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         self.saveBtn.enabled = false
         
         APICalls.saveReserve(vip, barid: App.cities[currCityId].bars[currBarId].id, dt: date.timeIntervalSince1970, num: num, discr: discrView.textBox.text!, onCompletion: { (bronid) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popViewControllerAnimated(true)
+                //self.dismissViewControllerAnimated(true, completion: nil)
             }) { (err) -> Void in
                 self.saveBtn.enabled=true
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
@@ -324,23 +326,30 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     func checkDate(){
         if currCityId != -1 && currBarId != -1{
             
-            let start = App.cities[currCityId].bars[currBarId].start
-            let end = App.cities[currCityId].bars[currBarId].end
-            
+            //let start = App.cities[currCityId].bars[currBarId].start
+            //let end = App.cities[currCityId].bars[currBarId].end
+            /*
             let f = NSDateFormatter()
             f.dateFormat = "HH"
             let h = Int(f.stringFromDate(date))
+*/
+            /*
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Hour], fromDate: date)
+            let h = components.hour
+            
             if start <= h && h <= 24 || 0<=h && h<=end {
                 
             }else{
                 
                 date = NSCalendar.currentCalendar().dateByAddingUnit(
                     NSCalendarUnit.Hour,
-                    value: start-h!,
+                    value: start-h,
                     toDate: date,
                     options: NSCalendarOptions.WrapComponents)!
                 
             }
+*/
         }
         
         let f = NSDateFormatter()

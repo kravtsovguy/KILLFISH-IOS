@@ -88,8 +88,9 @@ class ReserveCancelViewController: NavViewController {
             "", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Отменить", style: UIAlertActionStyle.Destructive,handler: { (action: UIAlertAction!) in
    
-            self.navigationController?.popViewControllerAnimated(true)
-            /*
+            //self.navigationController?.popViewControllerAnimated(true)
+            
+            
             APICalls.cancelReserve(self.item.id, onCompletion: { (ok) -> Void in
                 
                 self.navigationController?.popViewControllerAnimated(true)
@@ -97,7 +98,7 @@ class ReserveCancelViewController: NavViewController {
                 }, onError: { (err) -> Void in
                 JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
             })
-            */
+
             
         }))
         

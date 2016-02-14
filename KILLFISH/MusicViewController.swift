@@ -12,10 +12,8 @@ import MapKit
 class MusicViewController: MasterNavViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nowTitleView: UILabel!
-    @IBOutlet weak var nowArtistView: UILabel!
-    @IBOutlet weak var nowView: UIView!
-    @IBOutlet weak var nowStatusView: UILabel!
+
+    @IBOutlet weak var nowView: MusicNowView!
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var bottomC: NSLayoutConstraint!
@@ -43,6 +41,8 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
         if !App.ios9{
             //bottomC.constant += 100
         }
+        
+        App.musicView = self
         
         view.backgroundColor = UIColor.clearColor()
         
@@ -124,15 +124,9 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
         //nowView.frame.size.height = 0
         //self.tableView.tableHeaderView?.frame.size.height = 0
         
-        resetNowView()
+        self.nowView.setup(nil, bar: nil)
         setupLocationManager()
 
-    }
-    
-    func resetNowView(){
-        self.nowTitleView.text = ""
-        self.nowArtistView.text = ""
-        self.nowStatusView.text = "Не надейдено близжайших баров"
     }
     
     func setupLocationManager(){
@@ -301,15 +295,13 @@ extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegat
                         //self.nowView.hidden = false
                         //self.tableView.tableHeaderView?.frame.size.height = 70
                         //self.nowView.frame.size.height = 70
-                        self.nowTitleView.text = musicPlay[0].music.title
-                        self.nowArtistView.text = musicPlay[0].music.artist
-                        self.nowStatusView.text = "Сейчас играет"
+                        self.nowView.setup(musicPlay[0], bar: bars[0])
                     }
                 })
             })
             
             }else{
-                self.resetNowView()
+                self.nowView.setup(nil, bar: nil)
             }
             
             
