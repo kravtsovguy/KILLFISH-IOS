@@ -278,7 +278,8 @@ extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegat
         }
         isReady = true
         */
-        APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 5000) { (bars) -> Void in
+        //distance: 500
+        APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 500) { (bars) -> Void in
             
             if bars.count>0 {
             

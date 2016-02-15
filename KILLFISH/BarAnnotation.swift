@@ -14,7 +14,7 @@ class BarAnnotation:NSObject, MKAnnotation{
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
-    var diff: Int?
+    var bar:BarLocationInfo?
     
     init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate

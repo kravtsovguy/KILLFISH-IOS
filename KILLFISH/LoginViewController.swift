@@ -123,9 +123,9 @@ class LoginViewController: NavViewController {
             APICalls.remindCode(App.getCorrectPhone(self.numView.textBox.text!), onCompletion: { (ok) -> Void in
                 if ok{
                     JLToast.makeText("Код выслан", duration: JLToastDelay.LongDelay).show()
-                }else{
-                    JLToast.makeText("Ошибка!", duration: JLToastDelay.LongDelay).show()
                 }
+                }, onError: { (err) -> Void in
+                    JLToast.makeText(err, duration: JLToastDelay.ShortDelay).show()
             })
             
         }))

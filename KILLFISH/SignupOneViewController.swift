@@ -30,11 +30,28 @@ class SignupOneViewController: NavViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func sendCodePressed(sender: AnyObject) {
+        /*
         sendCode.enabled = false
         
         APICalls.sendSMStoRegister(preId) { (ok) -> Void in
             self.sendCode.enabled = true
         }
+        */
+        let alertController = UIAlertController(title: "Выслать код еще раз?", message:
+            "", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Выслать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
+            
+            APICalls.sendSMStoRegister(self.preId, onCompletion: { (ok) -> Void in
+                if ok{
+                    JLToast.makeText("Код выслан", duration: JLToastDelay.ShortDelay).show()
+                }
+                }, onError: { (err) -> Void in
+                    JLToast.makeText(err, duration: JLToastDelay.ShortDelay).show()
+            })
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Cancel,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     var preId = 0
@@ -77,7 +94,10 @@ class SignupOneViewController: NavViewController {
             })
             
         }else{
-            APICalls.registerTwo(preId, code: Int(codeView.text)!, onCompletion: { (id, next, num) -> Void in
+            //print(Int(codeView.text))
+            //print(Int(codeView.textBox.text!))
+            
+            APICalls.registerTwo(preId, code: Int(codeView.textBox.text!) ?? 0, onCompletion: { (id, next, num) -> Void in
                 
                 self.preId = id
                 self.num = num

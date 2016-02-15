@@ -75,17 +75,25 @@ class APICalls: NSObject {
     }
 
     
-    static func remindCode(num:String,onCompletion: (Bool)->Void){
+    static func remindCode(num:String,onCompletion: ((Bool)->Void)?,onError: ((String)->Void)?){
         callApi(.UserLoginCode, parameters: ["num":num]) { (json) -> Void in
             let ok = json["ok"] as! Bool
-            onCompletion(ok)
+            if ok{
+            }else{
+                onError?(json["err"] as! String)
+            }
+            onCompletion?(ok)
         }
     }
     
-    static func sendSMStoRegister(preid:Int,onCompletion: (Bool)->Void){
+    static func sendSMStoRegister(preid:Int,onCompletion: ((Bool)->Void)?,onError: ((String)->Void)?){
         callApi(.UserRegistrationSMS, parameters: ["id":preid]) { (json) -> Void in
             let ok = json["ok"] as! Bool
-            onCompletion(ok)
+            if ok{
+            }else{
+                onError?(json["err"] as! String)
+            }
+            onCompletion?(ok)
         }
     }
     

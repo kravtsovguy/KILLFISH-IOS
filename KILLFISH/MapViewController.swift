@@ -131,9 +131,9 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     
     func setupAnnotation(barL: BarLocationInfo){
         let loc = CLLocationCoordinate2D(latitude: barL.lat, longitude: barL.lon)
-        let ann = BarAnnotation(title: "KILLFISH", subtitle: "\(barL.name) (\(barL.time))", coordinate: loc)
+        let ann = BarAnnotation(title: "KILLFISH", subtitle: "\(barL.name)", coordinate: loc)
         
-        ann.diff = barL.diff
+        ann.bar = barL
         /*
         let pann = MKPointAnnotation()
         pann.title = "lel"
@@ -181,11 +181,13 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
             v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             
             v!.canShowCallout = true
+
+            v!.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "killfishICO")?.cropImage(scaledToSize: CGSize(width: 50, height: 50)))
             
             let btn = UIButton(type: .DetailDisclosure)
             v!.rightCalloutAccessoryView = btn
             
-            v!.image = UIImage(named: "MapPoint")?.cropImage(scaledToSize: CGSize(width: 20, height: 28.8)).setColor(withColor: UIColor.blackColor())
+            v!.image = UIImage(named: "MapPointColored")?.cropImage(scaledToSize: CGSize(width: 20, height: 28.8))
         }
         
         return v
@@ -242,11 +244,29 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
         return nil
 */
     }
-    
+    /*
+    func mapView(mapView: MKMapView!,
+        viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+            if (annotation is MKUserLocation) { return nil }
+            
+            let reuseID = "chest"
+            var v = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID)
+            
+            if v != nil {
+                v.annotation = annotation
+            } else {
+                v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+                
+                v.image = UIImage(named:"chest")
+            }
+            
+            return v
+    }
+    */
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let barA = view.annotation as! BarAnnotation
         let placeName = barA.title
-        let placeInfo = barA.subtitle!+"\n +\(barA.diff!/60) МСК"
+        let placeInfo = barA.subtitle!+"\nВремя работы: \(barA.bar!.time)"+"\nЧасовой пояс: \(barA.bar!.diff/60) МСК"
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

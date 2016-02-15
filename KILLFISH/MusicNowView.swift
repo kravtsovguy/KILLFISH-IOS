@@ -38,7 +38,7 @@ class MusicNowView: UIView {
             return
         }
         
-        let alertController = UIAlertController(title: "Текущая песня", message: "Бар: \(bar!.name)\nРасстояние: \(bar!.distance) м", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Текущая песня", message: "Бар: \(bar!.name)\nВремя работы: \(bar!.time)\nРасстояние: \(bar!.distance) м", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
         
         App.musicView.presentViewController(alertController, animated: true, completion: nil)

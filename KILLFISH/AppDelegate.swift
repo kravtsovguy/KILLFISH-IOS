@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
@@ -165,17 +166,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         window?.rootViewController = sideMenu
         window?.makeKeyAndVisible()
     }
+    
+    func setupHockeyApp(){
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("d876461354f84b50a2c0dc37740712c4")
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+        
+        //BITHockeyManager.sharedHockeyManager().testIdentifier()
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         //UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
+        setupHockeyApp()
         setupToolbar()
         setupNavBar()
         setupSideMenu()
         setupToast()
         setupNotifications()
+    
         
         return true
     }

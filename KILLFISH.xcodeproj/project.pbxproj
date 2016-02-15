@@ -85,6 +85,8 @@
 		BAEC09E61C6E295D000CA579 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E51C6E295D000CA579 /* PayViewController.swift */; };
 		BAEC09E81C6E7011000CA579 /* ReserveRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */; };
 		BAEC09EA1C6F3920000CA579 /* MusicNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC09E91C6F3920000CA579 /* MusicNowView.swift */; };
+		BAEC09F71C7200F2000CA579 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC09F41C7200F2000CA579 /* HockeySDK.framework */; };
+		BAEC09F81C7200F2000CA579 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAEC09F61C7200F2000CA579 /* HockeySDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +251,8 @@
 		BAEC09E51C6E295D000CA579 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BAEC09E71C6E7011000CA579 /* ReserveRulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveRulesViewController.swift; sourceTree = "<group>"; };
 		BAEC09E91C6F3920000CA579 /* MusicNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNowView.swift; sourceTree = "<group>"; };
+		BAEC09F41C7200F2000CA579 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		BAEC09F61C7200F2000CA579 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,7 @@
 			files = (
 				BAEC09E41C6BE413000CA579 /* MapKit.framework in Frameworks */,
 				BAEC09D91C6B9A52000CA579 /* Alamofire.framework in Frameworks */,
+				BAEC09F71C7200F2000CA579 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +460,8 @@
 		BA8D3FCD1C5A42D300727AFD = {
 			isa = PBXGroup;
 			children = (
-				BAEC09E31C6BE413000CA579 /* MapKit.framework */,
 				BA8D3FD81C5A42D300727AFD /* KILLFISH */,
+				BAEC09F21C7200E3000CA579 /* Frameworks */,
 				BA8D3FD71C5A42D300727AFD /* Products */,
 				BAEC09C11C6B9A4D000CA579 /* Alamofire.xcodeproj */,
 			);
@@ -548,6 +553,33 @@
 			name = TagFilter;
 			sourceTree = "<group>";
 		};
+		BAEC09F21C7200E3000CA579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC09E31C6BE413000CA579 /* MapKit.framework */,
+				BAEC09F31C7200F2000CA579 /* HockeySDK.embeddedframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAEC09F31C7200F2000CA579 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC09F41C7200F2000CA579 /* HockeySDK.framework */,
+				BAEC09F51C7200F2000CA579 /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		BAEC09F51C7200F2000CA579 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC09F61C7200F2000CA579 /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,6 +591,7 @@
 				BA8D3FD31C5A42D300727AFD /* Frameworks */,
 				BA8D3FD41C5A42D300727AFD /* Resources */,
 				BAEC09DD1C6B9A53000CA579 /* Embed Frameworks */,
+				BAEC09EB1C720048000CA579 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -679,12 +712,29 @@
 				BA1F2AD31C6560A90060B321 /* FlatSwitchView.xib in Resources */,
 				BA53751B1C62AEEF0058F917 /* Info.plist in Resources */,
 				BA8D3FE11C5A42D300727AFD /* Assets.xcassets in Resources */,
+				BAEC09F81C7200F2000CA579 /* HockeySDKResources.bundle in Resources */,
 				BA05BE991C5D7A0E00E6AE89 /* TestView.xib in Resources */,
 				BA8D3FDF1C5A42D300727AFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAEC09EB1C720048000CA579 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA8D3FD21C5A42D300727AFD /* Sources */ = {
@@ -881,6 +931,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = KILLFISH/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
@@ -898,9 +952,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: matvey.kravtsov.e@gmail.com (9738465KAW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: matvey.kravtsov.e@gmail.com (9738465KAW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = KILLFISH/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
