@@ -170,11 +170,34 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
+        if (annotation is MKUserLocation) { return nil }
+        
+        let reuseID = "barAnn"
+        var v = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID)
+        
+        if v != nil {
+            v!.annotation = annotation
+        } else {
+            v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            
+            v!.canShowCallout = true
+            
+            let btn = UIButton(type: .DetailDisclosure)
+            v!.rightCalloutAccessoryView = btn
+            
+            v!.image = UIImage(named: "MapPoint")?.cropImage(scaledToSize: CGSize(width: 20, height: 28.8)).setColor(withColor: UIColor.blackColor())
+        }
+        
+        return v
+        
+        /*
         if annotation is BarAnnotation{
             let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "barAnn")
             annotationView.canShowCallout = true
             
             //annotationView.pinColor = .Purple
+            
+            annotationView.image = UIImage(named:"IconOld")
             
             // 5
             
@@ -185,6 +208,8 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
         }
         
         return nil
+*/
+        
         /*// 1
         let identifier = "BarAnnotation"
         
