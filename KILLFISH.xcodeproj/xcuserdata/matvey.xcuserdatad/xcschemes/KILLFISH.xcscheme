@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA8D3FD51C5A42D300727AFD"
-               BuildableName = "KILLFISH.app"
+               BuildableName = "Killfish.app"
                BlueprintName = "KILLFISH"
-               ReferencedContainer = "container:KILLFISH.xcodeproj">
+               ReferencedContainer = "container:Killfish.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA8D3FD51C5A42D300727AFD"
-            BuildableName = "KILLFISH.app"
+            BuildableName = "Killfish.app"
             BlueprintName = "KILLFISH"
-            ReferencedContainer = "container:KILLFISH.xcodeproj">
+            ReferencedContainer = "container:Killfish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA8D3FD51C5A42D300727AFD"
-            BuildableName = "KILLFISH.app"
+            BuildableName = "Killfish.app"
             BlueprintName = "KILLFISH"
-            ReferencedContainer = "container:KILLFISH.xcodeproj">
+            ReferencedContainer = "container:Killfish.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA8D3FD51C5A42D300727AFD"
-            BuildableName = "KILLFISH.app"
+            BuildableName = "Killfish.app"
             BlueprintName = "KILLFISH"
-            ReferencedContainer = "container:KILLFISH.xcodeproj">
+            ReferencedContainer = "container:Killfish.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

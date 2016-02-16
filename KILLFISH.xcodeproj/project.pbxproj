@@ -194,6 +194,7 @@
 		BA1F2AEB1C669EFE0060B321 /* CheckViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewCell.swift; sourceTree = "<group>"; };
 		BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewCell.swift; sourceTree = "<group>"; };
+		BA3F36B71C73BAAB00631ED4 /* Killfish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Killfish.app; path = "/Users/matvey/Documents/Projects/Xcode/KILLFISH/build/Debug-iphoneos/Killfish.app"; sourceTree = "<absolute>"; };
 		BA5375021C5F8E860058F917 /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		BA5375041C60B39C0058F917 /* UIImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		BA5375081C60CEF90058F917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -214,7 +215,6 @@
 		BA8854211C63F4A60048F287 /* MusicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		BA8854231C63F4E50048F287 /* MusicPlayInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayInfo.swift; sourceTree = "<group>"; };
 		BA8854251C649E430048F287 /* ReserveSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveSaveViewController.swift; sourceTree = "<group>"; };
-		BA8D3FD61C5A42D300727AFD /* KILLFISH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KILLFISH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8D3FD91C5A42D300727AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA8D3FDB1C5A42D300727AFD /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BA8D3FDE1C5A42D300727AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -462,17 +462,8 @@
 			children = (
 				BA8D3FD81C5A42D300727AFD /* KILLFISH */,
 				BAEC09F21C7200E3000CA579 /* Frameworks */,
-				BA8D3FD71C5A42D300727AFD /* Products */,
 				BAEC09C11C6B9A4D000CA579 /* Alamofire.xcodeproj */,
 			);
-			sourceTree = "<group>";
-		};
-		BA8D3FD71C5A42D300727AFD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BA8D3FD61C5A42D300727AFD /* KILLFISH.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BA8D3FD81C5A42D300727AFD /* KILLFISH */ = {
@@ -600,7 +591,7 @@
 			);
 			name = KILLFISH;
 			productName = KILLFISH;
-			productReference = BA8D3FD61C5A42D300727AFD /* KILLFISH.app */;
+			productReference = BA3F36B71C73BAAB00631ED4 /* Killfish.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -624,7 +615,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "KILLFISH" */;
+			buildConfigurationList = BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "Killfish" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -633,7 +624,7 @@
 				Base,
 			);
 			mainGroup = BA8D3FCD1C5A42D300727AFD;
-			productRefGroup = BA8D3FD71C5A42D300727AFD /* Products */;
+			productRefGroup = BA8D3FCD1C5A42D300727AFD;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -939,7 +930,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Killfish;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -963,7 +954,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Killfish;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -973,7 +964,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "KILLFISH" */ = {
+		BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "Killfish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA8D3FE61C5A42D300727AFD /* Debug */,

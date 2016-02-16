@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        //let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
         
     }
     
@@ -179,7 +179,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         setupHockeyApp()
         setupToolbar()

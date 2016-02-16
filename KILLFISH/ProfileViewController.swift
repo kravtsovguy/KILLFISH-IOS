@@ -120,6 +120,10 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     @IBAction func imageTapped(sender: AnyObject) {
         
         picker.navigationBar.tintColor = UIColor.blackColor()
+        picker.navigationBar.barTintColor = UIColor.whiteColor()
+        //picker.navigationBar.backgroundColor = UIColor.whiteColor()
+        picker.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+        picker.navigationBar.translucent = false
         
         let alert:UIAlertController=UIAlertController(title: "Выберите аватар", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cameraAction = UIAlertAction(title: "Камера", style: UIAlertActionStyle.Default)

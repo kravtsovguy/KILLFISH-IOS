@@ -103,6 +103,9 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
         
         setupInfoBtn("Справка", msg: "Закажите вашу любимую песню. Публичное исполнение музыкальных произведений организовано и осуществляется компанией HARLEX SALES Limited Liability Partnership")
         
+        self.nowView.setup(nil, bar: nil)
+        setupLocationManager()
+        
         APICalls.getMusicCost { _ in}
         
         APICalls.getMusic { (music) -> Void in
@@ -124,16 +127,14 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
         //nowView.frame.size.height = 0
         //self.tableView.tableHeaderView?.frame.size.height = 0
         
-        self.nowView.setup(nil, bar: nil)
-        setupLocationManager()
-
+        setupNowView()
     }
     
     func setupLocationManager(){
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        locationManager.distanceFilter = 500
+        locationManager.distanceFilter = 50
         
         locationManager.requestWhenInUseAuthorization()
         
@@ -251,6 +252,42 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
     */
     
     var isReady = false
+    
+    func setupNowView(){
+        if let loc = locationManager.location{
+            updateNowMusic(loc)
+        }
+    }
+    
+    func updateNowMusic(loc: CLLocation){
+        APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 500) { (bars) -> Void in
+            
+            if bars.count>0 {
+                
+                APICalls.getCurrentStream(bars[0].id, onCompletion:{ (stream) -> Void in
+                    
+                    var str = stream.stream
+                    if str == "listen" {
+                        str+="1"
+                    }
+                    
+                    APICalls.getMusicPlay(str,onCompletion: { (musicPlay) -> Void in
+                        if musicPlay.count>0{
+                            //self.tableView.tableHeaderView = self.nowView
+                            //self.nowView.hidden = false
+                            //self.tableView.tableHeaderView?.frame.size.height = 70
+                            //self.nowView.frame.size.height = 70
+                            self.nowView.setup(musicPlay[0], bar: bars[0])
+                        }
+                    })
+                })
+                
+            }else{
+                self.nowView.setup(nil, bar: nil)
+            }
+
+        }
+    }
 
 }
 
@@ -267,8 +304,6 @@ extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegat
         }
     }
     
-
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations.last! as CLLocation
         
@@ -279,36 +314,7 @@ extension MusicViewController: UISearchResultsUpdating, CLLocationManagerDelegat
         isReady = true
         */
         //distance: 500
-        APICalls.getBarsByCoords(loc.coordinate.latitude, lon: loc.coordinate.longitude, distance: 500) { (bars) -> Void in
-            
-            if bars.count>0 {
-            
-            APICalls.getCurrentStream(bars[0].id, onCompletion:{ (stream) -> Void in
-                
-                var str = stream.stream
-                if str == "listen" {
-                    str+="1"
-                }
-                
-                APICalls.getMusicPlay(str,onCompletion: { (musicPlay) -> Void in
-                    if musicPlay.count>0{
-                        //self.tableView.tableHeaderView = self.nowView
-                        //self.nowView.hidden = false
-                        //self.tableView.tableHeaderView?.frame.size.height = 70
-                        //self.nowView.frame.size.height = 70
-                        self.nowView.setup(musicPlay[0], bar: bars[0])
-                    }
-                })
-            })
-            
-            }else{
-                self.nowView.setup(nil, bar: nil)
-            }
-            
-            
-            
-            
-        }
+        updateNowMusic(loc)
     }
     
 }

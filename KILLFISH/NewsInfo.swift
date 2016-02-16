@@ -69,7 +69,8 @@ class NewsInfo: NSObject, NSCoding {
             var imgUrl = "http://killfish.ru"
             let r = text.rangeOfString("src=\"")
             if r==nil{
-                return "http://placehold.it/350x150"
+                //return "http://placehold.it/350x150"
+                return ""
             }
             for var i=r!.endIndex; i<=text.endIndex; i = i.advancedBy(1)
             {

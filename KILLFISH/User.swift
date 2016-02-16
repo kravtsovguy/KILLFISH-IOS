@@ -19,7 +19,7 @@ class User: NSObject, NSCoding{
     var phone: String = ""
     var card: String = ""
     var card_type: Int = 0
-    var curr:String = ""
+    var curr:String = "RUR"
     var photo:String = ""
     var percent: [Int] = [Int](count: 3, repeatedValue: 0)
     var lastBarId: Int = 0

@@ -23,7 +23,7 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        locationManager.distanceFilter = 500
+        locationManager.distanceFilter = 50
         
         locationManager.requestWhenInUseAuthorization()
         
@@ -170,7 +170,10 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if (annotation is MKUserLocation) { return nil }
+        if (annotation is MKUserLocation) {
+            mapView.userLocation.title = "Я здесь"
+            return nil
+        }
         
         let reuseID = "barAnn"
         var v = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID)
@@ -181,7 +184,7 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
             v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             
             v!.canShowCallout = true
-
+            
             v!.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "killfishICO")?.cropImage(scaledToSize: CGSize(width: 50, height: 50)))
             
             let btn = UIButton(type: .DetailDisclosure)
