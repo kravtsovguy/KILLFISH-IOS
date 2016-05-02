@@ -194,7 +194,6 @@
 		BA1F2AEB1C669EFE0060B321 /* CheckViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewCell.swift; sourceTree = "<group>"; };
 		BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewCell.swift; sourceTree = "<group>"; };
-		BA3F36B71C73BAAB00631ED4 /* Killfish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Killfish.app; path = "/Users/matvey/Documents/Projects/Xcode/KILLFISH/build/Debug-iphoneos/Killfish.app"; sourceTree = "<absolute>"; };
 		BA5375021C5F8E860058F917 /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		BA5375041C60B39C0058F917 /* UIImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		BA5375081C60CEF90058F917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -229,6 +228,7 @@
 		BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
 		BABDB12D1C5ECDDD00588ECD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		BAD43D2C1C62B7810047E1D5 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		BAD4E0D11C74BDBB00411172 /* Killfish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Killfish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +463,7 @@
 				BA8D3FD81C5A42D300727AFD /* KILLFISH */,
 				BAEC09F21C7200E3000CA579 /* Frameworks */,
 				BAEC09C11C6B9A4D000CA579 /* Alamofire.xcodeproj */,
+				BAD4E0D11C74BDBB00411172 /* Killfish.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -591,7 +592,7 @@
 			);
 			name = KILLFISH;
 			productName = KILLFISH;
-			productReference = BA3F36B71C73BAAB00631ED4 /* Killfish.app */;
+			productReference = BAD4E0D11C74BDBB00411172 /* Killfish.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -919,7 +920,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Матвей Кравцов (83W65ZB2H6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -931,7 +932,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = Killfish;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "524afb4b-2bd5-4c80-85a2-be1419ffb94a";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -943,7 +944,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Матвей Кравцов (83W65ZB2H6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -955,7 +956,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = Killfish;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "524afb4b-2bd5-4c80-85a2-be1419ffb94a";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

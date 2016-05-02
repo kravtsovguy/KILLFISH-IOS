@@ -22,7 +22,7 @@ class PayViewController: NavViewController, UIWebViewDelegate {
     override func viewWillAppear(animated: Bool) {
         //super.viewWillAppear(animated)
         
-        let url = NSURL (string: "https://paymentgateway.ru/pgw/?project=7976&nickname=7777777\(App.user.id)")
+        let url = NSURL (string: "https://paymentgateway.ru/pgw/?project=10387&nickname=7777777\(App.user.id)")
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
         
