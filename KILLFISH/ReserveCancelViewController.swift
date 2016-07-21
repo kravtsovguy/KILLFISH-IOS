@@ -93,6 +93,9 @@ class ReserveCancelViewController: NavViewController {
             
             APICalls.cancelReserve(self.item.id, onCompletion: { (ok) -> Void in
                 
+                
+                JLToast.makeText("Бронь отменена", duration: JLToastDelay.ShortDelay).show()
+                
                 self.navigationController?.popViewControllerAnimated(true)
                 
                 }, onError: { (err) -> Void in

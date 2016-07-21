@@ -269,7 +269,8 @@ class MapViewController: MasterNavViewController, MKMapViewDelegate, CLLocationM
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let barA = view.annotation as! BarAnnotation
         let placeName = barA.title
-        let placeInfo = barA.subtitle!+"\nВремя работы: \(barA.bar!.time)"+"\nЧасовой пояс: \(barA.bar!.diff/60) МСК"
+        let sign = (barA.bar!.diff >= 0) ? "+" : "";
+        let placeInfo = barA.subtitle!+"\nВремя работы: \(barA.bar!.time)"+"\nЧасовой пояс: \(sign)\(barA.bar!.diff/60) МСК"
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

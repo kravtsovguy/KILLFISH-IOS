@@ -37,7 +37,7 @@ class NewsInfo: NSObject, NSCoding {
             str = "Star"
             break
         }
-        return UIImage(named: str)!
+        return UIImage(named: str) ?? UIImage(named: "Star")!
     }
     var dayAndMonth:String{
         /*//Here I’m creating the calendar instance that we will operate with:

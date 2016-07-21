@@ -32,6 +32,7 @@
 		BA1F2AEC1C669EFE0060B321 /* CheckViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F2AEB1C669EFE0060B321 /* CheckViewCell.swift */; };
 		BA1F2AEE1C676A9F0060B321 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */; };
 		BA1F2AF01C676B490060B321 /* MusicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */; };
+		BA36128E1D2077E300E9BEB6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36128D1D2077E300E9BEB6 /* UIViewControllerExt.swift */; };
 		BA5375031C5F8E860058F917 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375021C5F8E860058F917 /* APICalls.swift */; };
 		BA5375051C60B39C0058F917 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375041C60B39C0058F917 /* UIImageViewExt.swift */; };
 		BA5375091C60CEF90058F917 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5375081C60CEF90058F917 /* User.swift */; };
@@ -63,6 +64,7 @@
 		BABDB12A1C5EB48100588ECD /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB1291C5EB48100588ECD /* NewsItemViewController.swift */; };
 		BABDB12C1C5EBD0E00588ECD /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDB12B1C5EBD0E00588ECD /* NewsInfo.swift */; };
 		BAD43D2D1C62B7810047E1D5 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD43D2C1C62B7810047E1D5 /* StringExt.swift */; };
+		BAE563F91D34058600E3F008 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE563F81D34058600E3F008 /* Platform.swift */; };
 		BAEAACC71C5CEDE0004C1348 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */; };
 		BAEAACC91C5CFC85004C1348 /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */; };
 		BAEAACCB1C5D01E9004C1348 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEAACCA1C5D01E9004C1348 /* ProfileViewController.swift */; };
@@ -194,6 +196,7 @@
 		BA1F2AEB1C669EFE0060B321 /* CheckViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewCell.swift; sourceTree = "<group>"; };
 		BA1F2AED1C676A9F0060B321 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		BA1F2AEF1C676B490060B321 /* MusicViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewCell.swift; sourceTree = "<group>"; };
+		BA36128D1D2077E300E9BEB6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		BA5375021C5F8E860058F917 /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		BA5375041C60B39C0058F917 /* UIImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		BA5375081C60CEF90058F917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -229,6 +232,7 @@
 		BABDB12D1C5ECDDD00588ECD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		BAD43D2C1C62B7810047E1D5 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		BAD4E0D11C74BDBB00411172 /* Killfish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Killfish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE563F81D34058600E3F008 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		BAEAACC51C5B70BA004C1348 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		BAEAACC61C5CEDE0004C1348 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BAEAACC81C5CFC85004C1348 /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				BA05BEC51C5E4EF800E6AE89 /* TabNavExt.swift */,
 				BA5375041C60B39C0058F917 /* UIImageViewExt.swift */,
 				BAD43D2C1C62B7810047E1D5 /* StringExt.swift */,
+				BA36128D1D2077E300E9BEB6 /* UIViewControllerExt.swift */,
+				BAE563F81D34058600E3F008 /* Platform.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -616,7 +622,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "Killfish" */;
+			buildConfigurationList = BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "KILLFISH" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -787,10 +793,12 @@
 				BA05BEC41C5DB0B400E6AE89 /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				BA5375051C60B39C0058F917 /* UIImageViewExt.swift in Sources */,
 				BA1F2ADF1C661C470060B321 /* PaymentsListViewController.swift in Sources */,
+				BAE563F91D34058600E3F008 /* Platform.swift in Sources */,
 				BA1F2AF01C676B490060B321 /* MusicViewCell.swift in Sources */,
 				BA8854151C637DE90048F287 /* ReserveTableViewCell.swift in Sources */,
 				BA5375091C60CEF90058F917 /* User.swift in Sources */,
 				BA05BE9D1C5D81A200E6AE89 /* LoginViewController.swift in Sources */,
+				BA36128E1D2077E300E9BEB6 /* UIViewControllerExt.swift in Sources */,
 				BAEC09E01C6BBA8E000CA579 /* NewsTagFilter.swift in Sources */,
 				BA1F2AEE1C676A9F0060B321 /* MusicViewController.swift in Sources */,
 				BA1F2AE81C6681A00060B321 /* LabelView.swift in Sources */,
@@ -920,7 +928,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Матвей Кравцов (83W65ZB2H6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -932,7 +940,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = Killfish;
-				PROVISIONING_PROFILE = "524afb4b-2bd5-4c80-85a2-be1419ffb94a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -944,8 +952,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Матвей Кравцов (83W65ZB2H6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -956,7 +963,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = BT.KILLFISH;
 				PRODUCT_NAME = Killfish;
-				PROVISIONING_PROFILE = "524afb4b-2bd5-4c80-85a2-be1419ffb94a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KILLFISH/KILLFISH-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -965,7 +972,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "Killfish" */ = {
+		BA8D3FD11C5A42D300727AFD /* Build configuration list for PBXProject "KILLFISH" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA8D3FE61C5A42D300727AFD /* Debug */,

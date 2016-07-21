@@ -15,6 +15,7 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
     @IBOutlet weak var phoneView: TextBoxView!
     @IBOutlet weak var moneyView: TextBoxView!
     @IBOutlet weak var cardView: TextBoxView!
+    @IBOutlet weak var cardTypeView: TextBoxView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +101,7 @@ class ProfileViewController: MasterNavViewController, UIImagePickerControllerDel
         phoneView.text = App.user.phone
         moneyView.text = "\(App.user.balance/100) \(App.curr)"
         cardView.text = App.user.card
+        cardTypeView.text = "Тип карты: "+App.cardType[App.user.card_type]!;
         
         if App.userPhoto == nil{
             setupAvatarByURL(App.user.photo)

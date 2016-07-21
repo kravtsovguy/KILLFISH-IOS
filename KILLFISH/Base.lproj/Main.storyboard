@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WAK-es-eqo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WAK-es-eqo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -57,9 +57,9 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
-            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -272,6 +272,23 @@
                                     <outletCollection property="gestureRecognizers" destination="eHI-mr-eRS" appends="YES" id="gKt-id-ywx"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hX-FZ-LHr" userLabel="CardType" customClass="TextBoxView" customModule="Killfish" customModuleProvider="target">
+                                <rect key="frame" x="20" y="408" width="280" height="40"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hSE-17-0wF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Тип карты: Обычная"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="secureText" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageIco" value="Card"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Тип карты"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5Se-SP-EyB" appends="YES" id="hMP-za-PNb"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -282,8 +299,11 @@
                             <constraint firstItem="TUV-yv-zVu" firstAttribute="top" secondItem="Kfc-yR-VmV" secondAttribute="bottom" constant="46" id="LaU-z0-ApF"/>
                             <constraint firstItem="GDs-Q3-CIW" firstAttribute="top" secondItem="TUV-yv-zVu" secondAttribute="bottom" constant="54" id="Rr6-Y4-8pd"/>
                             <constraint firstAttribute="trailing" secondItem="Vlf-F6-sAV" secondAttribute="trailing" constant="20" id="Tdq-qR-UmO"/>
+                            <constraint firstItem="6hX-FZ-LHr" firstAttribute="leading" secondItem="gHH-yh-LKr" secondAttribute="leading" constant="20" id="VZq-oy-RvT"/>
+                            <constraint firstAttribute="trailing" secondItem="6hX-FZ-LHr" secondAttribute="trailing" constant="20" id="Vca-Fy-cNY"/>
                             <constraint firstItem="Vlf-F6-sAV" firstAttribute="top" secondItem="GDs-Q3-CIW" secondAttribute="bottom" constant="8" id="cIJ-d0-8cR"/>
                             <constraint firstAttribute="trailing" secondItem="Ptz-wL-Sho" secondAttribute="trailing" constant="20" id="i6C-Jv-aKV"/>
+                            <constraint firstItem="6hX-FZ-LHr" firstAttribute="top" secondItem="dJD-W6-rTg" secondAttribute="bottom" constant="8" id="iNa-Ul-jJw"/>
                             <constraint firstAttribute="trailing" secondItem="GDs-Q3-CIW" secondAttribute="trailing" constant="20" id="jgt-p4-Lrj"/>
                             <constraint firstItem="Ptz-wL-Sho" firstAttribute="top" secondItem="Vlf-F6-sAV" secondAttribute="bottom" constant="8" id="n4P-2C-wPR"/>
                             <constraint firstItem="dJD-W6-rTg" firstAttribute="top" secondItem="Vlf-F6-sAV" secondAttribute="bottom" constant="8" id="vHp-lj-us0"/>
@@ -295,6 +315,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="avatarView" destination="TUV-yv-zVu" id="MRU-mo-0Hi"/>
+                        <outlet property="cardTypeView" destination="6hX-FZ-LHr" id="z0L-VP-y6m"/>
                         <outlet property="cardView" destination="dJD-W6-rTg" id="Hys-Qa-pJc"/>
                         <outlet property="moneyView" destination="Ptz-wL-Sho" id="MIX-TM-1Ed"/>
                         <outlet property="nameView" destination="GDs-Q3-CIW" id="SSu-hp-NXo"/>
@@ -314,9 +335,10 @@
                         <action selector="moneyTapped:" destination="W8B-RU-eYU" id="P1o-sF-GFD"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="eHI-mr-eRS" userLabel="cardTap">
+                <tapGestureRecognizer id="eHI-mr-eRS" userLabel="cardTap"/>
+                <tapGestureRecognizer id="5Se-SP-EyB" userLabel="cardTypeTap">
                     <connections>
-                        <action selector="cardTapped:" destination="W8B-RU-eYU" id="WVR-CX-8bF"/>
+                        <action selector="cardTapped:" destination="W8B-RU-eYU" id="p17-VM-Zog"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -368,6 +390,7 @@
                     <navigationItem key="navigationItem" title="Платежи" id="dB5-06-3WU"/>
                     <connections>
                         <segue destination="edf-J3-bfH" kind="push" identifier="goto_payment_info" id="eGP-rM-xlb"/>
+                        <segue destination="7Eo-uY-RC3" kind="push" identifier="goto_pay_from_payments" id="QpB-S7-3SE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ep2-dZ-D31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -810,7 +833,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="20.02.2016"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Дата"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Дата и время"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="imageIco" value="Time"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -839,9 +862,13 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="imageIco" value="Notes"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-LU-Bub" userLabel="Time" customClass="TextBoxView" customModule="Killfish" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-LU-Bub" userLabel="Time" customClass="TextBoxView" customModule="Killfish" customModuleProvider="target">
                                 <rect key="frame" x="160" y="182" width="140" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="72A-BY-seb"/>
+                                    <constraint firstAttribute="width" constant="140" id="qje-V2-gJd"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="19:00"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Время"/>
@@ -861,7 +888,7 @@
                                     <action selector="vipChanged:" destination="NH0-eA-srZ" eventType="valueChanged" id="WSk-GO-br2"/>
                                 </connections>
                             </switch>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wz-fl-5Ne" customClass="FlatSwitchView" customModule="Killfish" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wz-fl-5Ne" customClass="FlatSwitchView" customModule="Killfish" customModuleProvider="target">
                                 <rect key="frame" x="160" y="235" width="140" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -913,6 +940,20 @@
                                     <action selector="saveReserve:" destination="NH0-eA-srZ" eventType="touchUpInside" id="ITP-Xz-Jto"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uxR-4b-krr">
+                                <rect key="frame" x="180" y="237" width="120" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="isH-z2-Rln"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Classic"/>
+                                    <segment title="VIP"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="NH0-eA-srZ" eventType="valueChanged" id="n7y-nE-RxP"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -921,13 +962,16 @@
                             <constraint firstItem="2DV-9Y-Azq" firstAttribute="top" secondItem="MQN-t8-eL4" secondAttribute="bottom" constant="8" id="4Lu-TN-3gM"/>
                             <constraint firstItem="Jhm-hr-MVA" firstAttribute="top" secondItem="EGc-yA-9XO" secondAttribute="bottom" constant="22" id="4SN-Id-8dH"/>
                             <constraint firstAttribute="trailing" secondItem="GRm-P1-d3Y" secondAttribute="trailing" constant="20" id="6GX-Nk-ay5"/>
+                            <constraint firstAttribute="trailing" secondItem="Nre-LU-Bub" secondAttribute="trailing" constant="20" id="G7I-9S-mly"/>
                             <constraint firstAttribute="trailing" secondItem="Jhm-hr-MVA" secondAttribute="trailing" constant="20" id="Hsn-7C-yAh"/>
                             <constraint firstAttribute="trailing" secondItem="1mX-dR-idy" secondAttribute="trailing" constant="20" id="Jeu-2v-0Ja"/>
                             <constraint firstItem="1wz-fl-5Ne" firstAttribute="top" secondItem="2Y1-yw-0Uo" secondAttribute="bottom" constant="13" id="K3g-34-NN6"/>
                             <constraint firstAttribute="trailing" secondItem="2Y1-yw-0Uo" secondAttribute="trailing" constant="20" id="Kyv-c4-Xwi"/>
+                            <constraint firstItem="uxR-4b-krr" firstAttribute="top" secondItem="Nre-LU-Bub" secondAttribute="bottom" constant="15" id="MU4-At-cXQ"/>
                             <constraint firstItem="1mX-dR-idy" firstAttribute="top" secondItem="Jhm-hr-MVA" secondAttribute="bottom" constant="8" id="NZ2-fo-gtv"/>
                             <constraint firstItem="Jhm-hr-MVA" firstAttribute="leading" secondItem="zfE-bu-6mn" secondAttribute="leading" constant="20" id="Qeh-JE-hNm"/>
                             <constraint firstItem="oeL-qV-veR" firstAttribute="top" secondItem="2Y1-yw-0Uo" secondAttribute="bottom" constant="8" id="UDv-oE-Q8l"/>
+                            <constraint firstItem="Nre-LU-Bub" firstAttribute="top" secondItem="1mX-dR-idy" secondAttribute="bottom" constant="8" id="a0i-xr-a7b"/>
                             <constraint firstItem="2Y1-yw-0Uo" firstAttribute="top" secondItem="1mX-dR-idy" secondAttribute="bottom" constant="8" id="eSa-kj-DWH"/>
                             <constraint firstItem="v4F-py-lhA" firstAttribute="top" secondItem="2DV-9Y-Azq" secondAttribute="bottom" constant="8" id="fuT-lb-LWt"/>
                             <constraint firstItem="Ghn-Jq-Dh2" firstAttribute="centerX" secondItem="zfE-bu-6mn" secondAttribute="centerX" id="gVk-PJ-BF8"/>
@@ -937,6 +981,7 @@
                             <constraint firstItem="GRm-P1-d3Y" firstAttribute="leading" secondItem="zfE-bu-6mn" secondAttribute="leading" constant="20" id="oR1-CG-p19"/>
                             <constraint firstItem="GRm-P1-d3Y" firstAttribute="top" secondItem="oeL-qV-veR" secondAttribute="bottom" constant="8" id="pad-1x-rTO"/>
                             <constraint firstItem="oeL-qV-veR" firstAttribute="leading" secondItem="zfE-bu-6mn" secondAttribute="leading" constant="20" id="qCL-Bm-aOl"/>
+                            <constraint firstAttribute="trailing" secondItem="uxR-4b-krr" secondAttribute="trailing" constant="20" id="sVf-FH-VI1"/>
                             <constraint firstItem="Ghn-Jq-Dh2" firstAttribute="top" secondItem="GRm-P1-d3Y" secondAttribute="bottom" constant="45" id="tjU-Hr-tzQ"/>
                             <constraint firstItem="2DV-9Y-Azq" firstAttribute="leading" secondItem="zfE-bu-6mn" secondAttribute="leading" constant="20" id="vI6-OT-dwF"/>
                             <constraint firstAttribute="trailing" secondItem="1wz-fl-5Ne" secondAttribute="trailing" constant="20" id="ygU-l9-m7S"/>
@@ -951,6 +996,7 @@
                         <outlet property="fswitchView" destination="1wz-fl-5Ne" id="OD7-aQ-R2Z"/>
                         <outlet property="numView" destination="oeL-qV-veR" id="xZ5-Wh-Xuu"/>
                         <outlet property="saveBtn" destination="MQN-t8-eL4" id="Pnj-mS-NEM"/>
+                        <outlet property="segmentView" destination="uxR-4b-krr" id="suS-fj-1uA"/>
                         <outlet property="sumView" destination="Ghn-Jq-Dh2" id="CoZ-Db-f0y"/>
                         <outlet property="timeView" destination="Nre-LU-Bub" id="hMC-Ym-FDR"/>
                         <outlet property="vipView" destination="WEr-ur-n2y" id="caJ-Za-fM7"/>
@@ -1099,7 +1145,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pJz-pG-cEB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pJz-pG-cEB">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
@@ -1251,10 +1297,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfu-hD-gqm">
-                                <rect key="frame" x="20" y="72" width="280" height="488"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDt-oL-g0X">
+                                <rect key="frame" x="8" y="72" width="304" height="488"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Стандартное бронирование:
+                                <mutableString key="text">Стандартное бронирование:
+
 При стандартном бронировании столиков, величина депозита равняется 300 рублям за каждую полную или неполную четверку гостей.
 
 Бронирование столов по акции «VIP RESERVE»:
@@ -1273,18 +1320,18 @@
 бронирование возможно не позднее, чем за 3 часа до предполагаемого времени, и не ранее, чем за 45 дней;
 бронирование на вечер/ночь перед выходным (в т.ч. в пятницу) или праздничным днем возможно не позднее, чем за 6 часов до предполагаемого времени;
 отмена брони возможна не позднее, чем за 3 часа до обозначенного времени брони на один промежуток времени Вы можете сделать только одну бронь.
-cумму депозита можно потратить только в том баре, адрес которого был указан при бронировании столика. В противном случае - сумма депозита будет списана с Вашей карты как непотраченная.</string>
+cумму депозита можно потратить только в том баре, адрес которого был указан при бронировании столика. В противном случае - сумма депозита будет списана с Вашей карты как непотраченная.</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hfu-hD-gqm" firstAttribute="top" secondItem="1ee-9w-J3F" secondAttribute="bottom" constant="8" id="2Dj-oH-etK"/>
-                            <constraint firstItem="Hfu-hD-gqm" firstAttribute="leading" secondItem="GuJ-pE-gNn" secondAttribute="leading" constant="20" id="Fr8-og-ACh"/>
-                            <constraint firstAttribute="trailing" secondItem="Hfu-hD-gqm" secondAttribute="trailing" constant="20" id="jBj-qT-URK"/>
-                            <constraint firstItem="Akl-Qm-aJR" firstAttribute="top" secondItem="Hfu-hD-gqm" secondAttribute="bottom" constant="8" id="lay-ge-609"/>
+                            <constraint firstItem="VDt-oL-g0X" firstAttribute="top" secondItem="1ee-9w-J3F" secondAttribute="bottom" constant="8" id="OW6-W2-jbT"/>
+                            <constraint firstItem="Akl-Qm-aJR" firstAttribute="top" secondItem="VDt-oL-g0X" secondAttribute="bottom" constant="8" id="P6N-La-1Qi"/>
+                            <constraint firstItem="VDt-oL-g0X" firstAttribute="leading" secondItem="GuJ-pE-gNn" secondAttribute="leading" constant="8" id="SfJ-rX-9ru"/>
+                            <constraint firstAttribute="trailing" secondItem="VDt-oL-g0X" secondAttribute="trailing" constant="8" id="dgI-Et-vxG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Условия" id="8lM-d2-7bW"/>
@@ -1488,7 +1535,7 @@ cумму депозита можно потратить только в том 
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrZ-Gn-uli">
@@ -2663,8 +2710,9 @@ cумму депозита можно потратить только в том 
         <image name="killfishICO" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="38e-W9-nwg"/>
         <segue reference="oTh-l8-HTI"/>
         <segue reference="OBz-Yy-PoZ"/>
+        <segue reference="fNT-9J-qAk"/>
+        <segue reference="1dS-Bi-DHT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,6 +38,8 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         if !App.ios9{
             //bottomC.constant += 100
         }
@@ -113,6 +115,10 @@ class MusicViewController: MasterNavViewController, UITableViewDelegate, UITable
             self.tableView.reloadData()
         }
 
+    }
+    
+    override func dismissKeyboard() {
+        searchController.dismissKeyboard()
     }
     
     override func viewWillAppear(animated: Bool) {

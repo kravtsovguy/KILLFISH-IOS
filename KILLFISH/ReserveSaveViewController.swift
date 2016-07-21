@@ -19,6 +19,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var sumView: LabelView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var fswitchView: FlatSwitchView!
+    @IBOutlet weak var segmentView: UISegmentedControl!
     
     var pickerBarView = UIPickerView()
     var pickerCityView = UIPickerView()
@@ -27,7 +28,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
     
-    var date = NSDate(timeIntervalSince1970: 0)
+    var date = NSDate()
     var currCityId = -1
     var currBarId = -1
     var num = 0
@@ -95,7 +96,7 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         numView.textBox.delegate = self
         discrView.textBox.delegate = self
         
-        datePicker.date = NSDate(timeIntervalSince1970: 0)
+        datePicker.date = NSDate()
         datePicker.datePickerMode = .DateAndTime
         timePicker.datePickerMode = .Time
         
@@ -290,16 +291,37 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
             return
         }
         
+        let f = NSDateFormatter()
+        f.dateFormat = "dd.MM.yyyy HH:mm"
+        let sdate = f.stringFromDate(date)
+        
+        let svip = vip ? "VIP" : "Обычный"
+        
+        let alertController = UIAlertController(title: "Бронирование", message:
+            "Город - \(App.cities[currCityId].name)\nБар - \(App.cities[currCityId].bars[currBarId].name)\nКоличество человек - \(num)\nДата - \(sdate)\nТип брони - \(svip)", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Забронировать", style: UIAlertActionStyle.Default,handler: { (action: UIAlertAction!) in
+            self.saveReserveDo()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Cancel,handler: { (action: UIAlertAction!) in
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    func saveReserveDo(){
         self.saveBtn.enabled = false
         
         APICalls.saveReserve(vip, barid: App.cities[currCityId].bars[currBarId].id, dt: date.timeIntervalSince1970, num: num, discr: discrView.textBox.text!, onCompletion: { (bronid) -> Void in
-                self.navigationController?.popViewControllerAnimated(true)
-                //self.dismissViewControllerAnimated(true, completion: nil)
-            }) { (err) -> Void in
-                self.saveBtn.enabled=true
-                JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
+            JLToast.makeText("Успешно!", duration: JLToastDelay.ShortDelay).show()
+            self.navigationController?.popViewControllerAnimated(true)
+            //self.dismissViewControllerAnimated(true, completion: nil)
+        }) { (err) -> Void in
+            self.saveBtn.enabled=true
+            JLToast.makeText(err, duration: JLToastDelay.LongDelay).show()
         }
-        
     }
     
     func checkValues(onError: (String)->Void)->Bool{
@@ -359,6 +381,10 @@ class ReserveSaveViewController: NavViewController, UIPickerViewDataSource, UIPi
         
     }
     
+    @IBAction func segmentChanged(sender: AnyObject) {
+        vip = segmentView.selectedSegmentIndex == 1
+        recalcSum()
+    }
     @IBAction func vipChanged(sender: AnyObject) {
         vip = fswitchView.isRight//vipView.on
         recalcSum()

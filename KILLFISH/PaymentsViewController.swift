@@ -17,6 +17,8 @@ class PaymentsViewController: MasterNavViewController, CarbonTabSwipeNavigationD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupRightItem()
+        
         App.paymentsView = self
         App.loadCachePayments()
         
@@ -29,6 +31,20 @@ class PaymentsViewController: MasterNavViewController, CarbonTabSwipeNavigationD
         
         self.style()
         
+    }
+    
+    func setupRightItem()
+    {
+        let imgMenu = UIImage(named: "Plus")!.alpha(0.5)
+        let rectMenu = CGRect(x: 0, y: 0, width: 20, height: 20)
+        let butMenu = UIButton(frame: rectMenu)
+        butMenu.setBackgroundImage(imgMenu, forState: .Normal)
+        butMenu.addTarget(self, action: #selector(PaymentsViewController.pay), forControlEvents: .TouchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butMenu);
+    }
+    
+    func pay(){
+        self.performSegueWithIdentifier("goto_pay_from_payments", sender: self)
     }
     
     
